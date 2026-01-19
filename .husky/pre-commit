@@ -6,4 +6,4 @@ node "$MONOREPO_ROOT/scripts/copy-wellknown.cjs"
 
 git add "$MONOREPO_ROOT/apps/remix/public/"
 
-npx lint-staged
+npm exec lint-staged
