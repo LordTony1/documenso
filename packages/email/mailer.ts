@@ -1,5 +1,7 @@
+import path from 'node:path';
 import type { Transporter } from 'nodemailer';
 import { createTransport } from 'nodemailer';
+import type { SendMailOptions } from 'nodemailer';
 
 import { env } from '@documenso/lib/utils/env';
 import { ResendTransport } from '@documenso/nodemailer-resend';
@@ -105,3 +107,63 @@ const getTransport = (): Transporter => {
 };
 
 export const mailer = getTransport();
+
+/**
+ * Wrapper for sending emails with standard attachments like the document icon
+ * and team branding logo using Content-ID (CID) embedding.
+ */
+export const sendEmail = async (
+  options: SendMailOptions & { brandingLogo?: string; inlineAssets?: string[] },
+) => {
+  const { brandingLogo, inlineAssets, ...mailOptions } = options;
+
+  const attachments = [...(mailOptions.attachments || [])];
+
+  // Attach static document icon
+  attachments.push({
+    filename: 'document.png',
+    path: path.join(process.cwd(), 'public/static/document.png'),
+    cid: 'document-icon',
+  });
+
+  if (inlineAssets?.includes('documenso-logo')) {
+    attachments.push({
+      filename: 'logo.png',
+      path: path.join(process.cwd(), 'public/static/logo.png'),
+      cid: 'documenso-logo',
+    });
+  }
+
+  if (inlineAssets?.includes('completed')) {
+    attachments.push({
+      filename: 'completed.png',
+      path: path.join(process.cwd(), 'public/static/completed.png'),
+      cid: 'completed',
+    });
+  }
+
+  if (inlineAssets?.includes('download')) {
+    attachments.push({
+      filename: 'download.png',
+      path: path.join(process.cwd(), 'public/static/download.png'),
+      cid: 'download',
+    });
+  }
+
+  // Attach branding logo if present
+  if (brandingLogo) {
+    attachments.push({
+      filename: 'logo.png',
+      // If brandingLogo is a URL, we can't just pass it as path directly if we want to embed it unless nodemailer handles URLs in path (it does).
+      // However, if it is base64, we need to handle it differently.
+      // Usually brandingLogo is a URL.
+      path: brandingLogo,
+      cid: 'team-logo',
+    });
+  }
+
+  return mailer.sendMail({
+    ...mailOptions,
+    attachments,
+  });
+};

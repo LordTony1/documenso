@@ -33,6 +33,7 @@ export const TemplateDocumentInvite = ({
   organisationType,
 }: TemplateDocumentInviteProps) => {
   const { _ } = useLingui();
+  const shouldIncludeSenderDetails = includeSenderDetails === true;
 
   const { actionVerb } = RECIPIENT_ROLES_DESCRIPTION[role];
 
@@ -41,8 +42,13 @@ export const TemplateDocumentInvite = ({
       <TemplateDocumentImage className="mt-6" assetBaseUrl={assetBaseUrl} />
 
       <Section>
-        <Text className="text-primary mx-auto mb-0 max-w-[80%] text-center text-lg font-semibold">
-          {match({ selfSigner, organisationType, includeSenderDetails, teamName })
+        <Text className="mx-auto mb-0 max-w-[80%] text-center text-lg font-semibold text-primary">
+          {match({
+            selfSigner,
+            organisationType,
+            includeSenderDetails: shouldIncludeSenderDetails,
+            teamName,
+          })
             .with({ selfSigner: true }, () => (
               <Trans>
                 Please {_(actionVerb).toLowerCase()} your document
@@ -91,7 +97,7 @@ export const TemplateDocumentInvite = ({
 
         <Section className="mb-6 mt-8 text-center">
           <Button
-            className="bg-documenso-500 text-sbase inline-flex items-center justify-center rounded-lg px-6 py-3 text-center font-medium text-black no-underline"
+            className="text-sbase inline-flex items-center justify-center rounded-lg bg-documenso-500 px-6 py-3 text-center font-medium text-black no-underline"
             href={signDocumentLink}
           >
             {match(role)

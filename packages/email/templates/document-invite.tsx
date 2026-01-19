@@ -40,11 +40,12 @@ export const DocumentInviteEmailTemplate = ({
   const branding = useBranding();
 
   const action = _(RECIPIENT_ROLES_DESCRIPTION[role].actionVerb).toLowerCase();
+  const shouldIncludeSenderDetails = includeSenderDetails === true;
 
   let previewText = msg`${inviterName} has invited you to ${action} ${documentName}`;
 
   if (organisationType === OrganisationType.ORGANISATION) {
-    previewText = includeSenderDetails
+    previewText = shouldIncludeSenderDetails
       ? msg`${inviterName} on behalf of "${teamName}" has invited you to ${action} ${documentName}`
       : msg`${teamName} has invited you to ${action} ${documentName}`;
   }
@@ -67,7 +68,7 @@ export const DocumentInviteEmailTemplate = ({
           <Container className="mx-auto mb-2 mt-8 max-w-xl rounded-lg border border-solid border-slate-200 p-4 backdrop-blur-sm">
             <Section>
               {branding.brandingEnabled && branding.brandingLogo ? (
-                <Img src={branding.brandingLogo} alt="Branding Logo" className="mb-4 h-6" />
+                <Img src="cid:team-logo" alt="Branding Logo" className="mb-4 h-6" />
               ) : (
                 <Img
                   src={getAssetUrl('/static/logo.png')}
@@ -86,7 +87,7 @@ export const DocumentInviteEmailTemplate = ({
                 selfSigner={selfSigner}
                 organisationType={organisationType}
                 teamName={teamName}
-                includeSenderDetails={includeSenderDetails}
+                includeSenderDetails={shouldIncludeSenderDetails}
               />
             </Section>
           </Container>

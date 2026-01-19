@@ -26,10 +26,6 @@ export const DocumentRecipientSignedEmailTemplate = ({
 
   const previewText = msg`${recipientReference} has signed ${documentName}`;
 
-  const getAssetUrl = (path: string) => {
-    return new URL(path, assetBaseUrl).toString();
-  };
-
   return (
     <Html>
       <Head />
@@ -40,13 +36,9 @@ export const DocumentRecipientSignedEmailTemplate = ({
           <Container className="mx-auto mb-2 mt-8 max-w-xl rounded-lg border border-solid border-slate-200 p-2 backdrop-blur-sm">
             <Section className="p-2">
               {branding.brandingEnabled && branding.brandingLogo ? (
-                <Img src={branding.brandingLogo} alt="Branding Logo" className="mb-4 h-6" />
+                <Img src="cid:team-logo" alt="Branding Logo" className="mb-4 h-6" />
               ) : (
-                <Img
-                  src={getAssetUrl('/static/logo.png')}
-                  alt="Documenso Logo"
-                  className="mb-4 h-6"
-                />
+                <Img src="cid:documenso-logo" alt="Documenso Logo" className="mb-4 h-6" />
               )}
 
               <TemplateDocumentRecipientSigned

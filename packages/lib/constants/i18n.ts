@@ -12,6 +12,7 @@ export const SUPPORTED_LANGUAGE_CODES = [
   'ja',
   'ko',
   'zh',
+  'hr',
 ] as const;
 
 export const ZSupportedLanguageCodeSchema = z.enum(SUPPORTED_LANGUAGE_CODES).catch('en');
@@ -85,6 +86,10 @@ export const SUPPORTED_LANGUAGES: Record<string, SupportedLanguage> = {
   zh: {
     short: 'zh',
     full: 'Chinese',
+  },
+  hr: {
+    short: 'hr',
+    full: 'Croatian',
   },
 } satisfies Record<SupportedLanguageCodes, SupportedLanguage>;
 

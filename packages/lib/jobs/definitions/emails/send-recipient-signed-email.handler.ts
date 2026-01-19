@@ -3,7 +3,7 @@ import { createElement } from 'react';
 import { msg } from '@lingui/core/macro';
 import { EnvelopeType } from '@prisma/client';
 
-import { mailer } from '@documenso/email/mailer';
+import { sendEmail } from '@documenso/email/mailer';
 import { DocumentRecipientSignedEmailTemplate } from '@documenso/email/templates/document-recipient-signed';
 import { prisma } from '@documenso/prisma';
 
@@ -115,7 +115,9 @@ export const run = async ({
       }),
     ]);
 
-    await mailer.sendMail({
+    const shouldUseBrandingLogo = Boolean(branding?.brandingEnabled && branding?.brandingLogo);
+
+    await sendEmail({
       to: {
         name: owner.name ?? '',
         address: owner.email,
@@ -124,6 +126,8 @@ export const run = async ({
       subject: i18n._(msg`${recipientReference} has signed "${envelope.title}"`),
       html,
       text,
+      brandingLogo: shouldUseBrandingLogo ? branding?.brandingLogo : undefined,
+      inlineAssets: shouldUseBrandingLogo ? undefined : ['documenso-logo'],
     });
   });
 };

@@ -3,7 +3,7 @@ import { createElement } from 'react';
 import { msg } from '@lingui/core/macro';
 import { DocumentSource, EnvelopeType } from '@prisma/client';
 
-import { mailer } from '@documenso/email/mailer';
+import { sendEmail } from '@documenso/email/mailer';
 import { DocumentCompletedEmailTemplate } from '@documenso/email/templates/document-completed';
 import { prisma } from '@documenso/prisma';
 
@@ -140,7 +140,9 @@ export const sendCompletedEmail = async ({ id, requestMetadata }: SendDocumentOp
 
     const i18n = await getI18nInstance(emailLanguage);
 
-    await mailer.sendMail({
+    const shouldUseBrandingLogo = Boolean(branding?.brandingEnabled && branding?.brandingLogo);
+
+    await sendEmail({
       to: [
         {
           name: owner.name || '',
@@ -153,6 +155,10 @@ export const sendCompletedEmail = async ({ id, requestMetadata }: SendDocumentOp
       html,
       text,
       attachments: completedDocumentEmailAttachments,
+      brandingLogo: shouldUseBrandingLogo ? branding?.brandingLogo : undefined,
+      inlineAssets: shouldUseBrandingLogo
+        ? ['completed', 'download']
+        : ['completed', 'download', 'documenso-logo'],
     });
 
     await prisma.documentAuditLog.create({
@@ -212,7 +218,9 @@ export const sendCompletedEmail = async ({ id, requestMetadata }: SendDocumentOp
 
       const i18n = await getI18nInstance(emailLanguage);
 
-      await mailer.sendMail({
+      const shouldUseBrandingLogo = Boolean(branding?.brandingEnabled && branding?.brandingLogo);
+
+      await sendEmail({
         to: [
           {
             name: recipient.name,
@@ -228,6 +236,10 @@ export const sendCompletedEmail = async ({ id, requestMetadata }: SendDocumentOp
         html,
         text,
         attachments: completedDocumentEmailAttachments,
+        brandingLogo: shouldUseBrandingLogo ? branding?.brandingLogo : undefined,
+        inlineAssets: shouldUseBrandingLogo
+          ? ['completed', 'download']
+          : ['completed', 'download', 'documenso-logo'],
       });
 
       await prisma.documentAuditLog.create({

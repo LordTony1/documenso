@@ -9,7 +9,7 @@ import {
   SigningStatus,
 } from '@prisma/client';
 
-import { mailer } from '@documenso/email/mailer';
+import { sendEmail } from '@documenso/email/mailer';
 import { DocumentInviteEmailTemplate } from '@documenso/email/templates/document-invite';
 import {
   RECIPIENT_ROLES_DESCRIPTION,
@@ -107,7 +107,7 @@ export const resendDocument = async ({
     return envelope;
   }
 
-  const { branding, emailLanguage, organisationType, senderEmail, replyToEmail } =
+  const { branding, emailLanguage, organisationType, senderEmail, replyToEmail, settings } =
     await getEmailContext({
       emailType: 'RECIPIENT',
       source: {
@@ -148,11 +148,14 @@ export const resendDocument = async ({
         emailSubject = i18n._(
           msg`Reminder: ${envelope.team.name} invited you to ${recipientActionVerb} a document`,
         );
-        emailMessage =
-          envelope.documentMeta.message ||
-          i18n._(
-            msg`${user.name || user.email} on behalf of "${envelope.team.name}" has invited you to ${recipientActionVerb} the document "${envelope.title}".`,
-          );
+        const shouldIncludeSenderDetails = settings.includeSenderDetails === true;
+        emailMessage = envelope.documentMeta.message
+          ? envelope.documentMeta.message
+          : i18n._(
+              shouldIncludeSenderDetails
+                ? msg`${user.name || user.email} on behalf of "${envelope.team.name}" has invited you to ${recipientActionVerb} the document "${envelope.title}".`
+                : msg`${envelope.team.name} has invited you to ${recipientActionVerb} the document "${envelope.title}".`,
+            );
       }
 
       const customEmailTemplate = {
@@ -178,6 +181,7 @@ export const resendDocument = async ({
         selfSigner,
         organisationType,
         teamName: envelope.team?.name,
+        includeSenderDetails: settings.includeSenderDetails,
       });
 
       const [html, text] = await Promise.all([
@@ -194,7 +198,7 @@ export const resendDocument = async ({
 
       await prisma.$transaction(
         async (tx) => {
-          await mailer.sendMail({
+          await sendEmail({
             to: {
               address: email,
               name,
@@ -209,6 +213,7 @@ export const resendDocument = async ({
               : emailSubject,
             html,
             text,
+            brandingLogo: branding?.brandingLogo,
           });
 
           await tx.documentAuditLog.create({

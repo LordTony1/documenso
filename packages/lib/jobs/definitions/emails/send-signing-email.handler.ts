@@ -10,7 +10,7 @@ import {
   SendStatus,
 } from '@prisma/client';
 
-import { mailer } from '@documenso/email/mailer';
+import { sendEmail } from '@documenso/email/mailer';
 import DocumentInviteEmailTemplate from '@documenso/email/templates/document-invite';
 import { isRecipientEmailValidForSending } from '@documenso/lib/utils/recipients';
 import { prisma } from '@documenso/prisma';
@@ -142,9 +142,10 @@ export const run = async ({
 
     if (!emailMessage) {
       const inviterName = user.name || '';
+      const shouldIncludeSenderDetails = settings.includeSenderDetails === true;
 
       emailMessage = i18n._(
-        settings.includeSenderDetails
+        shouldIncludeSenderDetails
           ? msg`${inviterName} on behalf of "${team.name}" has invited you to ${recipientActionVerb} the document "${envelope.title}".`
           : msg`${team.name} has invited you to ${recipientActionVerb} the document "${envelope.title}".`,
       );
@@ -189,7 +190,7 @@ export const run = async ({
         }),
       ]);
 
-      await mailer.sendMail({
+      await sendEmail({
         to: {
           name: recipient.name,
           address: recipient.email,
@@ -202,6 +203,7 @@ export const run = async ({
         ),
         html,
         text,
+        brandingLogo: branding?.brandingLogo,
       });
     });
   }
