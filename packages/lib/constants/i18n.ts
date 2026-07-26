@@ -39,6 +39,10 @@ export const SUPPORTED_LANGUAGES: Record<string, SupportedLanguage> = {
     short: 'es',
     full: msg`Spanish`,
   },
+  hr: {
+    short: 'hr',
+    full: msg`Croatian`,
+  },
   it: {
     short: 'it',
     full: msg`Italian`,

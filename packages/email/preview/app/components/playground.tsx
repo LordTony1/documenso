@@ -16,6 +16,7 @@ const LANGUAGE_LABELS: Record<string, string> = {
   de: 'German',
   fr: 'French',
   es: 'Spanish',
+  hr: 'Croatian',
   it: 'Italian',
   nl: 'Dutch',
   pl: 'Polish',

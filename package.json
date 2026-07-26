@@ -39,7 +39,8 @@
     "make:version": "npm version --workspace @documenso/remix --include-workspace-root --no-git-tag-version -m \"v%s\"",
     "translate": "npm run translate:extract && npm run translate:compile",
     "translate:extract": "lingui extract --clean",
-    "translate:compile": "lingui compile"
+    "translate:compile": "lingui compile",
+    "translate:hr": "node scripts/translate-hr.mjs"
   },
   "packageManager": "npm@11.11.0",
   "engines": {
