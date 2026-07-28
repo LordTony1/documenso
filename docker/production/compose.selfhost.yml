@@ -26,10 +26,15 @@ services:
       - database:/var/lib/postgresql/data
 
   documenso:
-    build:
-      # Build context is the repo root, four levels up from this file.
-      context: ../..
-      dockerfile: docker/Dockerfile
+    # Image built from THIS fork by .github/workflows/build-image.yml.
+    # The official documenso/documenso image has no Croatian translation.
+    #
+    # To build on the server instead of pulling, comment out `image:` and
+    # uncomment the `build:` block below (needs ~4 GB RAM and ~10 GB disk).
+    image: ghcr.io/lordtony1/documenso:latest
+    # build:
+    #   context: ../..
+    #   dockerfile: docker/Dockerfile
     restart: unless-stopped
     depends_on:
       database:
