@@ -16,12 +16,6 @@ COMPOSE="docker compose -f compose.selfhost.yml"
 BACKUP_DIR="${HOME}/documenso-backups"
 KEEP=7
 
-# Compose reads .env itself; this shell does not, and pg_dump needs the credentials.
-set -a
-# shellcheck disable=SC1091
-. ./.env
-set +a
-
 mkdir -p "${BACKUP_DIR}"
 STAMP="$(date +%F)"
 TARGET="${BACKUP_DIR}/documenso-${STAMP}.dump"
@@ -34,8 +28,12 @@ echo "[$(date -Is)] starting backup"
 #
 # Write to .partial first so a run that dies midway cannot leave a truncated
 # file that looks like a valid backup to the retention logic below.
+#
+# Single-quoted so the variables expand inside the container, which already has
+# them from compose. Sourcing .env here instead would break on any unquoted
+# value containing spaces (e.g. SMTP_FROM_NAME).
 ${COMPOSE} exec -T database \
-  pg_dump -U "${POSTGRES_USER}" -Fc "${POSTGRES_DB}" > "${TARGET}.partial"
+  sh -c 'pg_dump -U "$POSTGRES_USER" -Fc "$POSTGRES_DB"' > "${TARGET}.partial"
 
 mv "${TARGET}.partial" "${TARGET}"
 echo "[$(date -Is)] wrote ${TARGET} ($(du -h "${TARGET}" | cut -f1))"

@@ -15,23 +15,19 @@ cd "$(dirname "$0")"
 COMPOSE="docker compose -f compose.selfhost.yml"
 BACKUP_DIR="${HOME}/documenso-backups"
 
-# Compose reads .env by itself, but this shell does not, and pg_dump below
-# needs the credentials.
-set -a
-# shellcheck disable=SC1091
-. ./.env
-set +a
-
 echo "==> Disk before update"
 df -h / | tail -1
 
 echo "==> Backing up database"
 mkdir -p "${BACKUP_DIR}"
 STAMP="$(date +%F-%H%M)"
+# Single-quoted so the variables expand inside the container, which already has
+# them from compose. Sourcing .env here instead would break on any unquoted
+# value containing spaces (e.g. SMTP_FROM_NAME).
 ${COMPOSE} exec -T database \
-  pg_dump -U "${POSTGRES_USER}" "${POSTGRES_DB}" \
-  | gzip > "${BACKUP_DIR}/pre-update-${STAMP}.sql.gz"
-echo "    saved ${BACKUP_DIR}/pre-update-${STAMP}.sql.gz ($(du -h "${BACKUP_DIR}/pre-update-${STAMP}.sql.gz" | cut -f1))"
+  sh -c 'pg_dump -U "$POSTGRES_USER" -Fc "$POSTGRES_DB"' \
+  > "${BACKUP_DIR}/pre-update-${STAMP}.dump"
+echo "    saved ${BACKUP_DIR}/pre-update-${STAMP}.dump ($(du -h "${BACKUP_DIR}/pre-update-${STAMP}.dump" | cut -f1))"
 
 echo "==> Updating repo"
 git pull --ff-only
@@ -47,7 +43,7 @@ echo "==> Removing superseded images"
 docker image prune -f
 
 # Keep the last 10 dumps; the LXC disk is small.
-ls -1t "${BACKUP_DIR}"/pre-update-*.sql.gz 2>/dev/null | tail -n +11 | xargs -r rm --
+ls -1t "${BACKUP_DIR}"/pre-update-*.dump 2>/dev/null | tail -n +11 | xargs -r rm --
 
 echo "==> Done"
 ${COMPOSE} ps
