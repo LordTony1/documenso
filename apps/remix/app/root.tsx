@@ -2,7 +2,6 @@ import { getOptionalSession } from '@documenso/auth/server/lib/utils/get-session
 import { SessionProvider } from '@documenso/lib/client-only/providers/session';
 import { APP_I18N_OPTIONS, type SupportedLanguageCodes } from '@documenso/lib/constants/i18n';
 import { createPublicEnv } from '@documenso/lib/utils/env';
-import { extractLocaleData } from '@documenso/lib/utils/i18n';
 import { TrpcProvider } from '@documenso/trpc/react';
 import { getOrganisationSession } from '@documenso/trpc/server/organisation-router/get-organisation-session';
 import { Toaster } from '@documenso/ui/primitives/toaster';
@@ -51,8 +50,15 @@ export async function loader({ context, request }: Route.LoaderArgs) {
 
   let lang: SupportedLanguageCodes = await langCookie.parse(cookieHeader);
 
+  // This is a Croatian deployment: serve Croatian unless the visitor explicitly
+  // picked another language via the switcher (which sets the cookie above).
+  //
+  // Upstream falls back to Accept-Language here, which meant a recipient with an
+  // English browser got an English signing page even when the sender had set the
+  // document's language to Croatian — documentMeta.language only drives emails
+  // and the generated PDFs, never this UI.
   if (!APP_I18N_OPTIONS.supportedLangs.includes(lang)) {
-    lang = extractLocaleData({ headers: request.headers }).lang;
+    lang = APP_I18N_OPTIONS.defaultLanguage;
   }
 
   const disableAnimations = cookieHeader.includes('__disable_animations=true');
