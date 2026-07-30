@@ -73,6 +73,16 @@ services:
     image: cloudflare/cloudflared:latest
     restart: unless-stopped
     command: tunnel --no-autoupdate run
+    # cloudflared resolves the Cloudflare edge IPs ONCE at process start and
+    # never re-resolves. On a host reboot it can win the race against the LAN
+    # router's DNS forwarder, which then answers the edge lookup with its own
+    # address — cloudflared caches that and retries a dead IP forever, serving
+    # Cloudflare error 1033 until the container is restarted by hand. Happened
+    # 2026-07-30. Public resolvers here keep edge discovery independent of the
+    # router's boot timing; a failed lookup is retried, a poisoned one is not.
+    dns:
+      - 1.1.1.1
+      - 1.0.0.1
     environment:
       - TUNNEL_TOKEN=${CLOUDFLARE_TUNNEL_TOKEN:?err}
     depends_on:
