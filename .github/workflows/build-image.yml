@@ -7,10 +7,15 @@ name: Build and push self-host image
 on:
   push:
     branches: [main]
-    # Skip docs-only churn; the image does not change for those.
+    # Skip churn that cannot change the image contents.
     paths-ignore:
       - '**.md'
       - 'apps/docs/**'
+      # Compose files and host-side scripts (update.sh, backup.sh) are read on
+      # the server, never baked into the image. The files that DO affect it —
+      # docker/Dockerfile and docker/start.sh — sit one level up and still
+      # trigger a build.
+      - 'docker/production/**'
   workflow_dispatch:
 
 env:
