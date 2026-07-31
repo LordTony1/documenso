@@ -282,7 +282,7 @@ msgstr "{0}"
 #. placeholder {0}: team.name
 #: apps/remix/app/components/dialogs/public-profile-template-manage-dialog.tsx
 msgid "{0} direct signing templates"
-msgstr "{0} predložaka za izravno potpisivanje"
+msgstr "Predlošci za izravno potpisivanje – {0}"
 
 #. placeholder {0}: t(FRIENDLY_FIELD_TYPE[field.type])
 #: packages/ui/components/document/envelope-recipient-field-tooltip.tsx
@@ -318,7 +318,7 @@ msgstr "{0} u ime \"{1}\" pozvao vas je da {recipientActionVerb} dokument \"{2}\
 #. placeholder {0}: organisation.name
 #: apps/remix/app/routes/_authenticated+/o.$orgUrl._index.tsx
 msgid "{0} Teams"
-msgstr "{0} timova"
+msgstr "Timovi organizacije {0}"
 
 #. placeholder {0}: currentStepData.order
 #. placeholder {1}: envelopeEditorSteps.length
@@ -424,11 +424,11 @@ msgstr "{organisationClaimCount, plural, one {# pravo organizacije} few {# prava
 
 #: apps/remix/app/components/general/direct-template/direct-template-page.tsx
 msgid "{recipientActionVerb} document"
-msgstr "{recipientActionVerb} dokument"
+msgstr "Potrebno je da {recipientActionVerb} dokument"
 
 #: apps/remix/app/components/general/direct-template/direct-template-page.tsx
 msgid "{recipientActionVerb} the document to complete the process."
-msgstr "{recipientActionVerb} dokument da biste dovršili postupak."
+msgstr "Potrebno je da {recipientActionVerb} dokument kako biste dovršili postupak."
 
 #: apps/remix/app/components/general/document/document-certificate-qr-view.tsx
 #: apps/remix/app/components/general/document/document-certificate-qr-view.tsx
@@ -437,7 +437,7 @@ msgstr "{recipientCount} primatelja"
 
 #: packages/email/templates/document-created-from-direct-template.tsx
 msgid "{recipientName} {action} a document by using one of your direct links"
-msgstr "{recipientName} {action} dokument koristeći jednu od vaših izravnih poveznica"
+msgstr "{recipientName} – {action} dokumenta putem jedne od vaših izravnih poveznica"
 
 #: packages/email/templates/document-rejected.tsx
 msgid "{recipientName} has rejected the document '{documentName}'"
@@ -2066,7 +2066,7 @@ msgstr "Odobri"
 #: packages/lib/constants/recipient-roles.ts
 msgctxt "Recipient role action verb"
 msgid "Approve"
-msgstr "Odobri"
+msgstr "odobrite"
 
 #: apps/remix/app/components/general/document-signing/document-signing-mobile-widget.tsx
 #: apps/remix/app/components/general/document-signing/document-signing-page-view-v1.tsx
@@ -2082,7 +2082,7 @@ msgstr "Odobreno"
 #: packages/lib/constants/recipient-roles.ts
 msgctxt "Recipient role actioned"
 msgid "Approved"
-msgstr "Odobreno"
+msgstr "Odobrenje"
 
 #: apps/remix/app/components/general/envelope-signing/envelope-signer-header.tsx
 msgid "Approver"
@@ -2167,7 +2167,7 @@ msgstr "Dodijeljeni timovi"
 #: packages/lib/constants/recipient-roles.ts
 msgctxt "Recipient role action verb"
 msgid "Assist"
-msgstr "Asistiraj"
+msgstr "asistirate"
 
 #: apps/remix/app/components/general/document-signing/document-signing-mobile-widget.tsx
 #: apps/remix/app/components/general/document-signing/document-signing-page-view-v1.tsx
@@ -2209,7 +2209,7 @@ msgstr "Asistirano"
 #: packages/lib/constants/recipient-roles.ts
 msgctxt "Recipient role actioned"
 msgid "Assisted"
-msgstr "Asistirano"
+msgstr "Asistencija"
 
 #: packages/lib/constants/recipient-roles.ts
 msgctxt "Recipient role progressive verb"
@@ -2660,7 +2660,7 @@ msgstr "Otkazano"
 
 #: apps/remix/app/components/dialogs/passkey-create-dialog.tsx
 msgid "Cancelled by user"
-msgstr "Otkazao korisnik"
+msgstr "Korisnik je otkazao radnju"
 
 #: apps/remix/app/components/embed/authoring/configure-document-upload.tsx
 msgid "Cannot remove document"
@@ -2683,7 +2683,7 @@ msgstr "Kopija"
 #: packages/lib/constants/recipient-roles.ts
 msgctxt "Recipient role action verb"
 msgid "CC"
-msgstr "Kopija"
+msgstr "zaprimite"
 
 #: packages/lib/constants/recipient-roles.ts
 msgctxt "Recipient role progressive verb"
@@ -2693,7 +2693,7 @@ msgstr "Kopija"
 #: packages/lib/constants/recipient-roles.ts
 msgctxt "Recipient role actioned"
 msgid "CC'd"
-msgstr "U kopiji"
+msgstr "Zaprimanje"
 
 #: packages/lib/constants/recipient-roles.ts
 msgctxt "Recipient role plural name"
@@ -2941,7 +2941,7 @@ msgstr "Dovršeno"
 
 #: apps/remix/app/routes/_authenticated+/admin+/documents.$id.tsx
 msgid "Completed At"
-msgstr "Dovršeno u"
+msgstr "Datum dovršetka"
 
 #: packages/email/templates/document-completed.tsx
 #: packages/email/templates/document-self-signed.tsx
@@ -3510,11 +3510,11 @@ msgstr "Stvoreno"
 #: apps/remix/app/routes/_internal+/[__htmltopdf]+/audit-log.tsx
 #: packages/lib/server-only/pdf/render-audit-logs.ts
 msgid "Created At"
-msgstr "Stvoreno u"
+msgstr "Datum stvaranja"
 
 #: apps/remix/app/routes/_authenticated+/t.$teamUrl+/documents.$id.logs.tsx
 msgid "Created by"
-msgstr "Stvorio"
+msgstr "Autor"
 
 #: apps/remix/app/routes/_authenticated+/admin+/documents.$id.tsx
 msgid "Created on"
@@ -4157,7 +4157,7 @@ msgstr "Dokument"
 #. placeholder {1}: recipient.name
 #: packages/lib/jobs/definitions/emails/send-rejection-emails.handler.ts
 msgid "Document \"{0}\" - Rejected by {1}"
-msgstr "Dokument \"{0}\" - Odbio {1}"
+msgstr "Dokument \"{0}\" – odbijen ({1})"
 
 #. placeholder {0}: envelope.title
 #: packages/lib/jobs/definitions/emails/send-rejection-emails.handler.ts
@@ -4256,7 +4256,7 @@ msgstr "Dokument stvoren"
 #. placeholder {0}: document.user.name
 #: apps/remix/app/components/general/template/template-page-view-recent-activity.tsx
 msgid "Document created by <0>{0}</0>"
-msgstr "Dokument stvorio <0>{0}</0>"
+msgstr "Autor dokumenta: <0>{0}</0>"
 
 #: packages/email/templates/document-created-from-direct-template.tsx
 #: packages/lib/jobs/definitions/emails/send-document-created-from-direct-template-email.handler.ts
@@ -6512,7 +6512,7 @@ msgstr "Pozvano"
 
 #: apps/remix/app/components/tables/organisation-member-invites-table.tsx
 msgid "Invited At"
-msgstr "Pozvano u"
+msgstr "Datum pozivnice"
 
 #: apps/remix/app/components/tables/organisation-billing-invoices-table.tsx
 msgid "Invoice"
@@ -6544,7 +6544,7 @@ msgstr "Ključno je da vaši kontaktni podaci, osobito e-mail adresa, kod nas bu
 #. placeholder {0}: publicProfile.name
 #: apps/remix/app/routes/_profile+/p.$url.tsx
 msgid "It looks like {0} hasn't added any documents to their profile yet."
-msgstr "Čini se da {0} još nije dodao nijedan dokument na svoj profil."
+msgstr "Čini se da na profilu {0} još nema dokumenata."
 
 #: apps/remix/app/components/embed/multisign/multi-sign-document-list.tsx
 msgid "It looks like we ran into an issue!"
@@ -6591,7 +6591,7 @@ msgstr "Pridruženo"
 #. placeholder {0}: DateTime.fromJSDate(team.createdAt).toRelative({ style: 'short' })
 #: apps/remix/app/routes/_authenticated+/dashboard.tsx
 msgid "Joined {0}"
-msgstr "Pridružio se {0}"
+msgstr "Pridruživanje: {0}"
 
 #: apps/remix/app/routes/_authenticated+/admin+/teams.$id.tsx
 msgid "Key identifiers and relationships for this team."
@@ -6671,7 +6671,7 @@ msgstr "Zadnje ažuriranje"
 
 #: apps/remix/app/routes/_authenticated+/admin+/documents.$id.tsx
 msgid "Last updated at"
-msgstr "Zadnje ažurirano u"
+msgstr "Zadnje ažuriranje"
 
 #: apps/remix/app/components/tables/settings-security-passkey-table.tsx
 msgid "Last used"
@@ -6795,7 +6795,7 @@ msgstr "Povezani računi"
 
 #: apps/remix/app/routes/_authenticated+/settings+/security.linked-accounts.tsx
 msgid "Linked At"
-msgstr "Povezano u"
+msgstr "Datum povezivanja"
 
 #: apps/remix/app/components/general/document/document-edit-form.tsx
 msgid "Links Generated"
@@ -8215,23 +8215,23 @@ msgstr "Planovi bez transporta koriste sistemski zadani mailer."
 #. placeholder {0}: _(actionVerb).toLowerCase()
 #: packages/email/template-components/template-document-invite.tsx
 msgid "Please {0} your document<0/>\"{documentName}\""
-msgstr "Molimo {0} svoj dokument<0/>\"{documentName}\""
+msgstr "Molimo vas da {0} svoj dokument<0/>\"{documentName}\""
 
 #: packages/email/templates/document-invite.tsx
 msgid "Please {action} your document {documentName}"
-msgstr "Molimo {action} svoj dokument {documentName}"
+msgstr "Molimo vas da {action} svoj dokument {documentName}"
 
 #: packages/lib/jobs/definitions/emails/send-signing-email.handler.ts
 msgid "Please {recipientActionVerb} this document"
-msgstr "Molimo {recipientActionVerb} ovaj dokument"
+msgstr "Molimo vas da {recipientActionVerb} ovaj dokument"
 
 #: packages/lib/jobs/definitions/emails/send-signing-email.handler.ts
 msgid "Please {recipientActionVerb} this document created by your direct template"
-msgstr "Molimo {recipientActionVerb} ovaj dokument stvoren vašim izravnim predloškom"
+msgstr "Molimo vas da {recipientActionVerb} ovaj dokument stvoren vašim izravnim predloškom"
 
 #: packages/lib/jobs/definitions/emails/send-signing-email.handler.ts
 msgid "Please {recipientActionVerb} your document"
-msgstr "Molimo {recipientActionVerb} svoj dokument"
+msgstr "Molimo vas da {recipientActionVerb} svoj dokument"
 
 #: apps/remix/app/components/dialogs/organisation-member-invite-dialog.tsx
 msgid "Please check the CSV file and make sure it is according to our format"
@@ -8790,7 +8790,7 @@ msgstr "Primatelj je zatražio udaljeni potpis"
 
 #: apps/remix/app/components/general/admin-global-settings-section.tsx
 msgid "Recipient signed"
-msgstr "Primatelj potpisao"
+msgstr "Primatelj je potpisao"
 
 #: packages/ui/components/document/document-email-checkboxes.tsx
 msgid "Recipient signed email"
@@ -8976,20 +8976,20 @@ msgstr "Podsjetnik: {0} vas je pozvao da {recipientActionVerb} dokument"
 #. placeholder {0}: _(actionVerb).toLowerCase()
 #: packages/email/template-components/template-document-reminder.tsx
 msgid "Reminder: Please {0} your document<0/>\"{documentName}\""
-msgstr "Podsjetnik: Molimo {0} svoj dokument<0/>\"{documentName}\""
+msgstr "Podsjetnik: Molimo vas da {0} svoj dokument<0/>\"{documentName}\""
 
 #. placeholder {0}: envelope.title
 #: packages/lib/jobs/definitions/internal/process-signing-reminder.handler.ts
 msgid "Reminder: Please {recipientActionVerb} the document \"{0}\""
-msgstr "Podsjetnik: Molimo {recipientActionVerb} dokument \"{0}\""
+msgstr "Podsjetnik: Molimo vas da {recipientActionVerb} dokument \"{0}\""
 
 #: packages/lib/server-only/document/resend-document.ts
 msgid "Reminder: Please {recipientActionVerb} this document"
-msgstr "Podsjetnik: Molimo {recipientActionVerb} ovaj dokument"
+msgstr "Podsjetnik: Molimo vas da {recipientActionVerb} ovaj dokument"
 
 #: packages/lib/server-only/document/resend-document.ts
 msgid "Reminder: Please {recipientActionVerb} your document"
-msgstr "Podsjetnik: Molimo {recipientActionVerb} svoj dokument"
+msgstr "Podsjetnik: Molimo vas da {recipientActionVerb} svoj dokument"
 
 #: apps/remix/app/components/general/envelope-editor/envelope-editor-settings-dialog.tsx
 msgid "Reminders"
@@ -9926,7 +9926,7 @@ msgstr "Potpiši"
 #: packages/lib/constants/recipient-roles.ts
 msgctxt "Recipient role action verb"
 msgid "Sign"
-msgstr "Potpiši"
+msgstr "potpišete"
 
 #. placeholder {0}: recipient.name
 #. placeholder {1}: recipient.email
@@ -10078,7 +10078,7 @@ msgstr "Potpisano"
 #: packages/lib/constants/recipient-roles.ts
 msgctxt "Recipient role actioned"
 msgid "Signed"
-msgstr "Potpisano"
+msgstr "Potpis"
 
 #: apps/remix/app/components/dialogs/envelope-download-dialog.tsx
 msgctxt "Signed document (adjective)"
@@ -10125,7 +10125,7 @@ msgstr "Certifikat za potpisivanje nije valjan"
 #: apps/remix/app/routes/_internal+/[__htmltopdf]+/certificate.tsx
 #: packages/lib/server-only/pdf/render-certificate.ts
 msgid "Signing certificate provided by"
-msgstr "Certifikat za potpisivanje pružio"
+msgstr "Izdavatelj certifikata za potpisivanje"
 
 #: packages/lib/jobs/definitions/emails/send-document-completed-emails.handler.ts
 #: packages/lib/jobs/definitions/emails/send-document-completed-emails.handler.ts
@@ -12424,7 +12424,7 @@ msgstr "Ažuriraj korisnika"
 
 #: apps/remix/app/components/dialogs/admin-organisation-member-update-dialog.tsx
 msgid "Updated {organisationMemberName} to {roleLabel}."
-msgstr "{organisationMemberName} ažuriran na {roleLabel}."
+msgstr "{organisationMemberName} – nova uloga: {roleLabel}."
 
 #: apps/remix/app/routes/embed+/v2+/authoring+/envelope.edit.$id.tsx
 msgid "Updating Document"
@@ -12535,7 +12535,7 @@ msgstr "Učitajte logotip svog brenda (maks. 5 MB, JPG, PNG ili WebP)"
 #: apps/remix/app/components/general/document/document-page-view-information.tsx
 #: apps/remix/app/components/general/template/template-page-view-information.tsx
 msgid "Uploaded by"
-msgstr "Učitao"
+msgstr "Učitao/la"
 
 #: apps/remix/app/components/forms/avatar-image.tsx
 msgid "Uploaded file is too large"
@@ -12743,7 +12743,7 @@ msgstr "Prikaži"
 #: packages/lib/constants/recipient-roles.ts
 msgctxt "Recipient role action verb"
 msgid "View"
-msgstr "Prikaži"
+msgstr "pregledate"
 
 #: apps/remix/app/routes/_authenticated+/settings+/security._index.tsx
 msgid "View activity"
@@ -12888,7 +12888,7 @@ msgstr "Pregledano"
 #: packages/lib/constants/recipient-roles.ts
 msgctxt "Recipient role actioned"
 msgid "Viewed"
-msgstr "Pregledano"
+msgstr "Pregled"
 
 #: apps/remix/app/components/general/envelope-signing/envelope-signer-header.tsx
 msgid "Viewer"
@@ -13889,7 +13889,7 @@ msgstr "<0>{0}</0> vas je pozvao da se pridružite njihovoj organizaciji."
 #. placeholder {0}: organisation.name
 #: packages/lib/server-only/organisation/create-organisation-member-invites.ts
 msgid "You have been invited to join {0} on Documenso"
-msgstr "Pozvani ste da se pridružite {0} na Documensu"
+msgstr "Pozvani ste da se pridružite organizaciji {0} na Documensu"
 
 #: packages/email/templates/organisation-invite.tsx
 msgid "You have been invited to join the following organisation"
