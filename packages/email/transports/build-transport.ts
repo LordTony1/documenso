@@ -2,10 +2,12 @@ import type { TEmailTransportConfig } from '@documenso/lib/server-only/email/ema
 import { ResendTransport } from '@documenso/nodemailer-resend';
 import type { Transporter } from 'nodemailer';
 import { createTransport } from 'nodemailer';
-
+import { getSmtpGreetingHostname } from '../utils/smtp-greeting';
 import { MailChannelsTransport } from './mailchannels';
 
 export const buildTransport = (config: TEmailTransportConfig): Transporter => {
+  const name = getSmtpGreetingHostname();
+
   switch (config.type) {
     case 'MAILCHANNELS':
       return createTransport(
@@ -24,6 +26,7 @@ export const buildTransport = (config: TEmailTransportConfig): Transporter => {
 
     case 'SMTP_API':
       return createTransport({
+        name,
         host: config.host,
         port: config.port,
         secure: config.secure,
@@ -35,6 +38,7 @@ export const buildTransport = (config: TEmailTransportConfig): Transporter => {
 
     case 'SMTP_AUTH':
       return createTransport({
+        name,
         host: config.host,
         port: config.port,
         secure: config.secure,

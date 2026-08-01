@@ -4,6 +4,7 @@ import type { Transporter } from 'nodemailer';
 import { createTransport } from 'nodemailer';
 
 import { MailChannelsTransport } from './transports/mailchannels';
+import { getSmtpGreetingHostname } from './utils/smtp-greeting';
 
 /**
  * Creates a Nodemailer transport object for sending emails.
@@ -80,6 +81,7 @@ const getTransport = (): Transporter => {
     }
 
     return createTransport({
+      name: getSmtpGreetingHostname(),
       host: env('NEXT_PRIVATE_SMTP_HOST'),
       port: Number(env('NEXT_PRIVATE_SMTP_PORT')) || 587,
       secure: env('NEXT_PRIVATE_SMTP_SECURE') === 'true',
@@ -91,6 +93,7 @@ const getTransport = (): Transporter => {
   }
 
   return createTransport({
+    name: getSmtpGreetingHostname(),
     host: env('NEXT_PRIVATE_SMTP_HOST') ?? '127.0.0.1:2500',
     port: Number(env('NEXT_PRIVATE_SMTP_PORT')) || 587,
     secure: env('NEXT_PRIVATE_SMTP_SECURE') === 'true',
