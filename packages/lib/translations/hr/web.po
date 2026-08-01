@@ -7232,6 +7232,10 @@ msgstr "Premjesti u mapu"
 msgid "Multiple access methods can be selected."
 msgstr "Može se odabrati više metoda pristupa."
 
+#: apps/remix/app/components/forms/branding-preferences-form.tsx
+msgid "Muted Foreground"
+msgstr "Prigušeni tekst"
+
 #: apps/remix/app/components/dialogs/folder-create-dialog.tsx
 msgid "My Folder"
 msgstr "Moja mapa"
@@ -9468,6 +9472,10 @@ msgstr "Pretraži jezike..."
 #: apps/remix/app/components/general/organisation-members-multiselect-combobox.tsx
 msgid "Search members by name or email"
 msgstr "Pretraži članove po imenu ili e-mailu"
+
+#: apps/remix/app/components/forms/branding-preferences-form.tsx
+msgid "Secondary text colour, used for descriptions and footers."
+msgstr "Sporedna boja teksta, koristi se za opise i podnožja."
 
 #: apps/remix/app/components/dialogs/webhook-create-dialog.tsx
 msgid "Secret"

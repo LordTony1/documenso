@@ -381,6 +381,29 @@ export function BrandingPreferencesForm({
 
                   <FormField
                     control={form.control}
+                    name="brandingColors.mutedForeground"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>
+                          <Trans>Muted Foreground</Trans>
+                        </FormLabel>
+                        <FormDescription>
+                          <Trans>Secondary text colour, used for descriptions and footers.</Trans>
+                        </FormDescription>
+                        <FormControl>
+                          <ColorPicker
+                            nonce={nonce}
+                            value={field.value ?? ''}
+                            defaultValue={DEFAULT_BRAND_COLORS.mutedForeground}
+                            onChange={(color) => field.onChange(color)}
+                          />
+                        </FormControl>
+                      </FormItem>
+                    )}
+                  />
+
+                  <FormField
+                    control={form.control}
                     name="brandingColors.primary"
                     render={({ field }) => (
                       <FormItem>
