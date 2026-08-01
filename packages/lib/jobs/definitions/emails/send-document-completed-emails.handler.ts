@@ -88,7 +88,10 @@ export const run = async ({ payload, io }: { payload: TSendDocumentCompletedEmai
       const file = await getFileServerSide(envelopeItem.documentData);
 
       // Use the envelope title for version 1, and the envelope item title for version 2.
-      const fileNameToUse = envelope.internalVersion === 1 ? envelope.title : envelopeItem.title + '.pdf';
+      // Neither is guaranteed to carry the extension, so it is appended below — appending
+      // it here too produced "<name>.pdf.pdf", which reads as a double extension to spam
+      // filters.
+      const fileNameToUse = envelope.internalVersion === 1 ? envelope.title : envelopeItem.title;
 
       return {
         filename: fileNameToUse.endsWith('.pdf') ? fileNameToUse : fileNameToUse + '.pdf',
