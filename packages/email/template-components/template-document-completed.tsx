@@ -9,6 +9,14 @@ export interface TemplateDocumentCompletedProps {
   documentName: string;
   assetBaseUrl: string;
   customBody?: string;
+  /**
+   * Fork-specific: set when the signed PDF(s) were too large to attach
+   * safely to this email (see
+   * packages/lib/utils/estimate-email-attachment-size.ts). Don't drop this
+   * prop if upstream reworks this template — the handler still needs a way
+   * to tell the recipient why there's no attachment.
+   */
+  attachmentOmitted?: boolean;
 }
 
 export const TemplateDocumentCompleted = ({
@@ -16,6 +24,7 @@ export const TemplateDocumentCompleted = ({
   documentName,
   assetBaseUrl,
   customBody,
+  attachmentOmitted,
 }: TemplateDocumentCompletedProps) => {
   return (
     <>
@@ -56,6 +65,12 @@ export const TemplateDocumentCompleted = ({
             <Trans>Download</Trans>
           </Button>
         </Section>
+
+        {attachmentOmitted && (
+          <Text className="my-1 text-center text-base text-muted-foreground">
+            <Trans>The signed document was too large to attach directly — use the button above to download it.</Trans>
+          </Text>
+        )}
       </Section>
     </>
   );

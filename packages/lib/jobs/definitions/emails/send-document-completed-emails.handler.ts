@@ -6,13 +6,16 @@ import { createElement } from 'react';
 
 import { getI18nInstance } from '../../../client-only/providers/i18n-server';
 import { NEXT_PUBLIC_WEBAPP_URL } from '../../../constants/app';
+import { SMTP_MAX_MESSAGE_SIZE_MB } from '../../../constants/email';
 import { getEmailContext } from '../../../server-only/email/get-email-context';
 import { assertOrganisationRatesAndLimits } from '../../../server-only/rate-limit/assert-organisation-rates-and-limits';
 import { DOCUMENT_AUDIT_LOG_TYPE } from '../../../types/document-audit-logs';
 import { extractDerivedDocumentEmailSettings } from '../../../types/document-email';
+import { megabytesToBytes } from '../../../universal/unit-convertions';
 import { getFileServerSide } from '../../../universal/upload/get-file.server';
 import { createDocumentAuditLogData } from '../../../utils/document-audit-logs';
 import { unsafeBuildEnvelopeIdQuery } from '../../../utils/envelope';
+import { exceedsSafeEmailAttachmentSize } from '../../../utils/estimate-email-attachment-size';
 import { isRecipientEmailValidForSending } from '../../../utils/recipients';
 import { renderCustomEmailTemplate } from '../../../utils/render-custom-email-template';
 import { renderEmailWithI18N } from '../../../utils/render-email-with-i18n';
@@ -101,6 +104,35 @@ export const run = async ({ payload, io }: { payload: TSendDocumentCompletedEmai
     }),
   );
 
+  // Fork-specific: self-hosted SMTP relays reject oversized messages (this
+  // deployment saw production 552s from its Exim relay on multi-item
+  // envelopes). getFileServerSide above already fully fetches every
+  // envelope item regardless of outcome — this guard only decides whether
+  // to attach the already-fetched bytes, it doesn't skip anything upstream
+  // would recognize as a fetch/perf optimization. Don't strip this if
+  // upstream reworks this handler or the completed-email template; see
+  // packages/lib/utils/estimate-email-attachment-size.ts.
+  const totalRawAttachmentBytes = completedDocumentEmailAttachments.reduce(
+    (sum, attachment) => sum + attachment.content.byteLength,
+    0,
+  );
+
+  const shouldOmitAttachments = exceedsSafeEmailAttachmentSize(
+    totalRawAttachmentBytes,
+    completedDocumentEmailAttachments.length,
+    megabytesToBytes(SMTP_MAX_MESSAGE_SIZE_MB),
+  );
+
+  if (shouldOmitAttachments) {
+    io.logger.warn({
+      msg: 'Completed-document email attachments omitted: estimated encoded size exceeds SMTP limit',
+      envelopeId: envelope.id,
+      totalRawAttachmentBytes,
+      attachmentCount: completedDocumentEmailAttachments.length,
+      smtpMaxMessageSizeMb: SMTP_MAX_MESSAGE_SIZE_MB,
+    });
+  }
+
   const assetBaseUrl = NEXT_PUBLIC_WEBAPP_URL() || 'http://localhost:3000';
 
   let documentOwnerDownloadLink = `${NEXT_PUBLIC_WEBAPP_URL()}${formatDocumentsPath(
@@ -128,6 +160,7 @@ export const run = async ({ payload, io }: { payload: TSendDocumentCompletedEmai
       documentName: envelope.title,
       assetBaseUrl,
       downloadLink: documentOwnerDownloadLink,
+      attachmentOmitted: shouldOmitAttachments,
     });
 
     const [html, text] = await Promise.all([
@@ -153,7 +186,7 @@ export const run = async ({ payload, io }: { payload: TSendDocumentCompletedEmai
       subject: i18n._(msg`Signing Complete!`),
       html,
       text,
-      attachments: completedDocumentEmailAttachments,
+      attachments: shouldOmitAttachments ? [] : completedDocumentEmailAttachments,
     });
 
     await prisma.documentAuditLog.create({
@@ -225,6 +258,7 @@ export const run = async ({ payload, io }: { payload: TSendDocumentCompletedEmai
             ? renderCustomEmailTemplate(envelope.documentMeta.message, customEmailTemplate)
             : undefined,
         reportUrl,
+        attachmentOmitted: shouldOmitAttachments,
       });
 
       const [html, text] = await Promise.all([
@@ -253,7 +287,7 @@ export const run = async ({ payload, io }: { payload: TSendDocumentCompletedEmai
             : i18n._(msg`Signing Complete!`),
         html,
         text,
-        attachments: completedDocumentEmailAttachments,
+        attachments: shouldOmitAttachments ? [] : completedDocumentEmailAttachments,
       });
 
       await prisma.documentAuditLog.create({
