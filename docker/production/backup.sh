@@ -1,12 +1,17 @@
 #!/usr/bin/env bash
 #
-# Nightly logical backup of the Documenso database.
+# Weekly logical backup of the Documenso database.
 #
 # This is the portable layer on top of the Proxmox Backup Server snapshot:
 # PBS restores the whole LXC onto Proxmox, this restores anywhere.
 #
+# KEEP=1 because the dump has grown large enough (~GBs) that keeping a
+# week's worth on the LXC's small disk filled it and crashed postgres
+# (2026-09-07). PBS already covers longer history; this is just the
+# portable/pre-restore copy, so only the latest one needs to survive here.
+#
 # Cron:
-#   30 3 * * * /root/documenso/docker/production/backup.sh >> /var/log/documenso-backup.log 2>&1
+#   0 17 * * 5 /root/documenso/docker/production/backup.sh >> /var/log/documenso-backup.log 2>&1
 
 set -euo pipefail
 
@@ -14,7 +19,7 @@ cd "$(dirname "$0")"
 
 COMPOSE="docker compose -f compose.selfhost.yml"
 BACKUP_DIR="${HOME}/documenso-backups"
-KEEP=7
+KEEP=1
 
 mkdir -p "${BACKUP_DIR}"
 STAMP="$(date +%F)"
@@ -48,9 +53,17 @@ echo "[$(date -Is)] verified"
 
 # Retention. Never lets a bad day wipe history: only whole, verified files
 # from previous runs are counted.
+#
+# Also sweeps documenso-*.dump.partial from earlier failed runs (a run that
+# fails after the pg_dump step, e.g. the verification below, otherwise leaves
+# these behind forever — they're never valid backups, so no KEEP applies).
 ls -1t "${BACKUP_DIR}"/documenso-*.dump 2>/dev/null | tail -n +$((KEEP + 1)) | while read -r old; do
   echo "[$(date -Is)] pruning ${old}"
   rm -- "${old}"
+done
+ls -1 "${BACKUP_DIR}"/documenso-*.dump.partial 2>/dev/null | while read -r stale; do
+  echo "[$(date -Is)] pruning stale ${stale}"
+  rm -- "${stale}"
 done
 
 echo "[$(date -Is)] done; $(ls -1 "${BACKUP_DIR}"/documenso-*.dump | wc -l) backups, $(du -sh "${BACKUP_DIR}" | cut -f1) total"
