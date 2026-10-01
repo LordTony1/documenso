@@ -57,3 +57,16 @@
 - Use `(params: Route.Params)` and `(loaderData: Route.LoaderData)` for routes
 - Directly return data from loaders, don't use `json()`
 - Use `superLoaderJson` when sending complex data through loaders such as dates or prisma decimals
+
+## Checking Production (read-only debugging)
+
+- SSH over Tailscale, not the LAN IP: `ssh root@100.93.36.104`. Containers: `documenso-selfhost-documenso-1` (app), `documenso-selfhost-database-1` (postgres).
+- Postgres credentials live *inside* the database container, never in a host `.env`: `docker exec documenso-selfhost-database-1 env | grep POSTGRES`.
+- Query with those creds, e.g. to check whether an email/recipient went out and was opened:
+  ```bash
+  docker exec documenso-selfhost-database-1 psql -U documenso -d documenso -c \
+    "SELECT id, \"envelopeId\", email, name, role, \"signingStatus\", \"sendStatus\", \"readStatus\" FROM \"Recipient\" WHERE email ILIKE '%<address>%' ORDER BY id DESC LIMIT 20;"
+  ```
+  Then look up the envelope by `envelopeId` in the `Envelope` table (`title`, `type`, `status`) for context.
+- App container logs (`docker logs documenso-selfhost-documenso-1 --since 72h`) generally don't contain email addresses/content — prefer the DB query above over grepping logs.
+- This is read-only investigation, not a deploy — fine to do without extra approval. Never run `update.sh`/`compose ... up`/anything that deploys or mutates data without explicit approval, per the rules above.
