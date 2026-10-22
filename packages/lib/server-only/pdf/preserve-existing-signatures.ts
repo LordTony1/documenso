@@ -1,5 +1,12 @@
 import type { PDF, PDFEmbeddedPage, PDFPage, SignatureField } from '@libpdf/core';
-import { AnnotationFlags, PdfArray, PdfDict, PdfName, PdfNumber, PdfStream } from '@libpdf/core';
+import { AnnotationFlags, PdfArray, PdfDict, PdfName, PdfNumber, PdfStream, PdfString } from '@libpdf/core';
+import { nanoid } from 'nanoid';
+
+const toPdfDate = (date: Date) => {
+  const pad = (value: number) => String(value).padStart(2, '0');
+
+  return `D:${date.getUTCFullYear()}${pad(date.getUTCMonth() + 1)}${pad(date.getUTCDate())}${pad(date.getUTCHours())}${pad(date.getUTCMinutes())}${pad(date.getUTCSeconds())}Z`;
+};
 
 /**
  * Whether the PDF carries at least one applied digital signature (e.g. a
@@ -72,10 +79,19 @@ export const stampOverlayOnPage = ({ pdf, page, overlay, translateX, translateY 
   const xs = corners.map(([cx]) => cx);
   const ys = corners.map(([, cy]) => cy);
 
+  const now = toPdfDate(new Date());
+
+  // NM, M, CreationDate and T are optional, but Acrobat fills in whichever
+  // ones are missing on a markup annotation when it opens the file and then
+  // lists that as "Annotations Modified" after the seal signature.
   const stampDict = PdfDict.of({
     Type: PdfName.of('Annot'),
     Subtype: PdfName.of('Stamp'),
     Name: PdfName.of('DocumensoFields'),
+    NM: PdfString.fromString(`documenso-fields-${nanoid()}`),
+    T: PdfString.fromString('Documenso'),
+    M: PdfString.fromString(now),
+    CreationDate: PdfString.fromString(now),
     Rect: PdfArray.of(
       PdfNumber.of(Math.min(...xs)),
       PdfNumber.of(Math.min(...ys)),
