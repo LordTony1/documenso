@@ -12,6 +12,7 @@ import type { DocumentData, Envelope, EnvelopeItem, Field } from '@prisma/client
 import { DocumentStatus, EnvelopeType, RecipientRole, SigningStatus, WebhookTriggerEvents } from '@prisma/client';
 import { nanoid } from 'nanoid';
 import { groupBy } from 'remeda';
+import { match } from 'ts-pattern';
 
 import { NEXT_PRIVATE_USE_PLAYWRIGHT_PDF } from '../../../constants/app';
 import { AppError, AppErrorCode } from '../../../errors/app-error';
@@ -20,6 +21,7 @@ import { getCertificatePdf } from '../../../server-only/htmltopdf/get-certificat
 import { insertFieldInPDFV1 } from '../../../server-only/pdf/insert-field-in-pdf-v1';
 import { insertFieldInPDFV2 } from '../../../server-only/pdf/insert-field-in-pdf-v2';
 import { legacy_insertFieldInPDF } from '../../../server-only/pdf/legacy-insert-field-in-pdf';
+import { hasExistingSignatures, stampOverlayOnPage } from '../../../server-only/pdf/preserve-existing-signatures';
 import { getTeamSettings } from '../../../server-only/team/get-team-settings';
 import { triggerWebhook } from '../../../server-only/webhooks/trigger/trigger-webhook';
 import { DOCUMENT_AUDIT_LOG_TYPE, type TDocumentAuditLog } from '../../../types/document-audit-logs';
@@ -383,6 +385,10 @@ const decorateAndSignPdf = async ({
 }: DecorateAndSignPdfOptions) => {
   let pdfDoc = await PDF.load(pdfData);
 
+  if (envelope.internalVersion === 2 && hasExistingSignatures(pdfDoc)) {
+    return await decorateAndSignPreSignedPdf({ envelopeItem, envelopeItemFields, isRejected, rejectionReason, pdfDoc });
+  }
+
   // Normalize and flatten layers that could cause issues with the signature
   pdfDoc.flattenAll();
   // Upgrade to PDF 1.7 for better compatibility with signing
@@ -493,6 +499,81 @@ const decorateAndSignPdf = async ({
   const { name } = path.parse(envelopeItem.title);
 
   // Add suffix based on document status
+  const suffix = isRejected ? '_rejected.pdf' : '_signed.pdf';
+
+  const { documentData: newDocumentData } = await putPdfFileServerSide(
+    {
+      name: `${name}${suffix}`,
+      type: 'application/pdf',
+      arrayBuffer: async () => Promise.resolve(pdfBytes),
+    },
+    envelopeItem.documentData.initialData,
+  );
+
+  return {
+    oldDocumentDataId: envelopeItem.documentData.id,
+    newDocumentDataId: newDocumentData.id,
+  };
+};
+
+type DecorateAndSignPreSignedPdfOptions = Pick<
+  DecorateAndSignPdfOptions,
+  'envelopeItem' | 'envelopeItemFields' | 'isRejected' | 'rejectionReason'
+> & {
+  pdfDoc: PDF;
+};
+
+/**
+ * Seal a PDF that already carries digital signatures (e.g. qualified ones added
+ * before upload) without invalidating them.
+ *
+ * Everything is appended as incremental updates over the untouched original
+ * bytes: no flattening, no version upgrade, fields go in as annotations rather
+ * than page content, and the certificate / audit log pages are left out because
+ * adding pages after a signature is a disallowed modification. Both stay
+ * available as separate downloads.
+ */
+const decorateAndSignPreSignedPdf = async ({
+  envelopeItem,
+  envelopeItemFields,
+  isRejected,
+  rejectionReason,
+  pdfDoc,
+}: DecorateAndSignPreSignedPdfOptions) => {
+  if (isRejected) {
+    await addRejectionStampToPdf(pdfDoc, rejectionReason);
+  }
+
+  const fieldsGroupedByPage = groupBy(envelopeItemFields, (field) => field.page);
+
+  for (const [pageNumber, fields] of Object.entries(fieldsGroupedByPage)) {
+    const page = pdfDoc.getPage(Number(pageNumber) - 1);
+
+    if (!page) {
+      throw new Error(`Page ${pageNumber} does not exist`);
+    }
+
+    const overlayBytes = await insertFieldInPDFV2({
+      pageWidth: page.width,
+      pageHeight: page.height,
+      fields,
+    });
+
+    const overlay = await pdfDoc.embedPage(await PDF.load(overlayBytes), 0);
+
+    const [translateX, translateY] = match(page.rotation)
+      .with(90, () => [page.height, 0])
+      .with(180, () => [page.width, page.height])
+      .with(270, () => [0, page.width])
+      .otherwise(() => [0, 0]);
+
+    stampOverlayOnPage({ pdf: pdfDoc, page, overlay, translateX, translateY });
+  }
+
+  const pdfBytes = await signPdf({ pdf: await PDF.load(await pdfDoc.save({ incremental: true })) });
+
+  const { name } = path.parse(envelopeItem.title);
+
   const suffix = isRejected ? '_rejected.pdf' : '_signed.pdf';
 
   const { documentData: newDocumentData } = await putPdfFileServerSide(
