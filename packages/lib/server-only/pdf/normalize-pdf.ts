@@ -1,6 +1,7 @@
 import { PDF } from '@libpdf/core';
 
 import { AppError } from '../../errors/app-error';
+import { hasExistingSignatures } from './preserve-existing-signatures';
 
 export const normalizePdf = async (pdf: Buffer, options: { flattenForm?: boolean } = {}) => {
   const shouldFlattenForm = options.flattenForm ?? true;
@@ -12,6 +13,12 @@ export const normalizePdf = async (pdf: Buffer, options: { flattenForm?: boolean
       message: 'The document is not a valid PDF or is password protected',
     });
   });
+
+  // Rewriting a signed PDF (flattening, decrypting or a plain full save)
+  // invalidates its signatures, so it is stored byte for byte.
+  if (hasExistingSignatures(pdfDoc)) {
+    return pdf;
+  }
 
   if (pdfDoc.isEncrypted) {
     if (!pdfDoc.isAuthenticated) {
