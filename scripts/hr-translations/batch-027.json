@@ -1,0 +1,186 @@
+[
+  [
+    "{0, plural, one {# document downloaded.} other {# documents downloaded.}} {failedDownloads, plural, one {# document could not be downloaded.} other {# documents could not be downloaded.}}",
+    "{0, plural, one {Preuzet je # dokument.} few {Preuzeta su # dokumenta.} other {Preuzeto je # dokumenata.}} {failedDownloads, plural, one {# dokument nije moguće preuzeti.} few {# dokumenta nije moguće preuzeti.} other {# dokumenata nije moguće preuzeti.}}"
+  ],
+  [
+    "{0, plural, one {# document has been downloaded.} other {# documents have been downloaded.}}",
+    "{0, plural, one {Preuzet je # dokument.} few {Preuzeta su # dokumenta.} other {Preuzeto je # dokumenata.}}"
+  ],
+  [
+    "{0, plural, one {# recipient · any order} other {# recipients · any order}}",
+    "{0, plural, one {# primatelj · bilo kojim redoslijedom} few {# primatelja · bilo kojim redoslijedom} other {# primatelja · bilo kojim redoslijedom}}"
+  ],
+  [
+    "{0, plural, one {# use} other {# uses}}",
+    "{0, plural, one {# korištenje} few {# korištenja} other {# korištenja}}"
+  ],
+  [
+    "{0, plural, one {Select the version to download for the selected document.} other {Select the version to download for each of the # selected documents.}}",
+    "{0, plural, one {Odaberite verziju za preuzimanje odabranog dokumenta.} few {Odaberite verziju za preuzimanje za svaki od # odabrana dokumenta.} other {Odaberite verziju za preuzimanje za svaki od # odabranih dokumenata.}}"
+  ],
+  ["{0} active · {1} inactive", "{0} aktivnih · {1} neaktivnih"],
+  ["{0} has invited you to sign this document.", "{0} Vas je pozvao da potpišete ovaj dokument."],
+  ["{0} Plan", "Plan {0}"],
+  ["{activeCount} active this period", "{activeCount} aktivnih u ovom razdoblju"],
+  [
+    "{count, plural, one {# document} other {# documents}}",
+    "{count, plural, one {# dokument} few {# dokumenta} other {# dokumenata}}"
+  ],
+  [
+    "{count, plural, one {# member} other {# members}}",
+    "{count, plural, one {# član} few {# člana} other {# članova}}"
+  ],
+  ["{count, plural, one {# team} other {# teams}}", "{count, plural, one {# tim} few {# tima} other {# timova}}"],
+  ["{draftDays, plural, one {# day} other {# days}}", "{draftDays, plural, one {# dan} few {# dana} other {# dana}}"],
+  [
+    "{MAX_BULK_DOWNLOAD_ENVELOPES, plural, one {You can download up to # document at a time. Deselect some documents to continue.} other {You can download up to # documents at a time. Deselect some documents to continue.}}",
+    "{MAX_BULK_DOWNLOAD_ENVELOPES, plural, one {Možete preuzeti najviše # dokument odjednom. Poništite odabir nekih dokumenata kako biste nastavili.} few {Možete preuzeti najviše # dokumenta odjednom. Poništite odabir nekih dokumenata kako biste nastavili.} other {Možete preuzeti najviše # dokumenata odjednom. Poništite odabir nekih dokumenata kako biste nastavili.}}"
+  ],
+  [
+    "{recipientLabel} has been removed from the document \"{documentName}\" by an administrator, typically at the request of the document sender.",
+    "Administrator je uklonio primatelja {recipientLabel} iz dokumenta \"{documentName}\", obično na zahtjev pošiljatelja dokumenta."
+  ],
+  [
+    "{recipientName} has been removed from the document \"{documentName}\" by an administrator.",
+    "Administrator je uklonio primatelja {recipientName} iz dokumenta \"{documentName}\"."
+  ],
+  [
+    "{rowCount, plural, one {The CSV contains # row.} other {The CSV contains # rows.}} {maxRows, plural, one {A maximum of # row is allowed per upload.} other {A maximum of # rows is allowed per upload.}}",
+    "{rowCount, plural, one {CSV sadrži # redak.} few {CSV sadrži # retka.} other {CSV sadrži # redaka.}} {maxRows, plural, one {Dopušten je najviše # redak po učitavanju.} few {Dopuštena su najviše # retka po učitavanju.} other {Dopušteno je najviše # redaka po učitavanju.}}"
+  ],
+  [
+    "{totalVisibleCount, plural, one {# item} other {# items}}",
+    "{totalVisibleCount, plural, one {# stavka} few {# stavke} other {# stavki}}"
+  ],
+  [
+    "{totalVisibleCount, plural, one {# result} other {# results}}",
+    "{totalVisibleCount, plural, one {# rezultat} few {# rezultata} other {# rezultata}}"
+  ],
+  [
+    "{totalVisibleCount, plural, one {≥# result} other {≥# results}}",
+    "{totalVisibleCount, plural, one {≥# rezultat} few {≥# rezultata} other {≥# rezultata}}"
+  ],
+  ["{user} removed a recipient as an administrator", "Korisnik {user} uklonio je primatelja kao administrator"],
+  ["+{extraCount} more", "+{extraCount} više"],
+  [
+    "<0>{organisationName}</0> does not have an active subscription. Please contact the organisation administrator to renew their plan before accepting this invitation.",
+    "<0>{organisationName}</0> nema aktivnu pretplatu. Obratite se administratoru organizacije da obnovi plan prije prihvaćanja ovog poziva."
+  ],
+  [
+    "<0>{organisationName}</0> has reached its member limit. Please contact the organisation administrator to upgrade their plan before accepting this invitation.",
+    "<0>{organisationName}</0> je dosegnula ograničenje broja članova. Obratite se administratoru organizacije da nadogradi plan prije prihvaćanja ovog poziva."
+  ],
+  [
+    "<0>{recipientLabel}</0> and their fields will be removed from this document. They and the document owner will be emailed.",
+    "<0>{recipientLabel}</0> i njegova polja bit će uklonjeni iz ovog dokumenta. Primit će e-poruku on i vlasnik dokumenta."
+  ],
+  [
+    "<0>{teamName}</0> would like to use <1>{email}</1> as their team email.",
+    "<0>{teamName}</0> želi koristiti <1>{email}</1> kao e-adresu svojeg tima."
+  ],
+  ["A code is required", "Kod je obavezan"],
+  ["A name to help you identify this token later.", "Naziv koji će Vam kasnije pomoći da prepoznate ovaj token."],
+  ["A recipient has been removed from your document", "Primatelj je uklonjen iz Vašeg dokumenta"],
+  ["A recipient was removed by an administrator", "Administrator je uklonio primatelja"],
+  ["About uploaded file naming", "O imenovanju učitanih datoteka"],
+  ["Account Settings", "Postavke računa"],
+  [
+    "Accounts are automatically added to your organisation on sign-in",
+    "Računi se automatski dodaju u Vašu organizaciju pri prijavi"
+  ],
+  ["Activity", "Aktivnost"],
+  ["Add rate limit window", "Dodaj vremenski okvir ograničenja učestalosti"],
+  ["Almost there", "Još samo malo"],
+  ["An account was automatically disabled", "Račun je automatski onemogućen"],
+  ["An error occurred while downloading the documents.", "Došlo je do pogreške prilikom preuzimanja dokumenata."],
+  ["Analytics", "Analitika"],
+  ["and", "i"],
+  ["Apply", "Primijeni"],
+  ["Applying your signature...", "Primjenjuje se Vaš potpis..."],
+  [
+    "Authorise your signature with your signing provider in the popup window",
+    "Autorizirajte svoj potpis kod svojeg pružatelja usluge potpisivanja u skočnom prozoru"
+  ],
+  ["Border radius", "Zaobljenost rubova"],
+  ["Brand accent", "Naglasak brenda"],
+  [
+    "Brand colours, including background, foreground, primary, and border colours",
+    "Boje brenda, uključujući boje pozadine, teksta, primarnu boju i boju obruba"
+  ],
+  ["Brand details must be less than 500 characters", "Detalji o brendu moraju imati manje od 500 znakova"],
+  ["Brand website and brand details", "Web-mjesto brenda i detalji o brendu"],
+  ["By proceeding, you agree to our {0}.", "Nastavkom prihvaćate naše {0}."],
+  ["Capabilities enabled for this organisation.", "Mogućnosti omogućene za ovu organizaciju."],
+  ["Certificate preferences updated", "Postavke certifikata su ažurirane"],
+  ["Certificates", "Certifikati"],
+  ["Check your email", "Provjerite svoju e-poštu"],
+  ["Clear", "Očisti"],
+  ["Company details", "Podaci o tvrtki"],
+  ["Company details and website in email footers", "Podaci o tvrtki i web-mjesto u podnožju e-poruka"],
+  ["Complete sign in in the popup window", "Dovršite prijavu u skočnom prozoru"],
+  [
+    "Complete sign in with your signing provider in the popup window",
+    "Dovršite prijavu kod svojeg pružatelja usluge potpisivanja u skočnom prozoru"
+  ],
+  ["Completion rate", "Stopa dovršenosti"],
+  ["Connecting to the embed...", "Povezivanje s ugrađenim prikazom..."],
+  ["Contact Sales", "Kontaktirajte prodaju"],
+  [
+    "Contact your organisation owner to upgrade plans.",
+    "Obratite se vlasniku svoje organizacije radi nadogradnje plana."
+  ],
+  ["Continue to your signing provider", "Nastavite do svojeg pružatelja usluge potpisivanja"],
+  ["Continue with {0}", "Nastavi s {0}"],
+  ["Continue with Google", "Nastavi s Googleom"],
+  ["Continue with Microsoft", "Nastavi s Microsoftom"],
+  ["Continue with SSO", "Nastavi s SSO-om"],
+  ["Copy license key", "Kopiraj licencni ključ"],
+  [
+    "Copy your token now. For security reasons you will not be able to see it again.",
+    "Kopirajte svoj token sada. Iz sigurnosnih razloga nećete ga moći ponovno vidjeti."
+  ],
+  [
+    "Could not connect to the Documenso embed. Close this window and try again.",
+    "Povezivanje s Documenso ugrađenim prikazom nije uspjelo. Zatvorite ovaj prozor i pokušajte ponovno."
+  ],
+  [
+    "Create and manage API tokens. See our <0>documentation</0> for more information.",
+    "Izradite API tokene i upravljajte njima. Više informacija potražite u našoj <0>dokumentaciji</0>."
+  ],
+  ["Create API token", "Izradi API token"],
+  ["Croatian", "Hrvatski"],
+  ["Custom branding enabled setting", "Postavka omogućenog prilagođenog brendiranja"],
+  ["Custom CSS", "Prilagođeni CSS"],
+  ["Custom CSS must be less than 10,000 characters", "Prilagođeni CSS mora imati manje od 10.000 znakova"],
+  ["Custom document name", "Prilagođeni naziv dokumenta"],
+  ["Custom Plan", "Prilagođeni plan"],
+  ["Custom range", "Prilagođeno razdoblje"],
+  ["Custom range…", "Prilagođeno razdoblje…"],
+  ["Daily", "Dnevno"],
+  ["Date range", "Vremensko razdoblje"],
+  ["Default date format", "Zadani format datuma"],
+  ["Default document language", "Zadani jezik dokumenta"],
+  ["Default document visibility", "Zadana vidljivost dokumenta"],
+  ["Default recipients", "Zadani primatelji"],
+  ["Default signature settings", "Zadane postavke potpisa"],
+  ["Default time zone", "Zadana vremenska zona"],
+  ["Delete token", "Izbriši token"],
+  [
+    "Do not proceed if you are unsure about this request.",
+    "Nemojte nastaviti ako niste sigurni u vezi s ovim zahtjevom."
+  ],
+  ["Document already completed", "Dokument je već dovršen"],
+  ["Document already signed", "Dokument je već potpisan"],
+  ["Document Completed", "Dokument dovršen"],
+  ["Document expired", "Dokument je istekao"],
+  ["Document name", "Naziv dokumenta"],
+  ["Document name is required", "Naziv dokumenta je obavezan"],
+  ["Document name is too long", "Naziv dokumenta je predug"],
+  ["Document no longer available", "Dokument više nije dostupan"],
+  ["Document not ready", "Dokument nije spreman"],
+  ["Document status distribution", "Raspodjela statusa dokumenata"],
+  ["Documents created", "Izrađeni dokumenti"],
+  ["Documents created from templates", "Dokumenti izrađeni iz predložaka"],
+  ["Documents created in this period", "Dokumenti izrađeni u ovom razdoblju"]
+]

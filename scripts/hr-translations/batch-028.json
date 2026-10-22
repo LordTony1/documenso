@@ -1,0 +1,177 @@
+[
+  ["Documents downloaded", "Dokumenti preuzeti"],
+  ["Documents partially downloaded", "Dokumenti djelomično preuzeti"],
+  ["Documents sent", "Poslani dokumenti"],
+  ["Documents sent by each member in this period", "Dokumenti koje je poslao svaki član u ovom razdoblju"],
+  ["Documents sent by each team in this period", "Dokumenti koje je poslao svaki tim u ovom razdoblju"],
+  ["Documents that have been cancelled will appear here", "Ovdje će se prikazati otkazani dokumenti"],
+  ["Documents that have been rejected will appear here", "Ovdje će se prikazati odbijeni dokumenti"],
+  ["Documents that you have completed will appear here", "Ovdje će se prikazati dokumenti koje ste dovršili"],
+  ["Done", "Gotovo"],
+  ["Download Documents", "Preuzmi dokumente"],
+  ["Download version for {0}", "Preuzmi verziju za {0}"],
+  ["Downloading {progress} / {0}...", "Preuzimanje {progress} / {0}..."],
+  ["e.g. Removed at the sender's request", "npr. Uklonjeno na zahtjev pošiljatelja"],
+  [
+    "Easy DNS setup with auto-generated DKIM and SPF records",
+    "Jednostavno postavljanje DNS-a s automatski generiranim DKIM i SPF zapisima"
+  ],
+  ["Email already in use", "E-adresa je već u upotrebi"],
+  [
+    "Emails the organisation owner to let them know their limits have been updated. No email is sent if no limits changed.",
+    "Šalje e-poruku vlasniku organizacije kako bi ga obavijestila da su njegova ograničenja ažurirana. E-poruka se ne šalje ako nijedno ograničenje nije promijenjeno."
+  ],
+  ["Embed sessions", "Embed sesije"],
+  [
+    "Empty quota means unlimited, 0 blocks the resource. Rate limit windows accept values like 5m, 1h or 24h.",
+    "Prazna kvota znači neograničeno, a 0 blokira resurs. Prozori ograničenja učestalosti prihvaćaju vrijednosti poput 5m, 1h ili 24h."
+  ],
+  ["Enter a document name", "Unesite naziv dokumenta"],
+  ["Enter a max request count greater than 0", "Unesite maksimalan broj zahtjeva veći od 0"],
+  ["Enter a window, e.g. 5m", "Unesite prozor, npr. 5m"],
+  ["Enter custom document name", "Unesite prilagođeni naziv dokumenta"],
+  ["Enter one of your backup codes to continue.", "Unesite jedan od svojih pričuvnih kodova za nastavak."],
+  [
+    "Enter the code from your authenticator app to continue.",
+    "Unesite kôd iz svoje aplikacije za autentifikaciju za nastavak."
+  ],
+  ["esc", "esc"],
+  ["Exceeded", "Premašeno"],
+  ["Expires in", "Istječe za"],
+  ["Failed to remove recipient", "Uklanjanje primatelja nije uspjelo"],
+  [
+    "File size must be less than {BRANDING_LOGO_MAX_SIZE_MB}MB",
+    "Veličina datoteke mora biti manja od {BRANDING_LOGO_MAX_SIZE_MB} MB"
+  ],
+  ["General settings", "Opće postavke"],
+  [
+    "Give your members a dedicated single sign-on portal. The SSO portal is available on the Enterprise plan.",
+    "Omogućite svojim članovima namjenski portal za jedinstvenu prijavu (SSO). SSO portal dostupan je u Enterprise paketu."
+  ],
+  ["Global", "Globalno"],
+  ["Go to your settings", "Idite na svoje postavke"],
+  ["Group {stepLabel}", "Grupa {stepLabel}"],
+  ["Here you can edit your team's details.", "Ovdje možete urediti podatke svog tima."],
+  [
+    "Here you can set certificate and audit log preferences for your organisation. Teams will inherit these settings by default.",
+    "Ovdje možete postaviti postavke certifikata i revizijskog dnevnika za svoju organizaciju. Timovi će prema zadanim postavkama naslijediti ove postavke."
+  ],
+  [
+    "Here you can set certificate and audit log preferences for your team.",
+    "Ovdje možete postaviti postavke certifikata i revizijskog dnevnika za svoj tim."
+  ],
+  [
+    "Here you can set expiration and signing reminder preferences for your organisation. Teams will inherit these settings by default.",
+    "Ovdje možete postaviti postavke isteka i podsjetnika za potpisivanje za svoju organizaciju. Timovi će prema zadanim postavkama naslijediti ove postavke."
+  ],
+  [
+    "Here you can set expiration and signing reminder preferences for your team.",
+    "Ovdje možete postaviti postavke isteka i podsjetnika za potpisivanje za svoj tim."
+  ],
+  ["Hide field", "Sakrij polje"],
+  [
+    "If this was you, no action is needed. If it wasn't, reset your password immediately and <0>contact us</0>.",
+    "Ako ste to bili Vi, nikakva radnja nije potrebna. Ako niste, odmah poništite lozinku i <0>kontaktirajte nas</0>."
+  ],
+  [
+    "If you believe this is a mistake, please contact the sender directly.",
+    "Ako smatrate da je ovo pogreška, obratite se izravno pošiljatelju."
+  ],
+  [
+    "If you believe this was a mistake, contact us at <0>{supportEmail}</0>.",
+    "Ako smatrate da je ovo bila pogreška, obratite nam se na <0>{supportEmail}</0>."
+  ],
+  [
+    "If you have any questions, please contact support at {SUPPORT_EMAIL}.",
+    "Ako imate bilo kakvih pitanja, obratite se podršci na {SUPPORT_EMAIL}."
+  ],
+  [
+    "If you recently received an email regarding your usage limits, this change was made in response to that.",
+    "Ako ste nedavno primili e-poruku o ograničenjima korištenja, ova je promjena provedena kao odgovor na nju."
+  ],
+  ["Imprint", "Impresum"],
+  ["Invalid direct link template", "Neispravan predložak s izravnom poveznicom"],
+  ["Invitation already accepted", "Pozivnica je već prihvaćena"],
+  ["It's not your turn to sign yet", "Još niste na redu za potpisivanje"],
+  ["Jump to", "Idi na"],
+  ["Last 12 months", "Posljednjih 12 mjeseci"],
+  ["Last 90 days", "Posljednjih 90 dana"],
+  ["Last active", "Zadnja aktivnost"],
+  ["Last Used", "Zadnje korišteno"],
+  ["Limit reached", "Ograničenje dosegnuto"],
+  ["Link sent", "Poveznica poslana"],
+  ["Loading analytics", "Učitavanje analitike"],
+  ["Max requests", "Maks. broj zahtjeva"],
+  ["Member activity", "Aktivnost članova"],
+  ["Missing signature fields", "Nedostaju polja za potpis"],
+  ["Monthly quota", "Mjesečna kvota"],
+  ["Monthly usage", "Mjesečno korištenje"],
+  [
+    "Named senders with defaults per team, template or document",
+    "Imenovani pošiljatelji sa zadanim vrijednostima po timu, predlošku ili dokumentu"
+  ],
+  ["Navigate", "Navigacija"],
+  ["Near limit", "Blizu ograničenja"],
+  ["New", "Novo"],
+  ["No activity in the last 12 months.", "Nema aktivnosti u posljednjih 12 mjeseci."],
+  ["No activity in the last 30 days.", "Nema aktivnosti u posljednjih 30 dana."],
+  ["No activity in the last 7 days.", "Nema aktivnosti u posljednjih 7 dana."],
+  ["No activity in the last 90 days.", "Nema aktivnosti u posljednjih 90 dana."],
+  ["No activity in the selected range.", "Nema aktivnosti u odabranom rasponu."],
+  ["No documents created in this period", "Nema dokumenata izrađenih u ovom razdoblju"],
+  ["No documents in this period", "Nema dokumenata u ovom razdoblju"],
+  ["No documents match your search", "Nijedan dokument ne odgovara Vašem pretraživanju"],
+  [
+    "No documents were created from templates in this period",
+    "Nijedan dokument nije izrađen iz predložaka u ovom razdoblju"
+  ],
+  ["No expired documents", "Nema isteklih dokumenata"],
+  ["No further action is required", "Nisu potrebne daljnje radnje"],
+  ["No inherited claim", "Nema naslijeđenog paketa"],
+  ["No members", "Nema članova"],
+  ["No members match your search", "Nijedan član ne odgovara Vašem pretraživanju"],
+  ["No password set", "Lozinka nije postavljena"],
+  ["No rejected documents", "Nema odbijenih dokumenata"],
+  ["No results for “{trimmedSearch}”", "Nema rezultata za „{trimmedSearch}”"],
+  ["No teams", "Nema timova"],
+  ["No teams match your search", "Nijedan tim ne odgovara Vašem pretraživanju"],
+  ["Not available", "Nije dostupno"],
+  ["Notify the organisation about limit changes", "Obavijesti organizaciju o promjenama ograničenja"],
+  ["of sent documents completed", "dovršenih od poslanih dokumenata"],
+  ["Once confirmed, the following will be reset:", "Nakon potvrde bit će poništeno sljedeće:"],
+  [
+    "One of your signing requests has been reported. As part of keeping signers safe, we've disabled your account for now.",
+    "Jedan od Vaših zahtjeva za potpisivanje prijavljen je. U svrhu zaštite potpisnika, privremeno smo onemogućili Vaš račun."
+  ],
+  [
+    "One or more of your required fields have not been saved. Please refresh the page, complete any empty required fields, and try again.",
+    "Jedno ili više Vaših obveznih polja nije spremljeno. Osvježite stranicu, ispunite sva prazna obvezna polja i pokušajte ponovno."
+  ],
+  ["Only .jpg, .png, and .webp files are accepted", "Prihvaćene su samo datoteke .jpg, .png i .webp"],
+  [
+    "Only sign if you know and were expecting this sender.",
+    "Potpišite samo ako poznajete ovog pošiljatelja i očekivali ste ga."
+  ],
+  [
+    "Only sign if you know and were expecting this sender. <0>Report sender</0>",
+    "Potpišite samo ako poznajete ovog pošiljatelja i očekivali ste ga. <0>Prijavi pošiljatelja</0>"
+  ],
+  ["Open", "Otvori"],
+  [
+    "Organisation has been updated and its owner has been notified",
+    "Organizacija je ažurirana, a njezin vlasnik je obaviješten"
+  ],
+  [
+    "Organisation has been updated. No limits changed, so no notification was sent",
+    "Organizacija je ažurirana. Nijedno ograničenje nije promijenjeno, pa obavijest nije poslana"
+  ],
+  ["Overlapping fields detected", "Otkriveno preklapanje polja"],
+  ["Override", "Nadjačaj"],
+  [
+    "Passkeys could not be used here. If this document is embedded in another site, that site needs to allow passkeys for the embed.",
+    "Pristupni ključevi nisu se mogli upotrijebiti ovdje. Ako je ovaj dokument ugrađen na drugoj web-stranici, ta stranica mora dopustiti pristupne ključeve za ugradnju."
+  ],
+  ["Password authentication unavailable", "Autentifikacija lozinkom nije dostupna"],
+  ["Password Reset Success!", "Lozinka uspješno poništena!"],
+  ["Password sign in is disabled for this instance.", "Prijava lozinkom onemogućena je na ovoj instanci."]
+]

@@ -1,0 +1,201 @@
+[
+  [
+    "Password sign in is disabled for this instance. Please contact support.",
+    "Prijava lozinkom onemogućena je za ovu instancu. Obratite se podršci."
+  ],
+  ["People with access to this organisation.", "Osobe s pristupom ovoj organizaciji."],
+  ["Pick a start date", "Odaberite datum početka"],
+  ["Pick an end date", "Odaberite datum završetka"],
+  ["Please enter a valid URL", "Unesite valjani URL"],
+  [
+    "Please follow any instructions provided within the parent application.",
+    "Slijedite sve upute navedene u matičnoj aplikaciji."
+  ],
+  ["Please sign: Example.pdf", "Molimo potpišite: Example.pdf"],
+  ["Please upload a valid image file.", "Učitajte valjanu slikovnu datoteku."],
+  ["Privacy Policy", "Politika privatnosti"],
+  [
+    "Put your own brand on every document you send. Branding is available on the Teams plan and above.",
+    "Stavite vlastiti brend na svaki dokument koji pošaljete. Brendiranje je dostupno u paketu Teams i višim paketima."
+  ],
+  [
+    "Qualified electronic signatures are not supported in this embed.",
+    "Kvalificirani elektronički potpisi nisu podržani u ovoj ugrađenoj verziji."
+  ],
+  ["Receives Copy", "Prima kopiju"],
+  ["Recipient rejected the document externally", "Primatelj je odbio dokument izvana"],
+  ["Recipients cannot be removed from a completed document.", "Primatelji se ne mogu ukloniti iz dovršenog dokumenta."],
+  [
+    "Recipients cannot use this direct link template because the following signers are missing a signature field",
+    "Primatelji ne mogu koristiti ovaj predložak s izravnom poveznicom jer sljedeći potpisnici nemaju polje za potpis"
+  ],
+  ["Redirecting to your identity provider", "Preusmjeravanje na Vašeg pružatelja identiteta"],
+  ["Redirecting to your sign in provider...", "Preusmjeravanje na Vašeg pružatelja prijave..."],
+  ["Release to group", "Otpustite u grupu"],
+  ["Reminder preferences updated", "Postavke podsjetnika ažurirane"],
+  ["Remove rate limit", "Ukloni ograničenje učestalosti"],
+  ["Remove Recipient", "Ukloni primatelja"],
+  ["Reset branding preferences", "Vrati postavke brendiranja"],
+  ["Reset document preferences", "Vrati postavke dokumenata"],
+  ["Reset to defaults", "Vrati na zadano"],
+  ["Resource blocked", "Resurs je blokiran"],
+  [
+    "Restrict sign-ins by email domain and choose the default role",
+    "Ograničite prijave prema domeni e-pošte i odaberite zadanu ulogu"
+  ],
+  [
+    "Row {0}: <0>{1}</0> must be a valid email or empty",
+    "Redak {0}: <0>{1}</0> mora biti valjana adresa e-pošte ili prazan"
+  ],
+  [
+    "Search by document title, recipient:123, team:123 or user:123",
+    "Pretražite po naslovu dokumenta, recipient:123, team:123 ili user:123"
+  ],
+  ["Search documents, users, organisations…", "Pretražite dokumente, korisnike, organizacije…"],
+  ["Search languages…", "Pretražite jezike…"],
+  ["Search members", "Pretraži članove"],
+  ["Search members...", "Pretraži članove..."],
+  ["Search organisations…", "Pretražite organizacije…"],
+  ["Search teams", "Pretraži timove"],
+  ["Search teams…", "Pretražite timove…"],
+  ["Search templates...", "Pretražite predloške..."],
+  ["Search themes…", "Pretražite teme…"],
+  ["Select a section", "Odaberite odjeljak"],
+  ["selected", "odabrano"],
+  [
+    "Send documents from your own domain. Email domains are available on the Enterprise plan.",
+    "Šaljite dokumente sa svoje domene. Domene e-pošte dostupne su u paketu Enterprise."
+  ],
+  ["Send emails to recipients from your domain", "Šaljite e-poštu primateljima sa svoje domene"],
+  ["Send setup link", "Pošalji poveznicu za postavljanje"],
+  ["Sender Account Disabled", "Račun pošiljatelja je onemogućen"],
+  ["Sending from app.documenso.com", "Slanje s app.documenso.com"],
+  ["Sending from your domain", "Slanje s Vaše domene"],
+  ["Sent this period", "Poslano u ovom razdoblju"],
+  ["Separate branding per team", "Zasebno brendiranje po timu"],
+  [
+    "Sessions created by signing in to Documenso embedded on another website.",
+    "Sesije stvorene prijavom u Documenso ugrađen na drugoj web-stranici."
+  ],
+  ["Show all", "Prikaži sve"],
+  ["Show last 12 months", "Prikaži zadnjih 12 mjeseci"],
+  ["Showing {visibleCount} of {totalCount} members", "Prikazano {visibleCount} od {totalCount} članova"],
+  ["Showing {visibleCount} of {totalCount} teams", "Prikazano {visibleCount} od {totalCount} timova"],
+  [
+    "Sign in did not complete. Close this window and try again.",
+    "Prijava nije dovršena. Zatvorite ovaj prozor i pokušajte ponovno."
+  ],
+  ["Sign in did not complete. Please try again.", "Prijava nije dovršena. Pokušajte ponovno."],
+  ["Sign in timed out. Please try again.", "Isteklo je vrijeme za prijavu. Pokušajte ponovno."],
+  ["Sign in to Documenso to continue", "Prijavite se u Documenso za nastavak"],
+  ["Sign in with email or passkey", "Prijavite se e-poštom ili pristupnim ključem"],
+  ["Sign in with passkey", "Prijavite se pristupnim ključem"],
+  ["Sign in with your signing provider", "Prijavite se kod svog pružatelja usluge potpisivanja"],
+  [
+    "Sign in with your signing provider to continue",
+    "Prijavite se kod svog pružatelja usluge potpisivanja za nastavak"
+  ],
+  ["Signed in", "Prijavljeni"],
+  ["Signers that Signed Up", "Potpisnici koji su se registrirali"],
+  ["Signing link expired", "Poveznica za potpisivanje je istekla"],
+  ["Signing Order", "Redoslijed potpisivanja"],
+  [
+    "Signing this field requires a password, but your account does not have one. We can email you a link to set one. Once done, sign in again and return to this document to continue.",
+    "Za potpisivanje ovog polja potrebna je lozinka, a Vaš račun je nema. Možemo Vam e-poštom poslati poveznicu za njezino postavljanje. Nakon toga se ponovno prijavite i vratite se na ovaj dokument kako biste nastavili."
+  ],
+  ["Signing you in...", "Prijava u tijeku..."],
+  ["Single sign-on", "Jedinstvena prijava (SSO)"],
+  [
+    "Some fields are placed on top of each other. This may complicate the signing process or cause fields to not work as expected.",
+    "Neka polja postavljena su jedno preko drugog. To može otežati postupak potpisivanja ili uzrokovati da polja ne rade očekivano."
+  ],
+  ["Some fields were not saved", "Neka polja nisu spremljena"],
+  [
+    "Some searches failed — results may be incomplete.",
+    "Neka pretraživanja nisu uspjela — rezultati mogu biti nepotpuni."
+  ],
+  [
+    "Something went wrong while signing you in. Please try again.",
+    "Došlo je do pogreške pri prijavi. Pokušajte ponovno."
+  ],
+  [
+    "Something went wrong. Close this window and try again.",
+    "Nešto je pošlo po zlu. Zatvorite ovaj prozor i pokušajte ponovno."
+  ],
+  ["Starting sign in...", "Pokretanje prijave..."],
+  ["Status breakdown", "Raspodjela po statusu"],
+  ["Stop", "Zaustavi"],
+  [
+    "Storage access was denied, so we cannot keep you signed in inside this embed. Please try again.",
+    "Pristup pohrani je odbijen pa Vas ne možemo držati prijavljenima unutar ove ugrađene verzije. Pokušajte ponovno."
+  ],
+  ["Subscriptions", "Pretplate"],
+  ["Team activity", "Aktivnost tima"],
+  ["Teams that belong to this organisation.", "Timovi koji pripadaju ovoj organizaciji."],
+  ["Template usage", "Korištenje predložaka"],
+  ["Terms of Service", "Uvjeti korištenja"],
+  [
+    "The CSV contains invalid recipient emails. Please fix the following rows:",
+    "CSV sadrži nevaljane adrese e-pošte primatelja. Ispravite sljedeće retke:"
+  ],
+  [
+    "The CSV could not be parsed. Please check the file format and try again.",
+    "CSV se nije mogao obraditi. Provjerite format datoteke i pokušajte ponovno."
+  ],
+  [
+    "The CSV does not contain any rows. Please add at least one row of recipient details.",
+    "CSV ne sadrži nijedan redak. Dodajte barem jedan redak s podacima o primatelju."
+  ],
+  ["The CSV exceeds the maximum file size.", "CSV premašuje najveću dopuštenu veličinu datoteke."],
+  [
+    "The CSV is missing the following required columns. Please download the template CSV for the correct format.",
+    "CSV-u nedostaju sljedeći obavezni stupci. Preuzmite predložak CSV-a za ispravan format."
+  ],
+  [
+    "The document could not be sent because some signers do not have a signature field. Please edit the template and add a signature field for each signer.",
+    "Dokument nije moguće poslati jer neki potpisnici nemaju polje za potpis. Uredite predložak i dodajte polje za potpis za svakog potpisnika."
+  ],
+  [
+    "The document name will use the most recently uploaded file name without its extension.",
+    "Naziv dokumenta koristit će naziv zadnje učitane datoteke bez ekstenzije."
+  ],
+  [
+    "The document was rejected externally by {onBehalfOf} on behalf of {user}",
+    "Dokument je izvana odbio {onBehalfOf} u ime korisnika {user}"
+  ],
+  [
+    "The document was rejected externally by {onBehalfOf} on behalf of the recipient",
+    "Dokument je izvana odbio {onBehalfOf} u ime primatelja"
+  ],
+  ["The document was rejected externally on behalf of {user}", "Dokument je izvana odbijen u ime korisnika {user}"],
+  ["The document was rejected externally on behalf of the recipient", "Dokument je izvana odbijen u ime primatelja"],
+  ["The file is not a valid PDF or is password protected.", "Datoteka nije valjani PDF ili je zaštićena lozinkom."],
+  ["The image could not be loaded. Please try again.", "Slika se nije mogla učitati. Pokušajte ponovno."],
+  ["The image must be smaller than 5MB.", "Slika mora biti manja od 5 MB."],
+  ["The license key has been copied to your clipboard", "Licenčni ključ kopiran je u međuspremnik"],
+  [
+    "The recipient has been removed and the document owner has been notified.",
+    "Primatelj je uklonjen, a vlasnik dokumenta obaviješten."
+  ],
+  [
+    "The two factor code you provided is invalid. Please try again.",
+    "Kôd za dvofaktorsku autentifikaciju koji ste unijeli nije valjan. Pokušajte ponovno."
+  ],
+  ["Theme", "Tema"],
+  [
+    "There are no documents with expired signing links. You can redistribute a document to renew its expiration.",
+    "Nema dokumenata s isteklim poveznicama za potpisivanje. Možete ponovno poslati dokument kako biste obnovili njegov rok."
+  ],
+  [
+    "There are no rejected documents. Documents that a recipient declines to sign will appear here.",
+    "Nema odbijenih dokumenata. Dokumenti koje primatelj odbije potpisati prikazat će se ovdje."
+  ],
+  [
+    "There is no action required on your side. If you believe this was a mistake, please contact the document sender.",
+    "S Vaše strane nije potrebna nikakva radnja. Ako smatrate da se radi o pogrešci, obratite se pošiljatelju dokumenta."
+  ],
+  [
+    "There is no action required on your side. If you believe this was a mistake, please contact your administrator.",
+    "S Vaše strane nije potrebna nikakva radnja. Ako smatrate da se radi o pogrešci, obratite se svom administratoru."
+  ]
+]

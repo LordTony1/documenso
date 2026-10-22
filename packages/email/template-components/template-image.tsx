@@ -8,7 +8,7 @@ export interface TemplateImageProps {
 }
 
 export const TemplateImage = ({ assetBaseUrl, className, staticAsset }: TemplateImageProps) => {
-  return <Img className={className} src={getEmailAssetUrl(`/static/${staticAsset}`, assetBaseUrl)} alt="" />;
+  return <Img className={className} src={getEmailAssetUrl(assetBaseUrl, `static/${staticAsset}`)} alt="" />;
 };
 
 export default TemplateImage;

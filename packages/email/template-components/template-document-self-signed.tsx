@@ -24,7 +24,7 @@ export const TemplateDocumentSelfSigned = ({ documentName, assetBaseUrl }: Templ
           <Column align="center">
             <Text className="font-semibold text-base text-foreground">
               <Img
-                src={getEmailAssetUrl('/static/completed.png', assetBaseUrl)}
+                src={getEmailAssetUrl(assetBaseUrl, 'static/completed.png')}
                 className="-mt-0.5 mr-2 inline h-7 w-7 align-middle"
                 alt=""
               />
@@ -53,7 +53,7 @@ export const TemplateDocumentSelfSigned = ({ documentName, assetBaseUrl }: Templ
             className="mr-4 rounded-lg border border-border border-solid px-4 py-2 text-center font-medium text-foreground text-sm no-underline"
           >
             <Img
-              src={getEmailAssetUrl('/static/user-plus.png', assetBaseUrl)}
+              src={getEmailAssetUrl(assetBaseUrl, 'static/user-plus.png')}
               className="mr-2 mb-0.5 inline h-5 w-5 align-middle"
               alt=""
             />
@@ -65,7 +65,7 @@ export const TemplateDocumentSelfSigned = ({ documentName, assetBaseUrl }: Templ
             href="https://documenso.com/pricing"
           >
             <Img
-              src={getEmailAssetUrl('/static/review.png', assetBaseUrl)}
+              src={getEmailAssetUrl(assetBaseUrl, 'static/review.png')}
               className="mr-2 mb-0.5 inline h-5 w-5 align-middle"
               alt=""
             />

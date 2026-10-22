@@ -21,7 +21,7 @@ export const TemplateAccessAuth2FA = ({
 }: TemplateAccessAuth2FAProps) => {
   return (
     <div>
-      <Img src={getEmailAssetUrl('/static/document.png', assetBaseUrl)} alt="Document" className="mx-auto h-12 w-12" />
+      <Img src={getEmailAssetUrl(assetBaseUrl, 'static/document.png')} alt="Document" className="mx-auto h-12 w-12" />
 
       <Section className="mt-8">
         <Heading className="text-center font-semibold text-foreground text-lg">

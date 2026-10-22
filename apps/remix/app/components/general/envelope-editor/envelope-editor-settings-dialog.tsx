@@ -4,7 +4,12 @@ import { DATE_FORMATS, DEFAULT_DOCUMENT_DATE_FORMAT } from '@documenso/lib/const
 import { DOCUMENT_DISTRIBUTION_METHODS, DOCUMENT_SIGNATURE_TYPES } from '@documenso/lib/constants/document';
 import { ZEnvelopeExpirationPeriod } from '@documenso/lib/constants/envelope-expiration';
 import { ZEnvelopeReminderSettings } from '@documenso/lib/constants/envelope-reminder';
-import { APP_I18N_OPTIONS, isValidLanguageCode, SUPPORTED_LANGUAGE_CODES, SUPPORTED_LANGUAGES } from '@documenso/lib/constants/i18n';
+import {
+  APP_I18N_OPTIONS,
+  isValidLanguageCode,
+  SUPPORTED_LANGUAGE_CODES,
+  SUPPORTED_LANGUAGES,
+} from '@documenso/lib/constants/i18n';
 import { DEFAULT_DOCUMENT_TIME_ZONE, TIME_ZONES } from '@documenso/lib/constants/time-zones';
 import { DO_NOT_INVALIDATE_QUERY_ON_MUTATION } from '@documenso/lib/constants/trpc';
 import { AppError } from '@documenso/lib/errors/app-error';
@@ -16,7 +21,7 @@ import {
   ZDocumentMetaTimezoneSchema,
 } from '@documenso/lib/types/document-meta';
 import { extractDocumentAuthMethods } from '@documenso/lib/utils/document-auth';
-import { isValidRedirectUrl } from '@documenso/lib/utils/is-valid-redirect-url';
+import { isHttpUrl } from '@documenso/lib/utils/is-http-url';
 import { canAccessTeamDocument, DocumentSignatureType, extractTeamSignatureSettings } from '@documenso/lib/utils/teams';
 import { zEmail } from '@documenso/lib/utils/zod';
 import { trpc } from '@documenso/trpc/react';
@@ -97,7 +102,7 @@ export const ZAddSettingsFormSchema = z.object({
     redirectUrl: z
       .string()
       .optional()
-      .refine((value) => value === undefined || value === '' || isValidRedirectUrl(value), {
+      .refine((value) => value === undefined || value === '' || isHttpUrl(value), {
         message: 'Please enter a valid URL, make sure you include http:// or https:// part of the url.',
       }),
     language: z

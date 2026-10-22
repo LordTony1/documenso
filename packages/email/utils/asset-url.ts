@@ -12,13 +12,22 @@
 export const EMAIL_ASSET_VERSION = '2';
 
 /**
- * Builds the absolute, cache-busted URL for a static email asset.
+ * Resolve a static email asset path against the asset base URL, cache-busted
+ * with `EMAIL_ASSET_VERSION`.
  *
- * `path` is resolved against `assetBaseUrl` (the public webapp URL), so it must
- * be root-relative, e.g. `/static/logo.png`.
+ * The base is normalised to end with a trailing slash and the path is
+ * normalised to have no leading slash, so a sub-path in the base URL
+ * (e.g. "/ESign") is preserved. Passing a root-absolute path straight to
+ * `new URL()` would otherwise replace the base pathname entirely.
+ *
+ * `getEmailAssetUrl('https://host/ESign', 'static/logo.png')` -> `https://host/ESign/static/logo.png?v=2`
+ * `getEmailAssetUrl('https://host/ESign/', '/static/logo.png')` -> `https://host/ESign/static/logo.png?v=2`
  */
-export const getEmailAssetUrl = (path: string, assetBaseUrl: string): string => {
-  const url = new URL(path, assetBaseUrl);
+export const getEmailAssetUrl = (assetBaseUrl: string, path: string): string => {
+  const base = assetBaseUrl.endsWith('/') ? assetBaseUrl : `${assetBaseUrl}/`;
+  const relativePath = path.startsWith('/') ? path.slice(1) : path;
+
+  const url = new URL(relativePath, base);
 
   url.searchParams.set('v', EMAIL_ASSET_VERSION);
 

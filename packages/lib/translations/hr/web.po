@@ -110,7 +110,7 @@ msgstr "{0, plural, one {# dokument otkazan.} few {# dokumenta otkazana.} other 
 #. placeholder {0}: successfulEnvelopeIds.length
 #: apps/remix/app/components/dialogs/envelopes-bulk-download-dialog.tsx
 msgid "{0, plural, one {# document downloaded.} other {# documents downloaded.}} {failedDownloads, plural, one {# document could not be downloaded.} other {# documents could not be downloaded.}}"
-msgstr ""
+msgstr "{0, plural, one {Preuzet je # dokument.} few {Preuzeta su # dokumenta.} other {Preuzeto je # dokumenata.}} {failedDownloads, plural, one {# dokument nije moguće preuzeti.} few {# dokumenta nije moguće preuzeti.} other {# dokumenata nije moguće preuzeti.}}"
 
 #. placeholder {0}: result.cancelledCount
 #: apps/remix/app/components/dialogs/envelopes-bulk-cancel-dialog.tsx
@@ -120,7 +120,7 @@ msgstr "{0, plural, one {# dokument je otkazan.} few {# dokumenta su otkazana.} 
 #. placeholder {0}: successfulEnvelopeIds.length
 #: apps/remix/app/components/dialogs/envelopes-bulk-download-dialog.tsx
 msgid "{0, plural, one {# document has been downloaded.} other {# documents have been downloaded.}}"
-msgstr ""
+msgstr "{0, plural, one {Preuzet je # dokument.} few {Preuzeta su # dokumenta.} other {Preuzeto je # dokumenata.}}"
 
 #. placeholder {0}: folder._count.documents
 #: apps/remix/app/components/general/folder/folder-card.tsx
@@ -153,6 +153,11 @@ msgstr "{0, plural, one {# stavka izbrisana.} few {# stavke izbrisane.} other {#
 msgid "{0, plural, one {# item has been deleted.} other {# items have been deleted.}}"
 msgstr "{0, plural, one {# stavka je izbrisana.} few {# stavke su izbrisane.} other {# stavki je izbrisano.}}"
 
+#. placeholder {0}: step.members.length
+#: apps/remix/app/components/general/envelope-editor/recipient-step-card.tsx
+msgid "{0, plural, one {# recipient · any order} other {# recipients · any order}}"
+msgstr "{0, plural, one {# primatelj · bilo kojim redoslijedom} few {# primatelja · bilo kojim redoslijedom} other {# primatelja · bilo kojim redoslijedom}}"
+
 #. placeholder {0}: detectedRecipients.length
 #: apps/remix/app/components/general/envelope-editor/envelope-editor-recipient-form.tsx
 msgid "{0, plural, one {# recipient have been added from AI detection.} other {# recipients have been added from AI detection.}}"
@@ -177,6 +182,11 @@ msgstr "{0, plural, one {# tim} few {# tima} other {# timova}}"
 #: apps/remix/app/components/general/folder/folder-card.tsx
 msgid "{0, plural, one {# template} other {# templates}}"
 msgstr "{0, plural, one {# predložak} few {# predloška} other {# predložaka}}"
+
+#. placeholder {0}: template.count
+#: apps/remix/app/components/general/analytics/analytics-template-usage-card.tsx
+msgid "{0, plural, one {# use} other {# uses}}"
+msgstr "{0, plural, one {# korištenje} few {# korištenja} other {# korištenja}}"
 
 #. placeholder {0}: data.length
 #: apps/remix/app/components/general/organisations/organisation-invitations.tsx
@@ -254,7 +264,7 @@ msgstr "{0, plural, one {Odaberite mapu u koju ćete premjestiti odabrani predlo
 #. placeholder {0}: envelopes.length
 #: apps/remix/app/components/dialogs/envelopes-bulk-download-dialog.tsx
 msgid "{0, plural, one {Select the version to download for the selected document.} other {Select the version to download for each of the # selected documents.}}"
-msgstr ""
+msgstr "{0, plural, one {Odaberite verziju za preuzimanje odabranog dokumenta.} few {Odaberite verziju za preuzimanje za svaki od # odabrana dokumenta.} other {Odaberite verziju za preuzimanje za svaki od # odabranih dokumenata.}}"
 
 #. placeholder {0}: pendingRecipients.length
 #: apps/remix/app/routes/_authenticated+/t.$teamUrl+/documents.$id._index.tsx
@@ -291,6 +301,12 @@ msgstr "{0, plural, one {Uskoro ćete izbrisati odabrani predložak.} few {Uskor
 msgid "{0}"
 msgstr "{0}"
 
+#. placeholder {0}: formatNumber(entityCounts.active)
+#. placeholder {1}: formatNumber(entityCounts.total - entityCounts.active)
+#: apps/remix/app/components/general/analytics/analytics-overview-cards.tsx
+msgid "{0} active · {1} inactive"
+msgstr "{0} aktivnih · {1} neaktivnih"
+
 #. placeholder {0}: team.name
 #: apps/remix/app/components/dialogs/public-profile-template-manage-dialog.tsx
 msgid "{0} direct signing templates"
@@ -301,9 +317,11 @@ msgstr "Predlošci za izravno potpisivanje – {0}"
 msgid "{0} field"
 msgstr "polje {0}"
 
+#. placeholder {0}: envelope.team.name
 #. placeholder {0}: team.name
 #. placeholder {1}: envelope.title
 #: packages/lib/jobs/definitions/emails/send-signing-email.handler.ts
+#: packages/lib/server-only/document/resend-document.ts
 msgid "{0} has invited you to {recipientActionVerb} the document \"{1}\"."
 msgstr "{0} vas je pozvao da {recipientActionVerb} dokument \"{1}\"."
 
@@ -311,7 +329,7 @@ msgstr "{0} vas je pozvao da {recipientActionVerb} dokument \"{1}\"."
 #: apps/remix/app/components/general/settings-upsell/branding-upsell.tsx
 #: apps/remix/app/components/general/settings-upsell/email-domains-upsell.tsx
 msgid "{0} has invited you to sign this document."
-msgstr ""
+msgstr "{0} Vas je pozvao da potpišete ovaj dokument."
 
 #. placeholder {0}: team.name
 #: packages/lib/jobs/definitions/emails/send-signing-email.handler.ts
@@ -326,22 +344,10 @@ msgstr "{0} vas je pozvao da {recipientActionVerb} dokument"
 msgid "{0} of {1} documents remaining this month."
 msgstr "Preostalo {0} od {1} dokumenata ovaj mjesec."
 
-#. placeholder {0}: user.name || user.email
-#. placeholder {1}: envelope.team.name
-#. placeholder {2}: envelope.title
-#: packages/lib/server-only/document/resend-document.ts
-msgid "{0} on behalf of \"{1}\" has invited you to {recipientActionVerb} the document \"{2}\"."
-msgstr "{0} u ime \"{1}\" pozvao vas je da {recipientActionVerb} dokument \"{2}\"."
-
 #. placeholder {0}: planClaim.name
 #: apps/remix/app/components/general/settings-org-switcher.tsx
 msgid "{0} Plan"
-msgstr ""
-
-#. placeholder {0}: formatChipCount(totalVisibleCount, isVisibleCountCapped)
-#: apps/remix/app/components/general/app-command-menu.tsx
-msgid "{0} results"
-msgstr ""
+msgstr "Plan {0}"
 
 #. placeholder {0}: organisation.name
 #: apps/remix/app/routes/_authenticated+/o.$orgUrl._index.tsx
@@ -354,6 +360,11 @@ msgstr "Timovi organizacije {0}"
 msgctxt "The step counter"
 msgid "{0}/{1}"
 msgstr "{0}/{1}"
+
+#: apps/remix/app/routes/_authenticated+/o.$orgUrl.analytics._index.tsx
+#: apps/remix/app/routes/_authenticated+/t.$teamUrl+/analytics._index.tsx
+msgid "{activeCount} active this period"
+msgstr "{activeCount} aktivnih u ovom razdoblju"
 
 #: packages/ui/components/document/expiration-period-picker.tsx
 #: packages/ui/components/document/reminder-settings-picker.tsx
@@ -382,6 +393,22 @@ msgstr "{browserInfo} na {os}"
 #: apps/remix/app/components/general/document-signing/document-signing-text-field.tsx
 msgid "{charactersRemaining, plural, one {1 character remaining} other {{charactersRemaining} characters remaining}}"
 msgstr "{charactersRemaining, plural, one {1 preostali znak} few {{charactersRemaining} preostala znaka} other {{charactersRemaining} preostalih znakova}}"
+
+#: apps/remix/app/components/general/analytics/analytics-documents-over-time-card.tsx
+msgid "{count, plural, one {# document} other {# documents}}"
+msgstr "{count, plural, one {# dokument} few {# dokumenta} other {# dokumenata}}"
+
+#: apps/remix/app/routes/_authenticated+/t.$teamUrl+/analytics._index.tsx
+msgid "{count, plural, one {# member} other {# members}}"
+msgstr "{count, plural, one {# član} few {# člana} other {# članova}}"
+
+#: apps/remix/app/routes/_authenticated+/o.$orgUrl.analytics._index.tsx
+msgid "{count, plural, one {# team} other {# teams}}"
+msgstr "{count, plural, one {# tim} few {# tima} other {# timova}}"
+
+#: apps/remix/app/components/general/analytics/analytics-range-picker.tsx
+msgid "{draftDays, plural, one {# day} other {# days}}"
+msgstr "{draftDays, plural, one {# dan} few {# dana} other {# dana}}"
 
 #: packages/email/template-components/template-access-auth-2fa.tsx
 msgid "{expiresInMinutes, plural, one {This code will expire in # minute.} other {This code will expire in # minutes.}}"
@@ -420,9 +447,11 @@ msgstr "{inviterName} vas je uklonio iz dokumenta {documentName}."
 msgid "{inviterName} has removed you from the document<0/>\"{documentName}\""
 msgstr "{inviterName} vas je uklonio iz dokumenta<0/>\"{documentName}\""
 
+#. placeholder {0}: envelope.team.name
 #. placeholder {0}: team.name
 #. placeholder {1}: envelope.title
 #: packages/lib/jobs/definitions/emails/send-signing-email.handler.ts
+#: packages/lib/server-only/document/resend-document.ts
 msgid "{inviterName} on behalf of \"{0}\" has invited you to {recipientActionVerb} the document \"{1}\"."
 msgstr "{inviterName} u ime \"{0}\" pozvao vas je da {recipientActionVerb} dokument \"{1}\"."
 
@@ -434,6 +463,10 @@ msgstr "{inviterName} u ime \"{teamName}\" vas je pozvao da {0}<0/>\"{documentNa
 #: packages/email/templates/document-invite.tsx
 msgid "{inviterName} on behalf of \"{teamName}\" has invited you to {action} {documentName}"
 msgstr "{inviterName} u ime \"{teamName}\" vas je pozvao da {action} {documentName}"
+
+#: apps/remix/app/components/dialogs/envelopes-bulk-download-dialog.tsx
+msgid "{MAX_BULK_DOWNLOAD_ENVELOPES, plural, one {You can download up to # document at a time. Deselect some documents to continue.} other {You can download up to # documents at a time. Deselect some documents to continue.}}"
+msgstr "{MAX_BULK_DOWNLOAD_ENVELOPES, plural, one {Možete preuzeti najviše # dokument odjednom. Poništite odabir nekih dokumenata kako biste nastavili.} few {Možete preuzeti najviše # dokumenta odjednom. Poništite odabir nekih dokumenata kako biste nastavili.} other {Možete preuzeti najviše # dokumenata odjednom. Poništite odabir nekih dokumenata kako biste nastavili.}}"
 
 #: apps/remix/app/components/dialogs/passkey-create-dialog.tsx
 msgid "{MAXIMUM_PASSKEYS, plural, one {You cannot have more than # passkey.} other {You cannot have more than # passkeys.}}"
@@ -463,9 +496,17 @@ msgstr "Potrebno je da {recipientActionVerb} dokument kako biste dovršili postu
 msgid "{recipientCount} recipients"
 msgstr "{recipientCount} primatelja"
 
+#: packages/email/template-components/template-recipient-removed-by-admin.tsx
+msgid "{recipientLabel} has been removed from the document \"{documentName}\" by an administrator, typically at the request of the document sender."
+msgstr "Administrator je uklonio primatelja {recipientLabel} iz dokumenta \"{documentName}\", obično na zahtjev pošiljatelja dokumenta."
+
 #: packages/email/templates/document-created-from-direct-template.tsx
 msgid "{recipientName} {action} a document by using one of your direct links"
 msgstr "{recipientName} – {action} dokumenta putem jedne od vaših izravnih poveznica"
+
+#: packages/email/templates/recipient-removed-by-admin.tsx
+msgid "{recipientName} has been removed from the document \"{documentName}\" by an administrator."
+msgstr "Administrator je uklonio primatelja {recipientName} iz dokumenta \"{documentName}\"."
 
 #: packages/email/templates/document-rejected.tsx
 msgid "{recipientName} has rejected the document '{documentName}'"
@@ -493,6 +534,10 @@ msgstr "{recipientReference} je potpisao {documentName}"
 msgid "{remaningLength, plural, one {# character remaining} other {# characters remaining}}"
 msgstr "{remaningLength, plural, one {# preostali znak} few {# preostala znaka} other {# preostalih znakova}}"
 
+#: apps/remix/app/components/dialogs/template-bulk-send-dialog.tsx
+msgid "{rowCount, plural, one {The CSV contains # row.} other {The CSV contains # rows.}} {maxRows, plural, one {A maximum of # row is allowed per upload.} other {A maximum of # rows is allowed per upload.}}"
+msgstr "{rowCount, plural, one {CSV sadrži # redak.} few {CSV sadrži # retka.} other {CSV sadrži # redaka.}} {maxRows, plural, one {Dopušten je najviše # redak po učitavanju.} few {Dopuštena su najviše # retka po učitavanju.} other {Dopušteno je najviše # redaka po učitavanju.}}"
+
 #: apps/remix/app/components/tables/envelopes-table-bulk-action-bar.tsx
 msgid "{selectedCount} selected"
 msgstr "Odabrano: {selectedCount}"
@@ -515,8 +560,16 @@ msgid "{teamName} has invited you to {action} {documentName}"
 msgstr "{teamName} vas je pozvao da {action} {documentName}"
 
 #: apps/remix/app/components/general/app-command-menu.tsx
-msgid "{totalVisibleCount} items"
-msgstr ""
+msgid "{totalVisibleCount, plural, one {# item} other {# items}}"
+msgstr "{totalVisibleCount, plural, one {# stavka} few {# stavke} other {# stavki}}"
+
+#: apps/remix/app/components/general/app-command-menu.tsx
+msgid "{totalVisibleCount, plural, one {# result} other {# results}}"
+msgstr "{totalVisibleCount, plural, one {# rezultat} few {# rezultata} other {# rezultata}}"
+
+#: apps/remix/app/components/general/app-command-menu.tsx
+msgid "{totalVisibleCount, plural, one {≥# result} other {≥# results}}"
+msgstr "{totalVisibleCount, plural, one {≥# rezultat} few {≥# rezultata} other {≥# rezultata}}"
 
 #: packages/lib/utils/document-audit-logs.ts
 msgid "{user} added a field"
@@ -595,6 +648,10 @@ msgstr "{user} je uklonio polje"
 #: packages/lib/utils/document-audit-logs.ts
 msgid "{user} removed a recipient"
 msgstr "{user} je uklonio primatelja"
+
+#: packages/lib/utils/document-audit-logs.ts
+msgid "{user} removed a recipient as an administrator"
+msgstr "Korisnik {user} uklonio je primatelja kao administrator"
 
 #. placeholder {0}: data.envelopeItemTitle
 #: packages/lib/utils/document-audit-logs.ts
@@ -711,7 +768,7 @@ msgstr "{visibleRows, plural, one {Prikazuje se # rezultat.} few {Prikazuju se #
 
 #: apps/remix/app/components/general/filter-pill.tsx
 msgid "+{extraCount} more"
-msgstr ""
+msgstr "+{extraCount} više"
 
 #. placeholder {0}: document.title
 #. placeholder {0}: envelope.title
@@ -722,11 +779,11 @@ msgstr "<0>\"{0}\"</0> više nije dostupan za potpisivanje"
 
 #: apps/remix/app/routes/_unauthenticated+/organisation.invite.$token.tsx
 msgid "<0>{organisationName}</0> does not have an active subscription. Please contact the organisation administrator to renew their plan before accepting this invitation."
-msgstr ""
+msgstr "<0>{organisationName}</0> nema aktivnu pretplatu. Obratite se administratoru organizacije da obnovi plan prije prihvaćanja ovog poziva."
 
 #: apps/remix/app/routes/_unauthenticated+/organisation.invite.$token.tsx
 msgid "<0>{organisationName}</0> has reached its member limit. Please contact the organisation administrator to upgrade their plan before accepting this invitation."
-msgstr ""
+msgstr "<0>{organisationName}</0> je dosegnula ograničenje broja članova. Obratite se administratoru organizacije da nadogradi plan prije prihvaćanja ovog poziva."
 
 #: packages/email/templates/organisation-account-link-confirmation.tsx
 msgid "<0>{organisationName}</0> has requested to create an account on your behalf."
@@ -735,6 +792,10 @@ msgstr "<0>{organisationName}</0> zatražio je otvaranje računa u vaše ime."
 #: packages/email/templates/organisation-account-link-confirmation.tsx
 msgid "<0>{organisationName}</0> has requested to link your current Documenso account to their organisation."
 msgstr "<0>{organisationName}</0> zatražio je povezivanje vašeg trenutnog Documenso računa s njihovom organizacijom."
+
+#: apps/remix/app/components/dialogs/admin-recipient-delete-dialog.tsx
+msgid "<0>{recipientLabel}</0> and their fields will be removed from this document. They and the document owner will be emailed."
+msgstr "<0>{recipientLabel}</0> i njegova polja bit će uklonjeni iz ovog dokumenta. Primit će e-poruku on i vlasnik dokumenta."
 
 #: apps/remix/app/components/general/document-signing/document-signing-page-view-v1.tsx
 msgid "<0>{senderName} {senderEmail}</0> has invited you to approve this document"
@@ -778,7 +839,7 @@ msgstr "<0>{teamName}</0> zatražio je korištenje vaše e-mail adrese za svoj t
 
 #: apps/remix/app/routes/_unauthenticated+/team.verify.email.$token.tsx
 msgid "<0>{teamName}</0> would like to use <1>{email}</1> as their team email."
-msgstr ""
+msgstr "<0>{teamName}</0> želi koristiti <1>{email}</1> kao e-adresu svojeg tima."
 
 #: apps/remix/app/routes/_unauthenticated+/organisation.sso.confirmation.$token.tsx
 msgid "<0>Account management:</0> Modify your account settings, permissions, and preferences"
@@ -995,6 +1056,10 @@ msgstr "6 mjeseci"
 msgid "7 days"
 msgstr "7 dana"
 
+#: apps/remix/app/components/forms/password.tsx
+msgid "A code is required"
+msgstr "Kod je obavezan"
+
 #: apps/remix/app/components/forms/send-confirmation-email.tsx
 msgid "A confirmation email has been sent, and it should arrive in your inbox shortly."
 msgstr "Poslan je e-mail za potvrdu i trebao bi uskoro stići u vašu pristiglu poštu."
@@ -1048,7 +1113,7 @@ msgstr "Član je napustio vašu organizaciju na Documensu"
 
 #: apps/remix/app/components/dialogs/token-create-dialog.tsx
 msgid "A name to help you identify this token later."
-msgstr ""
+msgstr "Naziv koji će Vam kasnije pomoći da prepoznate ovaj token."
 
 #: packages/lib/jobs/definitions/emails/send-organisation-member-joined-email.handler.ts
 msgid "A new member has joined your organisation"
@@ -1063,6 +1128,11 @@ msgstr "Novi član pridružio se vašoj organizaciji {organisationName}"
 msgid "A password reset email has been sent, if you have an account you should see it in your inbox shortly."
 msgstr "Poslan je e-mail za ponovno postavljanje lozinke; ako imate račun, uskoro biste ga trebali vidjeti u pristigloj pošti."
 
+#: packages/email/template-components/template-recipient-removed-by-admin.tsx
+#: packages/lib/jobs/definitions/emails/send-admin-recipient-removed-emails.handler.ts
+msgid "A recipient has been removed from your document"
+msgstr "Primatelj je uklonjen iz Vašeg dokumenta"
+
 #: packages/lib/utils/document-audit-logs.ts
 msgctxt "Audit log format"
 msgid "A recipient was added"
@@ -1072,6 +1142,11 @@ msgstr "Primatelj je dodan"
 msgctxt "Audit log format"
 msgid "A recipient was removed"
 msgstr "Primatelj je uklonjen"
+
+#: packages/lib/utils/document-audit-logs.ts
+msgctxt "Audit log format"
+msgid "A recipient was removed by an administrator"
+msgstr "Administrator je uklonio primatelja"
 
 #: packages/lib/utils/document-audit-logs.ts
 msgctxt "Audit log format"
@@ -1129,6 +1204,10 @@ msgstr "Potrebna je valjana e-mail adresa"
 #: apps/remix/app/components/dialogs/team-email-add-dialog.tsx
 msgid "A verification email will be sent to the provided email."
 msgstr "E-mail za provjeru bit će poslan na navedenu adresu."
+
+#: apps/remix/app/components/dialogs/template-use-dialog.tsx
+msgid "About uploaded file naming"
+msgstr "O imenovanju učitanih datoteka"
 
 #: apps/remix/app/components/general/organisations/organisation-invitations.tsx
 #: apps/remix/app/routes/_unauthenticated+/organisation.invite.$token.tsx
@@ -1216,7 +1295,7 @@ msgstr "Ponovna autentifikacija računa"
 #: apps/remix/app/components/general/settings-scope-breadcrumb.tsx
 #: apps/remix/app/components/general/unified-settings-sidebar.tsx
 msgid "Account Settings"
-msgstr ""
+msgstr "Postavke računa"
 
 #: apps/remix/app/routes/_authenticated+/settings+/security.linked-accounts.tsx
 msgid "Account unlinked"
@@ -1224,7 +1303,7 @@ msgstr "Veza računa uklonjena"
 
 #: apps/remix/app/components/general/settings-upsell/sso-portal-upsell.tsx
 msgid "Accounts are automatically added to your organisation on sign-in"
-msgstr ""
+msgstr "Računi se automatski dodaju u Vašu organizaciju pri prijavi"
 
 #: apps/remix/app/routes/_unauthenticated+/articles.signature-disclosure.tsx
 msgid "Acknowledgment"
@@ -1232,6 +1311,7 @@ msgstr "Potvrda"
 
 #: apps/remix/app/components/general/document/document-page-view-dropdown.tsx
 #: apps/remix/app/components/tables/admin-document-logs-table.tsx
+#: apps/remix/app/components/tables/admin-document-recipient-item-table.tsx
 #: apps/remix/app/components/tables/document-logs-table.tsx
 #: apps/remix/app/components/tables/documents-table-action-dropdown.tsx
 #: apps/remix/app/components/tables/settings-public-profile-templates-table.tsx
@@ -1299,6 +1379,10 @@ msgstr "Aktivne sesije"
 #: apps/remix/app/routes/_authenticated+/admin+/stats.tsx
 msgid "Active Subscriptions"
 msgstr "Aktivne pretplate"
+
+#: apps/remix/app/components/tables/admin-document-recipient-item-table.tsx
+msgid "Activity"
+msgstr "Aktivnost"
 
 #: apps/remix/app/components/dialogs/team-email-add-dialog.tsx
 #: apps/remix/app/components/general/document/document-attachments-popover.tsx
@@ -1469,7 +1553,7 @@ msgstr "Dodaj rezervirana mjesta"
 
 #: apps/remix/app/components/general/rate-limit-array-input.tsx
 msgid "Add rate limit window"
-msgstr ""
+msgstr "Dodaj vremenski okvir ograničenja učestalosti"
 
 #: apps/remix/app/components/dialogs/ai-recipient-detection-dialog.tsx
 msgid "Add recipients"
@@ -1724,6 +1808,10 @@ msgstr "Omogućuje autentifikaciju pomoću biometrije, upravitelja lozinki, hard
 msgid "Almost done"
 msgstr "Gotovo pri kraju"
 
+#: apps/remix/app/components/embed/embed-popup-auth.tsx
+msgid "Almost there"
+msgstr "Još samo malo"
+
 #: apps/remix/app/components/forms/signup.tsx
 msgid "Already have an account? <0>Sign in instead</0>"
 msgstr "Već imate račun? <0>Prijavite se</0>"
@@ -1731,6 +1819,10 @@ msgstr "Već imate račun? <0>Prijavite se</0>"
 #: apps/remix/app/components/tables/organisation-billing-invoices-table.tsx
 msgid "Amount"
 msgstr "Iznos"
+
+#: packages/lib/jobs/definitions/emails/send-account-disabled-email.handler.ts
+msgid "An account was automatically disabled"
+msgstr "Račun je automatski onemogućen"
 
 #: packages/email/templates/document-super-delete.tsx
 msgid "An admin has deleted your document \"{documentName}\"."
@@ -1763,6 +1855,8 @@ msgstr "E-mail s ovom adresom već postoji."
 #: apps/remix/app/components/dialogs/organisation-email-create-dialog.tsx
 #: apps/remix/app/components/dialogs/token-create-dialog.tsx
 #: apps/remix/app/components/forms/avatar-image.tsx
+#: apps/remix/app/components/forms/password-setup-request-button.tsx
+#: apps/remix/app/components/forms/password-setup-request.tsx
 #: apps/remix/app/components/forms/password.tsx
 #: apps/remix/app/components/forms/reset-password.tsx
 #: apps/remix/app/components/forms/signup.tsx
@@ -1854,7 +1948,7 @@ msgstr "Došlo je do pogreške pri distribuciji dokumenta."
 #: apps/remix/app/components/dialogs/envelopes-bulk-download-dialog.tsx
 #: apps/remix/app/components/dialogs/envelopes-bulk-download-dialog.tsx
 msgid "An error occurred while downloading the documents."
-msgstr ""
+msgstr "Došlo je do pogreške prilikom preuzimanja dokumenata."
 
 #: apps/remix/app/components/dialogs/template-direct-link-dialog.tsx
 msgid "An error occurred while enabling direct link signing."
@@ -2042,6 +2136,16 @@ msgstr "Došlo je do nepoznate pogreške pri brisanju mape."
 msgid "An unknown error occurred while moving the folder."
 msgstr "Došlo je do nepoznate pogreške pri premještanju mape."
 
+#: apps/remix/app/components/general/analytics/analytics-page-header.tsx
+#: apps/remix/app/components/general/app-nav-mobile.tsx
+#: apps/remix/app/components/general/app-nav-mobile.tsx
+#: apps/remix/app/components/general/org-menu-switcher.tsx
+#: apps/remix/app/routes/_authenticated+/o.$orgUrl._index.tsx
+#: apps/remix/app/routes/_authenticated+/o.$orgUrl.analytics._index.tsx
+#: apps/remix/app/routes/_authenticated+/t.$teamUrl+/analytics._index.tsx
+msgid "Analytics"
+msgstr "Analitika"
+
 #: apps/remix/app/components/dialogs/ai-field-detection-dialog.tsx
 msgid "Analyzing page layout"
 msgstr "Analiza rasporeda stranice"
@@ -2049,6 +2153,10 @@ msgstr "Analiza rasporeda stranice"
 #: apps/remix/app/components/dialogs/ai-recipient-detection-dialog.tsx
 msgid "Analyzing pages"
 msgstr "Analiza stranica"
+
+#: apps/remix/app/components/forms/signup.tsx
+msgid "and"
+msgstr "i"
 
 #: apps/remix/app/routes/_authenticated+/inbox.tsx
 msgid "Any documents that you have been invited to will appear here"
@@ -2094,9 +2202,17 @@ msgstr "Korištenje API-ja približava se ograničenjima poštene upotrebe"
 msgid "App Version"
 msgstr "Verzija aplikacije"
 
+#: apps/remix/app/components/general/analytics/analytics-range-picker.tsx
+msgid "Apply"
+msgstr "Primijeni"
+
 #: apps/remix/app/components/general/document-signing/csc-recipient-signing-in-progress-page.tsx
 msgid "Applying your signature"
 msgstr "Primjena vašeg potpisa"
+
+#: apps/remix/app/components/general/envelope-signing/envelope-signing-csc-status.tsx
+msgid "Applying your signature..."
+msgstr "Primjenjuje se Vaš potpis..."
 
 #: apps/remix/app/components/general/organisations/organisation-quota-banner.tsx
 msgid "Approaching fair use limit"
@@ -2330,6 +2446,10 @@ msgstr "Potrebna je autentifikacija"
 msgid "Authenticator app"
 msgstr "Aplikacija za autentifikaciju"
 
+#: apps/remix/app/components/general/envelope-signing/envelope-signing-csc-status.tsx
+msgid "Authorise your signature with your signing provider in the popup window"
+msgstr "Autorizirajte svoj potpis kod svojeg pružatelja usluge potpisivanja u skočnom prozoru"
+
 #: apps/remix/app/components/general/document-signing/document-signing-auto-sign.tsx
 msgid "Automatically sign fields"
 msgstr "Automatski potpiši polja"
@@ -2378,6 +2498,7 @@ msgid "Backport email transport"
 msgstr "Backport e-mail transport"
 
 #: apps/remix/app/components/forms/2fa/disable-authenticator-app-dialog.tsx
+#: apps/remix/app/components/forms/2fa/two-factor-code-dialog.tsx
 #: apps/remix/app/components/forms/signin.tsx
 msgid "Backup Code"
 msgstr "Rezervni kôd"
@@ -2442,7 +2563,7 @@ msgstr "Obrub"
 
 #: apps/remix/app/components/dialogs/branding-preferences-reset-dialog.tsx
 msgid "Border radius"
-msgstr ""
+msgstr "Zaobljenost rubova"
 
 #: apps/remix/app/components/forms/branding-preferences-form.tsx
 msgid "Border Radius"
@@ -2458,7 +2579,7 @@ msgstr "Dno"
 
 #: apps/remix/app/components/general/settings-upsell/branding-upsell.tsx
 msgid "Brand accent"
-msgstr ""
+msgstr "Naglasak brenda"
 
 #: apps/remix/app/components/forms/branding-preferences-form.tsx
 msgid "Brand Colours"
@@ -2466,11 +2587,15 @@ msgstr "Boje brenda"
 
 #: apps/remix/app/components/dialogs/branding-preferences-reset-dialog.tsx
 msgid "Brand colours, including background, foreground, primary, and border colours"
-msgstr ""
+msgstr "Boje brenda, uključujući boje pozadine, teksta, primarnu boju i boju obruba"
 
 #: apps/remix/app/components/forms/branding-preferences-form.tsx
 msgid "Brand Details"
 msgstr "Detalji brenda"
+
+#: apps/remix/app/components/forms/branding-preferences-form.tsx
+msgid "Brand details must be less than 500 characters"
+msgstr "Detalji o brendu moraju imati manje od 500 znakova"
 
 #: apps/remix/app/components/forms/branding-preferences-form.tsx
 msgid "Brand Website"
@@ -2478,7 +2603,7 @@ msgstr "Web-mjesto brenda"
 
 #: apps/remix/app/components/dialogs/branding-preferences-reset-dialog.tsx
 msgid "Brand website and brand details"
-msgstr ""
+msgstr "Web-mjesto brenda i detalji o brendu"
 
 #: apps/remix/app/components/general/admin-global-settings-section.tsx
 #: packages/lib/utils/settings-nav.ts
@@ -2582,9 +2707,10 @@ msgstr "Nastavkom korištenja usluge elektroničkog potpisa koju pruža Documens
 msgid "By proceeding with your electronic signature, you acknowledge and consent that it will be used to sign the given document and holds the same legal validity as a handwritten signature. By completing the electronic signing process, you affirm your understanding and acceptance of these conditions."
 msgstr "Nastavkom elektroničkog potpisivanja potvrđujete i pristajete da će vaš potpis biti korišten za potpisivanje danog dokumenta te ima istu pravnu valjanost kao vlastoručni potpis. Dovršetkom postupka elektroničkog potpisivanja potvrđujete svoje razumijevanje i prihvaćanje ovih uvjeta."
 
+#. placeholder {0}: availableLegalLinks.map((link, index) => ( <Fragment key={link.href}> {index > 0 && ( <> {' '} <Trans>and</Trans>{' '} </> )} <Link to={link.href} target="_blank" rel="noopener noreferrer" className="text-documenso-700 duration-200 hover:opacity-70" > {link.label} </Link> </Fragment> ))
 #: apps/remix/app/components/forms/signup.tsx
-msgid "By proceeding, you agree to our <0>Terms of Service</0> and <1>Privacy Policy</1>."
-msgstr "Nastavkom prihvaćate naše <0>Uvjete korištenja</0> i <1>Pravila privatnosti</1>."
+msgid "By proceeding, you agree to our {0}."
+msgstr "Nastavkom prihvaćate naše {0}."
 
 #: apps/remix/app/routes/_unauthenticated+/articles.signature-disclosure.tsx
 msgid "By using the electronic signature feature, you are consenting to conduct transactions and receive disclosures electronically. You acknowledge that your electronic signature on documents is binding and that you accept the terms outlined in the documents you are signing."
@@ -2603,6 +2729,7 @@ msgstr "Ne možete pronaći nekoga?"
 #: apps/remix/app/components/dialogs/admin-organisation-member-delete-dialog.tsx
 #: apps/remix/app/components/dialogs/admin-organisation-member-update-dialog.tsx
 #: apps/remix/app/components/dialogs/admin-organisation-sync-subscription-dialog.tsx
+#: apps/remix/app/components/dialogs/admin-recipient-delete-dialog.tsx
 #: apps/remix/app/components/dialogs/admin-swap-subscription-dialog.tsx
 #: apps/remix/app/components/dialogs/admin-team-member-delete-dialog.tsx
 #: apps/remix/app/components/dialogs/admin-user-create-dialog.tsx
@@ -2679,9 +2806,12 @@ msgstr "Ne možete pronaći nekoga?"
 #: apps/remix/app/components/dialogs/token-delete-dialog.tsx
 #: apps/remix/app/components/dialogs/webhook-create-dialog.tsx
 #: apps/remix/app/components/dialogs/webhook-delete-dialog.tsx
+#: apps/remix/app/components/embed/embed-popup-auth.tsx
 #: apps/remix/app/components/forms/2fa/enable-authenticator-app-dialog.tsx
 #: apps/remix/app/components/forms/2fa/view-recovery-codes-dialog.tsx
+#: apps/remix/app/components/general/analytics/analytics-range-picker.tsx
 #: apps/remix/app/components/general/document-signing/document-signing-auth-2fa.tsx
+#: apps/remix/app/components/general/document-signing/document-signing-auth-account.tsx
 #: apps/remix/app/components/general/document-signing/document-signing-auth-account.tsx
 #: apps/remix/app/components/general/document-signing/document-signing-auth-passkey.tsx
 #: apps/remix/app/components/general/document-signing/document-signing-auth-passkey.tsx
@@ -2725,6 +2855,7 @@ msgid "Cancel Documents"
 msgstr "Otkaži dokumente"
 
 #: apps/remix/app/components/dialogs/envelopes-bulk-download-dialog.tsx
+#: apps/remix/app/components/general/analytics/analytics-status-breakdown-card.tsx
 #: apps/remix/app/components/general/document/document-status.tsx
 #: apps/remix/app/components/general/envelope-editor/envelope-editor-header.tsx
 #: packages/lib/constants/document.ts
@@ -2739,7 +2870,7 @@ msgstr "Korisnik je otkazao radnju"
 msgid "Cannot remove document"
 msgstr "Nije moguće ukloniti dokument"
 
-#: apps/remix/app/components/general/envelope-editor/envelope-editor-recipient-form.tsx
+#: apps/remix/app/components/general/envelope-editor/recipient-step-list.tsx
 #: packages/ui/primitives/document-flow/add-signers.tsx
 msgid "Cannot remove signer"
 msgstr "Nije moguće ukloniti potpisnika"
@@ -2750,7 +2881,7 @@ msgstr "Nije moguće učitavati stavke nakon što je dokument poslan"
 
 #: apps/remix/app/routes/_authenticated+/admin+/organisations.$id.tsx
 msgid "Capabilities enabled for this organisation."
-msgstr ""
+msgstr "Mogućnosti omogućene za ovu organizaciju."
 
 #: packages/lib/constants/recipient-roles.ts
 msgctxt "Recipient role name"
@@ -2784,14 +2915,14 @@ msgstr "Sredina"
 #: apps/remix/app/routes/_authenticated+/o.$orgUrl.settings.certificates.tsx
 #: apps/remix/app/routes/_authenticated+/t.$teamUrl+/settings.certificates.tsx
 msgid "Certificate preferences updated"
-msgstr ""
+msgstr "Postavke certifikata su ažurirane"
 
 #: apps/remix/app/routes/_authenticated+/o.$orgUrl.settings.certificates.tsx
 #: apps/remix/app/routes/_authenticated+/t.$teamUrl+/settings.certificates.tsx
 #: packages/lib/utils/settings-nav.ts
 #: packages/lib/utils/settings-nav.ts
 msgid "Certificates"
-msgstr ""
+msgstr "Certifikati"
 
 #: apps/remix/app/components/general/envelope-editor/envelope-editor-fields-page-renderer.tsx
 msgid "Change Field Type"
@@ -2821,6 +2952,11 @@ msgstr "Ograničenje broja znakova"
 #: apps/remix/app/routes/_authenticated+/admin+/stats.tsx
 msgid "Charts"
 msgstr "Grafikoni"
+
+#: apps/remix/app/components/forms/password-setup-request-button.tsx
+#: apps/remix/app/components/forms/password-setup-request.tsx
+msgid "Check your email"
+msgstr "Provjerite svoju e-poštu"
 
 #: apps/remix/app/components/dialogs/ai-field-detection-dialog.tsx
 #: apps/remix/app/components/general/envelope-editor/envelope-editor-fields-drag-drop.tsx
@@ -2892,7 +3028,7 @@ msgstr "Prava"
 
 #: apps/remix/app/components/general/filter-pill.tsx
 msgid "Clear"
-msgstr ""
+msgstr "Očisti"
 
 #: packages/ui/primitives/data-table.tsx
 msgid "Clear filters"
@@ -2920,8 +3056,7 @@ msgstr "Kliknite ovdje za ponovni pokušaj"
 msgid "Click here to upload"
 msgstr "Kliknite ovdje za učitavanje"
 
-#: apps/remix/app/components/general/avatar-with-recipient.tsx
-#: apps/remix/app/components/general/avatar-with-recipient.tsx
+#: apps/remix/app/components/general/stack-avatars-with-tooltip.tsx
 msgid "Click to copy signing link for sending to recipient"
 msgstr "Kliknite za kopiranje poveznice za potpisivanje radi slanja primatelju"
 
@@ -2973,6 +3108,7 @@ msgstr "Client Secret je obavezan"
 #: apps/remix/app/components/general/billing-plans.tsx
 #: apps/remix/app/components/general/document-signing/document-signing-auth-2fa.tsx
 #: apps/remix/app/components/general/document-signing/document-signing-auth-passkey.tsx
+#: apps/remix/app/components/general/document-signing/document-signing-auth-set-password.tsx
 #: apps/remix/app/components/general/document/document-recipient-link-copy-dialog.tsx
 #: apps/remix/app/components/general/organisations/organisation-quota-banner.tsx
 #: packages/ui/primitives/dialog.tsx
@@ -2995,11 +3131,11 @@ msgstr "Komunikacija"
 
 #: apps/remix/app/components/general/settings-upsell/branding-upsell.tsx
 msgid "Company details"
-msgstr ""
+msgstr "Podaci o tvrtki"
 
 #: apps/remix/app/components/general/settings-upsell/branding-upsell.tsx
 msgid "Company details and website in email footers"
-msgstr ""
+msgstr "Podaci o tvrtki i web-mjesto u podnožju e-poruka"
 
 #: apps/remix/app/components/dialogs/organisation-create-dialog.tsx
 msgid "Compare all plans and features in detail"
@@ -3019,17 +3155,28 @@ msgstr "Dovrši"
 msgid "Complete Document"
 msgstr "Dovrši dokument"
 
+#: apps/remix/app/components/embed/embed-popup-auth.tsx
+msgid "Complete sign in in the popup window"
+msgstr "Dovršite prijavu u skočnom prozoru"
+
+#: apps/remix/app/components/embed/embed-csc-authentication-required.tsx
+msgid "Complete sign in with your signing provider in the popup window"
+msgstr "Dovršite prijavu kod svojeg pružatelja usluge potpisivanja u skočnom prozoru"
+
 #: apps/remix/app/components/general/document-signing/document-signing-page-view-v1.tsx
 msgid "Complete the fields for the following signers."
 msgstr "Ispunite polja za sljedeće potpisnike."
 
 #: apps/remix/app/components/dialogs/envelopes-bulk-download-dialog.tsx
 #: apps/remix/app/components/embed/multisign/multi-sign-document-list.tsx
+#: apps/remix/app/components/general/analytics/analytics-activity-table-card.tsx
+#: apps/remix/app/components/general/analytics/analytics-status-breakdown-card.tsx
 #: apps/remix/app/components/general/document/document-status.tsx
 #: apps/remix/app/components/general/envelope-editor/envelope-editor-header.tsx
 #: apps/remix/app/components/general/stack-avatars-with-tooltip.tsx
 #: apps/remix/app/components/general/template/template-page-view-documents-table.tsx
 #: apps/remix/app/components/tables/admin-document-jobs-table.tsx
+#: apps/remix/app/components/tables/admin-document-recipients-table.tsx
 #: apps/remix/app/components/tables/organisation-insights-table.tsx
 #: packages/email/template-components/template-document-completed.tsx
 #: packages/email/template-components/template-document-recipient-signed.tsx
@@ -3038,7 +3185,7 @@ msgstr "Ispunite polja za sljedeće potpisnike."
 msgid "Completed"
 msgstr "Dovršeno"
 
-#: apps/remix/app/routes/_authenticated+/admin+/documents.$id.tsx
+#: apps/remix/app/components/tables/admin-document-recipients-table.tsx
 msgid "Completed At"
 msgstr "Datum dovršetka"
 
@@ -3059,6 +3206,11 @@ msgstr "Dovršeni dokumenti"
 #: apps/remix/app/components/general/document/document-certificate-qr-view.tsx
 msgid "Completed on {formattedDate}"
 msgstr "Dovršeno {formattedDate}"
+
+#: apps/remix/app/components/general/analytics/analytics-activity-table-card.tsx
+#: apps/remix/app/components/general/analytics/analytics-overview-cards.tsx
+msgid "Completion rate"
+msgstr "Stopa dovršenosti"
 
 #: packages/lib/constants/pdf-viewer-i18n.ts
 #: packages/lib/constants/pdf-viewer-i18n.ts
@@ -3179,6 +3331,10 @@ msgstr "Potvrdite e-mail"
 msgid "Confirmation email sent"
 msgstr "E-mail za potvrdu poslan"
 
+#: apps/remix/app/routes/embed+/auth+/popup.tsx
+msgid "Connecting to the embed..."
+msgstr "Povezivanje s ugrađenim prikazom..."
+
 #: apps/remix/app/routes/_unauthenticated+/articles.signature-disclosure.tsx
 msgid "Consent to Electronic Transactions"
 msgstr "Pristanak na elektroničke transakcije"
@@ -3190,7 +3346,7 @@ msgstr "Kontaktni podaci"
 #: apps/remix/app/components/general/settings-upsell/email-domains-upsell.tsx
 #: apps/remix/app/components/general/settings-upsell/sso-portal-upsell.tsx
 msgid "Contact Sales"
-msgstr ""
+msgstr "Kontaktirajte prodaju"
 
 #: apps/remix/app/components/dialogs/organisation-create-dialog.tsx
 msgid "Contact sales here"
@@ -3202,7 +3358,7 @@ msgstr "Kontaktirajte nas"
 
 #: apps/remix/app/components/general/settings-upsell/settings-upsell-card.tsx
 msgid "Contact your organisation owner to upgrade plans."
-msgstr ""
+msgstr "Obratite se vlasniku svoje organizacije radi nadogradnje plana."
 
 #: apps/remix/app/components/general/admin-site-banner-section.tsx
 msgid "Content"
@@ -3217,6 +3373,7 @@ msgstr "Kontekst"
 #: apps/remix/app/components/dialogs/passkey-create-dialog.tsx
 #: apps/remix/app/components/dialogs/public-profile-template-manage-dialog.tsx
 #: apps/remix/app/components/embed/authoring/configure-document-view.tsx
+#: apps/remix/app/components/embed/embed-popup-auth.tsx
 #: apps/remix/app/components/general/billing-plans.tsx
 #: apps/remix/app/components/general/document-signing/document-signing-form.tsx
 #: apps/remix/app/routes/_unauthenticated+/organisation.invite.$token.tsx
@@ -3224,6 +3381,7 @@ msgstr "Kontekst"
 #: apps/remix/app/routes/_unauthenticated+/team.verify.email.$token.tsx
 #: apps/remix/app/routes/_unauthenticated+/team.verify.email.$token.tsx
 #: apps/remix/app/routes/_unauthenticated+/verify-email.$token.tsx
+#: apps/remix/app/routes/embed+/auth+/popup.tsx
 #: packages/ui/primitives/document-flow/document-flow-root.tsx
 msgid "Continue"
 msgstr "Nastavi"
@@ -3256,9 +3414,26 @@ msgstr "Nastavite pregledom dokumenta."
 msgid "Continue to login"
 msgstr "Nastavi na prijavu"
 
+#: apps/remix/app/routes/embed+/auth+/popup.tsx
+msgid "Continue to your signing provider"
+msgstr "Nastavite do svojeg pružatelja usluge potpisivanja"
+
+#. placeholder {0}: oidcProviderLabel || 'OIDC'
+#: apps/remix/app/routes/embed+/auth+/popup.tsx
+msgid "Continue with {0}"
+msgstr "Nastavi s {0}"
+
+#: apps/remix/app/routes/embed+/auth+/popup.tsx
+msgid "Continue with Google"
+msgstr "Nastavi s Googleom"
+
+#: apps/remix/app/routes/embed+/auth+/popup.tsx
+msgid "Continue with Microsoft"
+msgstr "Nastavi s Microsoftom"
+
 #: apps/remix/app/components/general/settings-upsell/sso-portal-upsell.tsx
 msgid "Continue with SSO"
-msgstr ""
+msgstr "Nastavi s SSO-om"
 
 #: apps/remix/app/components/forms/reminder-preferences-form.tsx
 msgid "Controls how long recipients have to complete signing before the document expires. After expiration, recipients can no longer sign the document."
@@ -3324,10 +3499,10 @@ msgstr "Polje kopirano u međuspremnik"
 #: apps/remix/app/components/dialogs/template-direct-link-dialog.tsx
 #: apps/remix/app/components/forms/public-profile-form.tsx
 #: apps/remix/app/components/general/admin-license-card.tsx
-#: apps/remix/app/components/general/avatar-with-recipient.tsx
 #: apps/remix/app/components/general/document/document-page-view-recipients.tsx
 #: apps/remix/app/components/general/document/document-recipient-link-copy-dialog.tsx
 #: apps/remix/app/components/general/document/document-recipient-link-copy-dialog.tsx
+#: apps/remix/app/components/general/stack-avatars-with-tooltip.tsx
 #: apps/remix/app/components/general/template/template-direct-link-badge.tsx
 #: apps/remix/app/components/general/webhook-logs-sheet.tsx
 #: apps/remix/app/components/tables/admin-document-logs-table.tsx
@@ -3348,7 +3523,7 @@ msgstr "Kopiraj"
 
 #: apps/remix/app/components/general/admin-license-card.tsx
 msgid "Copy license key"
-msgstr ""
+msgstr "Kopiraj licencni ključ"
 
 #: packages/ui/components/document/document-share-button.tsx
 msgid "Copy Link"
@@ -3381,7 +3556,11 @@ msgstr "Kopiraj vrijednost"
 
 #: apps/remix/app/components/dialogs/token-create-dialog.tsx
 msgid "Copy your token now. For security reasons you will not be able to see it again."
-msgstr ""
+msgstr "Kopirajte svoj token sada. Iz sigurnosnih razloga nećete ga moći ponovno vidjeti."
+
+#: apps/remix/app/routes/embed+/auth+/popup.tsx
+msgid "Could not connect to the Documenso embed. Close this window and try again."
+msgstr "Povezivanje s Documenso ugrađenim prikazom nije uspjelo. Zatvorite ovaj prozor i pokušajte ponovno."
 
 #: apps/remix/app/components/general/organisation-usage-reset-button.tsx
 msgid "Counter reset."
@@ -3451,7 +3630,7 @@ msgstr "Stvorite organizaciju za početak."
 
 #: apps/remix/app/routes/_authenticated+/t.$teamUrl+/settings.tokens.tsx
 msgid "Create and manage API tokens. See our <0>documentation</0> for more information."
-msgstr ""
+msgstr "Izradite API tokene i upravljajte njima. Više informacija potražite u našoj <0>dokumentaciji</0>."
 
 #: apps/remix/app/components/dialogs/template-use-dialog.tsx
 msgid "Create and send"
@@ -3459,7 +3638,7 @@ msgstr "Stvori i pošalji"
 
 #: apps/remix/app/components/dialogs/token-create-dialog.tsx
 msgid "Create API token"
-msgstr ""
+msgstr "Izradi API token"
 
 #: apps/remix/app/components/dialogs/template-use-dialog.tsx
 msgid "Create as draft"
@@ -3658,7 +3837,7 @@ msgstr "Stvaranje predloška"
 
 #: packages/lib/constants/i18n.ts
 msgid "Croatian"
-msgstr ""
+msgstr "Hrvatski"
 
 #: apps/remix/app/routes/_authenticated+/o.$orgUrl.settings.branding.tsx
 #: apps/remix/app/routes/_authenticated+/t.$teamUrl+/settings.branding.tsx
@@ -3709,15 +3888,23 @@ msgstr "Prilagođena datoteka od {0} MB"
 
 #: apps/remix/app/components/dialogs/branding-preferences-reset-dialog.tsx
 msgid "Custom branding enabled setting"
-msgstr ""
+msgstr "Postavka omogućenog prilagođenog brendiranja"
 
 #: apps/remix/app/components/dialogs/branding-preferences-reset-dialog.tsx
 msgid "Custom CSS"
-msgstr ""
+msgstr "Prilagođeni CSS"
 
 #: apps/remix/app/components/forms/branding-preferences-form.tsx
 msgid "Custom CSS is sanitised on save. Layout-breaking properties, remote URLs, and pseudo-elements are stripped automatically. Any rules dropped during sanitisation will be shown after you save."
 msgstr "Prilagođeni CSS sanitizira se pri spremanju. Svojstva koja narušavaju izgled, udaljeni URL-ovi i pseudoelementi automatski se uklanjaju. Sva pravila odbačena tijekom sanitizacije prikazat će se nakon spremanja."
+
+#: apps/remix/app/components/forms/branding-preferences-form.tsx
+msgid "Custom CSS must be less than 10,000 characters"
+msgstr "Prilagođeni CSS mora imati manje od 10.000 znakova"
+
+#: apps/remix/app/components/dialogs/template-use-dialog.tsx
+msgid "Custom document name"
+msgstr "Prilagođeni naziv dokumenta"
 
 #: packages/ui/components/document/expiration-period-picker.tsx
 msgid "Custom duration"
@@ -3733,11 +3920,23 @@ msgstr "Prilagođene grupe organizacije"
 
 #: apps/remix/app/components/general/settings-org-switcher.tsx
 msgid "Custom Plan"
-msgstr ""
+msgstr "Prilagođeni plan"
+
+#: apps/remix/app/utils/analytics.ts
+msgid "Custom range"
+msgstr "Prilagođeno razdoblje"
+
+#: apps/remix/app/components/general/analytics/analytics-range-picker.tsx
+msgid "Custom range…"
+msgstr "Prilagođeno razdoblje…"
 
 #: apps/remix/app/components/forms/branding-preferences-form.tsx
 msgid "Customise the colours used on your signing pages."
 msgstr "Prilagodite boje koje se koriste na vašim stranicama za potpisivanje."
+
+#: apps/remix/app/components/general/analytics/analytics-documents-over-time-card.tsx
+msgid "Daily"
+msgstr "Dnevno"
 
 #: apps/remix/app/routes/_authenticated+/admin+/organisations.$id.tsx
 msgid "Danger Zone"
@@ -3755,6 +3954,7 @@ msgstr "Nadzorna ploča"
 #: apps/remix/app/components/dialogs/ai-field-detection-dialog.tsx
 #: apps/remix/app/components/general/document-signing/document-signing-date-field.tsx
 #: apps/remix/app/components/general/envelope-editor/envelope-editor-fields-drag-drop.tsx
+#: apps/remix/app/components/tables/admin-document-recipient-item-table.tsx
 #: apps/remix/app/components/tables/settings-security-activity-table.tsx
 #: packages/lib/utils/fields.ts
 #: packages/ui/primitives/document-flow/add-fields.tsx
@@ -3777,6 +3977,10 @@ msgstr "Format datuma"
 #: packages/ui/primitives/template-flow/add-template-settings.tsx
 msgid "Date Format"
 msgstr "Format datuma"
+
+#: apps/remix/app/components/general/analytics/analytics-range-picker.tsx
+msgid "Date range"
+msgstr "Vremensko razdoblje"
 
 #: apps/remix/app/components/general/envelope-editor/envelope-editor-fields-page.tsx
 msgid "Date Settings"
@@ -3806,7 +4010,7 @@ msgstr "Zadana boja obruba."
 
 #: apps/remix/app/components/dialogs/document-preferences-reset-dialog.tsx
 msgid "Default date format"
-msgstr ""
+msgstr "Zadani format datuma"
 
 #: apps/remix/app/components/forms/document-preferences-form.tsx
 msgid "Default Date Format"
@@ -3814,7 +4018,7 @@ msgstr "Zadani format datuma"
 
 #: apps/remix/app/components/dialogs/document-preferences-reset-dialog.tsx
 msgid "Default document language"
-msgstr ""
+msgstr "Zadani jezik dokumenta"
 
 #: apps/remix/app/components/forms/document-preferences-form.tsx
 msgid "Default Document Language"
@@ -3822,7 +4026,7 @@ msgstr "Zadani jezik dokumenta"
 
 #: apps/remix/app/components/dialogs/document-preferences-reset-dialog.tsx
 msgid "Default document visibility"
-msgstr ""
+msgstr "Zadana vidljivost dokumenta"
 
 #: apps/remix/app/components/forms/document-preferences-form.tsx
 msgid "Default Document Visibility"
@@ -3850,7 +4054,7 @@ msgstr "Zadana uloga u organizaciji za nove korisnike"
 
 #: apps/remix/app/components/dialogs/document-preferences-reset-dialog.tsx
 msgid "Default recipients"
-msgstr ""
+msgstr "Zadani primatelji"
 
 #: apps/remix/app/components/forms/document-preferences-form.tsx
 msgid "Default Recipients"
@@ -3866,7 +4070,7 @@ msgstr "Zadane postavke primijenjene na ovaj tim. Naslijeđene vrijednosti dolaz
 
 #: apps/remix/app/components/dialogs/document-preferences-reset-dialog.tsx
 msgid "Default signature settings"
-msgstr ""
+msgstr "Zadane postavke potpisa"
 
 #: apps/remix/app/components/forms/document-preferences-form.tsx
 msgid "Default Signature Settings"
@@ -3878,7 +4082,7 @@ msgstr "Zadani podsjetnici za potpisivanje"
 
 #: apps/remix/app/components/dialogs/document-preferences-reset-dialog.tsx
 msgid "Default time zone"
-msgstr ""
+msgstr "Zadana vremenska zona"
 
 #: apps/remix/app/components/forms/document-preferences-form.tsx
 msgid "Default Time Zone"
@@ -4070,7 +4274,7 @@ msgstr "Izbrišite korisnički račun i sav njegov sadržaj. Ova radnja je nepov
 
 #: apps/remix/app/components/dialogs/token-delete-dialog.tsx
 msgid "Delete token"
-msgstr ""
+msgstr "Izbriši token"
 
 #: apps/remix/app/components/dialogs/webhook-delete-dialog.tsx
 msgid "Delete Webhook"
@@ -4310,7 +4514,7 @@ msgstr "DNS zapisi"
 
 #: apps/remix/app/routes/_unauthenticated+/team.verify.email.$token.tsx
 msgid "Do not proceed if you are unsure about this request."
-msgstr ""
+msgstr "Nemojte nastaviti ako niste sigurni u vezi s ovim zahtjevom."
 
 #: apps/remix/app/components/general/admin-license-card.tsx
 msgid "Documenso License"
@@ -4367,11 +4571,11 @@ msgstr "Svi dokumenti"
 
 #: apps/remix/app/utils/toast-error-messages.ts
 msgid "Document already completed"
-msgstr ""
+msgstr "Dokument je već dovršen"
 
 #: apps/remix/app/components/general/envelope-signing/envelope-signing-complete-dialog.tsx
 msgid "Document already signed"
-msgstr ""
+msgstr "Dokument je već potpisan"
 
 #: apps/remix/app/routes/_recipient+/sign.$token+/complete.tsx
 msgid "Document Approved"
@@ -4407,14 +4611,14 @@ msgctxt "Audit log format"
 msgid "Document completed"
 msgstr "Dokument dovršen"
 
+#: apps/remix/app/components/embed/embed-document-completed.tsx
+msgid "Document Completed"
+msgstr "Dokument dovršen"
+
 #: packages/ui/components/document/document-email-checkboxes.tsx
 #: packages/ui/components/document/document-email-checkboxes.tsx
 msgid "Document completed email"
 msgstr "E-mail o dovršenom dokumentu"
-
-#: apps/remix/app/components/embed/embed-document-completed.tsx
-msgid "Document Completed!"
-msgstr "Dokument dovršen!"
 
 #: apps/remix/app/utils/toast-error-messages.ts
 msgid "Document conversion is temporarily unavailable. Please try again shortly or upload a PDF."
@@ -4501,7 +4705,7 @@ msgstr "Uređivač dokumenata"
 
 #: apps/remix/app/components/general/document/document-status.tsx
 msgid "Document expired"
-msgstr ""
+msgstr "Dokument je istekao"
 
 #: packages/lib/utils/document-audit-logs.ts
 msgctxt "Audit log format"
@@ -4554,9 +4758,22 @@ msgctxt "Audit log format"
 msgid "Document moved to team"
 msgstr "Dokument premješten u tim"
 
+#: apps/remix/app/components/dialogs/template-use-dialog.tsx
+#: apps/remix/app/components/dialogs/template-use-dialog.tsx
+msgid "Document name"
+msgstr "Naziv dokumenta"
+
+#: apps/remix/app/components/dialogs/template-use-dialog.tsx
+msgid "Document name is required"
+msgstr "Naziv dokumenta je obavezan"
+
+#: apps/remix/app/components/dialogs/template-use-dialog.tsx
+msgid "Document name is too long"
+msgstr "Naziv dokumenta je predug"
+
 #: apps/remix/app/utils/toast-error-messages.ts
 msgid "Document no longer available"
-msgstr ""
+msgstr "Dokument više nije dostupan"
 
 #: apps/remix/app/routes/_recipient+/sign.$token+/complete.tsx
 msgid "Document no longer available to sign"
@@ -4564,7 +4781,7 @@ msgstr "Dokument više nije dostupan za potpisivanje"
 
 #: apps/remix/app/utils/toast-error-messages.ts
 msgid "Document not ready"
-msgstr ""
+msgstr "Dokument nije spreman"
 
 #: packages/lib/utils/document-audit-logs.ts
 msgctxt "Audit log format"
@@ -4641,6 +4858,10 @@ msgstr "Postupak potpisivanja dokumenta bit će otkazan"
 #: apps/remix/app/routes/_authenticated+/t.$teamUrl+/documents.$id.logs.tsx
 msgid "Document status"
 msgstr "Status dokumenta"
+
+#: apps/remix/app/components/general/analytics/analytics-status-breakdown-card.tsx
+msgid "Document status distribution"
+msgstr "Raspodjela statusa dokumenata"
 
 #: apps/remix/app/components/general/admin-global-settings-section.tsx
 msgid "Document timezone"
@@ -4730,9 +4951,7 @@ msgstr "Dokumentacija"
 #: apps/remix/app/components/general/claim-limit-fields.tsx
 #: apps/remix/app/components/general/envelope-editor/envelope-editor-upload-page.tsx
 #: apps/remix/app/components/general/organisation-usage-panel.tsx
-#: apps/remix/app/components/general/skeletons/document-edit-skeleton.tsx
 #: apps/remix/app/components/general/use-admin-search-categories.ts
-#: apps/remix/app/components/general/user-profile-skeleton.tsx
 #: apps/remix/app/components/general/user-profile-timur.tsx
 #: apps/remix/app/components/tables/admin-dashboard-users-table.tsx
 #: apps/remix/app/components/tables/admin-organisation-stats-table.tsx
@@ -4761,6 +4980,10 @@ msgstr "Dokumenti otkazani"
 msgid "Documents Completed"
 msgstr "Dovršeni dokumenti"
 
+#: apps/remix/app/components/general/analytics/analytics-documents-over-time-card.tsx
+msgid "Documents created"
+msgstr "Izrađeni dokumenti"
+
 #: apps/remix/app/components/tables/organisation-insights-table.tsx
 msgid "Documents Created"
 msgstr "Stvoreni dokumenti"
@@ -4769,13 +4992,21 @@ msgstr "Stvoreni dokumenti"
 msgid "Documents created from template"
 msgstr "Dokumenti stvoreni iz predloška"
 
+#: apps/remix/app/components/general/analytics/analytics-template-usage-card.tsx
+msgid "Documents created from templates"
+msgstr "Dokumenti izrađeni iz predložaka"
+
+#: apps/remix/app/components/general/analytics/analytics-status-breakdown-card.tsx
+msgid "Documents created in this period"
+msgstr "Dokumenti izrađeni u ovom razdoblju"
+
 #: apps/remix/app/components/dialogs/envelopes-bulk-delete-dialog.tsx
 msgid "Documents deleted"
 msgstr "Dokumenti izbrisani"
 
 #: apps/remix/app/components/dialogs/envelopes-bulk-download-dialog.tsx
 msgid "Documents downloaded"
-msgstr ""
+msgstr "Dokumenti preuzeti"
 
 #: apps/remix/app/components/dialogs/envelopes-bulk-cancel-dialog.tsx
 msgid "Documents partially cancelled"
@@ -4787,15 +5018,39 @@ msgstr "Dokumenti djelomično izbrisani"
 
 #: apps/remix/app/components/dialogs/envelopes-bulk-download-dialog.tsx
 msgid "Documents partially downloaded"
-msgstr ""
+msgstr "Dokumenti djelomično preuzeti"
 
 #: apps/remix/app/routes/_authenticated+/admin+/stats.tsx
 msgid "Documents Received"
 msgstr "Primljeni dokumenti"
 
+#: apps/remix/app/components/general/analytics/analytics-overview-cards.tsx
+msgid "Documents sent"
+msgstr "Poslani dokumenti"
+
+#: apps/remix/app/routes/_authenticated+/t.$teamUrl+/analytics._index.tsx
+msgid "Documents sent by each member in this period"
+msgstr "Dokumenti koje je poslao svaki član u ovom razdoblju"
+
+#: apps/remix/app/routes/_authenticated+/o.$orgUrl.analytics._index.tsx
+msgid "Documents sent by each team in this period"
+msgstr "Dokumenti koje je poslao svaki tim u ovom razdoblju"
+
+#: apps/remix/app/components/tables/inbox-table.tsx
+msgid "Documents that have been cancelled will appear here"
+msgstr "Ovdje će se prikazati otkazani dokumenti"
+
+#: apps/remix/app/components/tables/inbox-table.tsx
+msgid "Documents that have been rejected will appear here"
+msgstr "Ovdje će se prikazati odbijeni dokumenti"
+
 #: apps/remix/app/components/tables/inbox-table.tsx
 msgid "Documents that require your attention will appear here"
 msgstr "Dokumenti koji zahtijevaju vašu pozornost prikazat će se ovdje"
+
+#: apps/remix/app/components/tables/inbox-table.tsx
+msgid "Documents that you have completed will appear here"
+msgstr "Ovdje će se prikazati dokumenti koje ste dovršili"
 
 #: apps/remix/app/routes/_authenticated+/admin+/stats.tsx
 msgid "Documents Viewed"
@@ -4846,7 +5101,7 @@ msgstr "Ne prenosi (izbriši sve dokumente)"
 
 #: apps/remix/app/components/dialogs/token-create-dialog.tsx
 msgid "Done"
-msgstr ""
+msgstr "Gotovo"
 
 #: apps/remix/app/components/dialogs/envelopes-bulk-download-dialog.tsx
 #: apps/remix/app/components/forms/2fa/enable-authenticator-app-dialog.tsx
@@ -4877,7 +5132,7 @@ msgstr "Preuzmi certifikat"
 
 #: apps/remix/app/components/dialogs/envelopes-bulk-download-dialog.tsx
 msgid "Download Documents"
-msgstr ""
+msgstr "Preuzmi dokumente"
 
 #: apps/remix/app/components/dialogs/envelope-download-dialog.tsx
 msgid "Download Files"
@@ -4897,14 +5152,15 @@ msgstr "Preuzmi CSV predložak"
 #. placeholder {0}: envelope.title
 #: apps/remix/app/components/dialogs/envelopes-bulk-download-dialog.tsx
 msgid "Download version for {0}"
-msgstr ""
+msgstr "Preuzmi verziju za {0}"
 
 #. placeholder {0}: envelopes.length
 #: apps/remix/app/components/dialogs/envelopes-bulk-download-dialog.tsx
 msgid "Downloading {progress} / {0}..."
-msgstr ""
+msgstr "Preuzimanje {progress} / {0}..."
 
 #: apps/remix/app/components/dialogs/envelopes-bulk-download-dialog.tsx
+#: apps/remix/app/components/general/analytics/analytics-status-breakdown-card.tsx
 #: apps/remix/app/components/general/document/document-status.tsx
 #: apps/remix/app/components/general/envelope-editor/envelope-editor-header.tsx
 #: apps/remix/app/components/general/template/template-page-view-documents-table.tsx
@@ -5018,13 +5274,17 @@ msgstr "Npr. 0"
 msgid "E.g. 100"
 msgstr "Npr. 100"
 
+#: apps/remix/app/components/dialogs/admin-recipient-delete-dialog.tsx
+msgid "e.g. Removed at the sender's request"
+msgstr "npr. Uklonjeno na zahtjev pošiljatelja"
+
 #: apps/remix/app/components/forms/email-transport-form.tsx
 msgid "e.g. Resend (free plans)"
 msgstr "npr. Resend (besplatni planovi)"
 
 #: apps/remix/app/components/general/settings-upsell/email-domains-upsell.tsx
 msgid "Easy DNS setup with auto-generated DKIM and SPF records"
-msgstr ""
+msgstr "Jednostavno postavljanje DNS-a s automatski generiranim DKIM i SPF zapisima"
 
 #: apps/remix/app/components/general/document/document-page-view-button.tsx
 #: apps/remix/app/components/general/document/document-page-view-dropdown.tsx
@@ -5094,10 +5354,12 @@ msgstr "Izjava o elektroničkom potpisu"
 #: apps/remix/app/components/general/direct-template/direct-template-configure-form.tsx
 #: apps/remix/app/components/general/document-signing/document-signing-email-field.tsx
 #: apps/remix/app/components/general/envelope-editor/envelope-editor-fields-drag-drop.tsx
-#: apps/remix/app/components/general/envelope-editor/envelope-editor-recipient-form.tsx
-#: apps/remix/app/components/general/envelope-editor/envelope-editor-recipient-form.tsx
+#: apps/remix/app/components/general/envelope-editor/recipient-row.tsx
+#: apps/remix/app/components/general/envelope-editor/recipient-row.tsx
+#: apps/remix/app/components/general/envelope-editor/recipient-step-list.tsx
 #: apps/remix/app/components/tables/admin-dashboard-users-table.tsx
 #: apps/remix/app/components/tables/admin-document-recipient-item-table.tsx
+#: apps/remix/app/components/tables/admin-document-recipients-table.tsx
 #: apps/remix/app/components/tables/organisation-insights-table.tsx
 #: apps/remix/app/routes/_authenticated+/admin+/email-domains.$id.tsx
 #: apps/remix/app/routes/_authenticated+/admin+/teams.$id.tsx
@@ -5143,7 +5405,7 @@ msgstr "E-mail već postoji"
 
 #: apps/remix/app/routes/_unauthenticated+/team.verify.email.$token.tsx
 msgid "Email already in use"
-msgstr ""
+msgstr "E-adresa je već u upotrebi"
 
 #: apps/remix/app/components/general/admin-email-blocklist-section.tsx
 msgid "Email Blocklist"
@@ -5318,6 +5580,14 @@ msgstr "Provjera e-maila ponovno poslana"
 msgid "Emails"
 msgstr "E-mailovi"
 
+#: apps/remix/app/routes/_authenticated+/admin+/organisations.$id.tsx
+msgid "Emails the organisation owner to let them know their limits have been updated. No email is sent if no limits changed."
+msgstr "Šalje e-poruku vlasniku organizacije kako bi ga obavijestila da su njegova ograničenja ažurirana. E-poruka se ne šalje ako nijedno ograničenje nije promijenjeno."
+
+#: apps/remix/app/routes/_authenticated+/settings+/security.sessions.tsx
+msgid "Embed sessions"
+msgstr "Embed sesije"
+
 #: apps/remix/app/components/dialogs/organisation-create-dialog.tsx
 msgid "Embedding, 5 members included and more"
 msgstr "Ugrađivanje, uključeno 5 članova i više"
@@ -5328,7 +5598,7 @@ msgstr "Prazno polje"
 
 #: apps/remix/app/components/general/claim-limit-fields.tsx
 msgid "Empty quota means unlimited, 0 blocks the resource. Rate limit windows accept values like 5m, 1h or 24h."
-msgstr ""
+msgstr "Prazna kvota znači neograničeno, a 0 blokira resurs. Prozori ograničenja učestalosti prihvaćaju vrijednosti poput 5m, 1h ili 24h."
 
 #: apps/remix/app/components/dialogs/team-inherit-member-enable-dialog.tsx
 msgid "Enable"
@@ -5449,9 +5719,13 @@ msgstr "Provjerite koristite li token za ugrađivanje, a ne API token"
 msgid "Enter"
 msgstr "Unesi"
 
+#: apps/remix/app/components/dialogs/template-use-dialog.tsx
+msgid "Enter a document name"
+msgstr "Unesite naziv dokumenta"
+
 #: apps/remix/app/components/general/rate-limit-array-input.tsx
 msgid "Enter a max request count greater than 0"
-msgstr ""
+msgstr "Unesite maksimalan broj zahtjeva veći od 0"
 
 #: apps/remix/app/components/dialogs/folder-create-dialog.tsx
 msgid "Enter a name for your new folder. Folders help you organise your items."
@@ -5463,11 +5737,15 @@ msgstr "Unesite novi naslov"
 
 #: apps/remix/app/components/general/rate-limit-array-input.tsx
 msgid "Enter a window, e.g. 5m"
-msgstr ""
+msgstr "Unesite prozor, npr. 5m"
 
 #: apps/remix/app/components/forms/subscription-claim-form.tsx
 msgid "Enter claim name"
 msgstr "Unesite naziv prava"
+
+#: apps/remix/app/components/dialogs/template-use-dialog.tsx
+msgid "Enter custom document name"
+msgstr "Unesite prilagođeni naziv dokumenta"
 
 #: apps/remix/app/components/dialogs/sign-field-email-dialog.tsx
 msgid "Enter Email"
@@ -5485,9 +5763,17 @@ msgstr "Unesi ime"
 msgid "Enter Number"
 msgstr "Unesi broj"
 
+#: apps/remix/app/components/forms/2fa/two-factor-code-dialog.tsx
+msgid "Enter one of your backup codes to continue."
+msgstr "Unesite jedan od svojih pričuvnih kodova za nastavak."
+
 #: apps/remix/app/components/dialogs/sign-field-text-dialog.tsx
 msgid "Enter Text"
 msgstr "Unesi tekst"
+
+#: apps/remix/app/components/forms/2fa/two-factor-code-dialog.tsx
+msgid "Enter the code from your authenticator app to continue."
+msgstr "Unesite kôd iz svoje aplikacije za autentifikaciju za nastavak."
 
 #: apps/remix/app/components/dialogs/organisation-email-domain-create-dialog.tsx
 msgid "Enter the domain you want to use for sending emails (without http:// or www)"
@@ -5609,7 +5895,6 @@ msgstr "Omotnica ažurirana"
 #: apps/remix/app/components/dialogs/envelopes-bulk-download-dialog.tsx
 #: apps/remix/app/components/dialogs/envelopes-bulk-download-dialog.tsx
 #: apps/remix/app/components/dialogs/session-logout-all-dialog.tsx
-#: apps/remix/app/components/dialogs/template-bulk-send-dialog.tsx
 #: apps/remix/app/components/dialogs/webhook-create-dialog.tsx
 #: apps/remix/app/components/embed/multisign/multi-sign-document-signing-view.tsx
 #: apps/remix/app/components/general/document-signing/document-signing-auto-sign.tsx
@@ -5700,7 +5985,7 @@ msgstr "Pogreška pri učitavanju datoteke"
 
 #: apps/remix/app/components/general/app-command-menu.tsx
 msgid "esc"
-msgstr ""
+msgstr "esc"
 
 #: apps/remix/app/components/general/webhook-logs-sheet.tsx
 #: apps/remix/app/routes/_authenticated+/t.$teamUrl+/settings.webhooks.$id._index.tsx
@@ -5731,7 +6016,7 @@ msgstr "Svi su potpisali! E-mailom ćete primiti kopiju potpisanog dokumenta."
 
 #: apps/remix/app/components/general/organisation-usage-panel.tsx
 msgid "Exceeded"
-msgstr ""
+msgstr "Premašeno"
 
 #: apps/remix/app/components/dialogs/passkey-create-dialog.tsx
 msgid "Exceeded timeout"
@@ -5769,7 +6054,7 @@ msgstr "Ističe {0}"
 
 #: apps/remix/app/components/dialogs/token-create-dialog.tsx
 msgid "Expires in"
-msgstr ""
+msgstr "Istječe za"
 
 #. placeholder {0}: DateTime.fromMillis(Math.max(millisecondsRemaining, 0)).toFormat('mm:ss')
 #: apps/remix/app/components/general/document-signing/access-auth-2fa-form.tsx
@@ -5846,6 +6131,10 @@ msgstr "Nije uspjela ponovna registracija e-mail domene"
 #: apps/remix/app/components/dialogs/envelope-item-edit-dialog.tsx
 msgid "Failed to read file"
 msgstr "Nije uspjelo čitanje datoteke"
+
+#: apps/remix/app/components/dialogs/admin-recipient-delete-dialog.tsx
+msgid "Failed to remove recipient"
+msgstr "Uklanjanje primatelja nije uspjelo"
 
 #: apps/remix/app/routes/_authenticated+/admin+/documents.$id.tsx
 msgid "Failed to reseal document"
@@ -6014,6 +6303,10 @@ msgstr "Datoteka je premalena"
 msgid "File size exceeds the limit of {APP_DOCUMENT_UPLOAD_SIZE_LIMIT} MB"
 msgstr "Veličina datoteke premašuje ograničenje od {APP_DOCUMENT_UPLOAD_SIZE_LIMIT} MB"
 
+#: apps/remix/app/components/forms/branding-preferences-form.tsx
+msgid "File size must be less than {BRANDING_LOGO_MAX_SIZE_MB}MB"
+msgstr "Veličina datoteke mora biti manja od {BRANDING_LOGO_MAX_SIZE_MB} MB"
+
 #: apps/remix/app/components/dialogs/email-transport-create-dialog.tsx
 msgid "Fill in the details to create a new email transport."
 msgstr "Ispunite detalje za stvaranje novog e-mail transporta."
@@ -6176,7 +6469,7 @@ msgstr "Općenito"
 
 #: apps/remix/app/routes/_authenticated+/t.$teamUrl+/settings.general.tsx
 msgid "General settings"
-msgstr ""
+msgstr "Opće postavke"
 
 #: apps/remix/app/components/dialogs/organisation-email-domain-create-dialog.tsx
 msgid "Generate DKIM Records"
@@ -6193,12 +6486,12 @@ msgstr "Njemački"
 
 #: apps/remix/app/components/general/settings-upsell/sso-portal-upsell.tsx
 msgid "Give your members a dedicated single sign-on portal. The SSO portal is available on the Enterprise plan."
-msgstr ""
+msgstr "Omogućite svojim članovima namjenski portal za jedinstvenu prijavu (SSO). SSO portal dostupan je u Enterprise paketu."
 
 #: apps/remix/app/components/general/app-command-menu.tsx
 #: apps/remix/app/components/general/app-command-menu.tsx
 msgid "Global"
-msgstr ""
+msgstr "Globalno"
 
 #: packages/ui/components/document/document-global-auth-action-select.tsx
 msgid "Global recipient action authentication"
@@ -6283,7 +6576,7 @@ msgstr "Idite na svoje <0>postavke javnog profila</0> da biste dodali dokumente.
 
 #: apps/remix/app/components/general/unified-settings-layout.tsx
 msgid "Go to your settings"
-msgstr ""
+msgstr "Idite na svoje postavke"
 
 #: packages/ui/primitives/signature-pad/signature-pad-color-picker.tsx
 msgid "Green"
@@ -6295,6 +6588,10 @@ msgstr "Zelena"
 #: apps/remix/app/components/tables/team-members-table.tsx
 msgid "Group"
 msgstr "Grupa"
+
+#: apps/remix/app/components/general/envelope-editor/recipient-step-card.tsx
+msgid "Group {stepLabel}"
+msgstr "Grupa {stepLabel}"
 
 #: apps/remix/app/components/dialogs/organisation-group-create-dialog.tsx
 msgid "Group has been created."
@@ -6316,9 +6613,7 @@ msgstr "Naziv grupe"
 msgid "Groups"
 msgstr "Grupe"
 
-#: apps/remix/app/components/general/envelope-editor/envelope-editor-recipient-form.tsx
-#: apps/remix/app/components/general/envelope-editor/envelope-editor-recipient-form.tsx
-#: apps/remix/app/components/general/envelope-editor/envelope-editor-recipient-form.tsx
+#: apps/remix/app/components/general/envelope-editor/recipient-step-list.tsx
 #: packages/ui/primitives/document-flow/add-signers.tsx
 #: packages/ui/primitives/document-flow/add-signers.tsx
 #: packages/ui/primitives/document-flow/add-signers.tsx
@@ -6355,7 +6650,7 @@ msgstr "Ovdje možete urediti svoje osobne podatke."
 
 #: apps/remix/app/routes/_authenticated+/t.$teamUrl+/settings.general.tsx
 msgid "Here you can edit your team's details."
-msgstr ""
+msgstr "Ovdje možete urediti podatke svog tima."
 
 #: apps/remix/app/routes/_authenticated+/settings+/security._index.tsx
 msgid "Here you can manage your password and security settings."
@@ -6371,11 +6666,11 @@ msgstr "Ovdje možete postaviti postavke brendiranja za svoj tim."
 
 #: apps/remix/app/routes/_authenticated+/o.$orgUrl.settings.certificates.tsx
 msgid "Here you can set certificate and audit log preferences for your organisation. Teams will inherit these settings by default."
-msgstr ""
+msgstr "Ovdje možete postaviti postavke certifikata i revizijskog dnevnika za svoju organizaciju. Timovi će prema zadanim postavkama naslijediti ove postavke."
 
 #: apps/remix/app/routes/_authenticated+/t.$teamUrl+/settings.certificates.tsx
 msgid "Here you can set certificate and audit log preferences for your team."
-msgstr ""
+msgstr "Ovdje možete postaviti postavke certifikata i revizijskog dnevnika za svoj tim."
 
 #: apps/remix/app/routes/_authenticated+/o.$orgUrl.settings.document.tsx
 msgid "Here you can set document preferences for your organisation. Teams will inherit these settings by default."
@@ -6383,11 +6678,11 @@ msgstr "Ovdje možete postaviti postavke dokumenata za svoju organizaciju. Timov
 
 #: apps/remix/app/routes/_authenticated+/o.$orgUrl.settings.reminders.tsx
 msgid "Here you can set expiration and signing reminder preferences for your organisation. Teams will inherit these settings by default."
-msgstr ""
+msgstr "Ovdje možete postaviti postavke isteka i podsjetnika za potpisivanje za svoju organizaciju. Timovi će prema zadanim postavkama naslijediti ove postavke."
 
 #: apps/remix/app/routes/_authenticated+/t.$teamUrl+/settings.reminders.tsx
 msgid "Here you can set expiration and signing reminder preferences for your team."
-msgstr ""
+msgstr "Ovdje možete postaviti postavke isteka i podsjetnika za potpisivanje za svoj tim."
 
 #: apps/remix/app/routes/_authenticated+/t.$teamUrl+/settings.branding.tsx
 msgid "Here you can set preferences and defaults for branding."
@@ -6422,6 +6717,7 @@ msgid "Hi, {userName} <0>({userEmail})</0>"
 msgstr "Pozdrav, {userName} <0>({userEmail})</0>"
 
 #: apps/remix/app/components/dialogs/envelope-delete-dialog.tsx
+#: apps/remix/app/components/tables/admin-document-recipient-item-table.tsx
 #: apps/remix/app/components/tables/documents-table-action-dropdown.tsx
 #: apps/remix/app/routes/_authenticated+/t.$teamUrl+/settings.public-profile.tsx
 msgid "Hide"
@@ -6429,7 +6725,7 @@ msgstr "Sakrij"
 
 #: packages/ui/components/document/envelope-recipient-field-tooltip.tsx
 msgid "Hide field"
-msgstr ""
+msgstr "Sakrij polje"
 
 #: apps/remix/app/components/general/admin-license-card.tsx
 msgid "Hide license key"
@@ -6524,9 +6820,21 @@ msgstr "Prepoznavanje primatelja"
 msgid "If there is any issue with your subscription, please contact us at <0>{SUPPORT_EMAIL}</0>."
 msgstr "Ako postoji bilo kakav problem s vašom pretplatom, obratite nam se na <0>{SUPPORT_EMAIL}</0>."
 
+#: packages/email/templates/reset-password.tsx
+msgid "If this was you, no action is needed. If it wasn't, reset your password immediately and <0>contact us</0>."
+msgstr "Ako ste to bili Vi, nikakva radnja nije potrebna. Ako niste, odmah poništite lozinku i <0>kontaktirajte nas</0>."
+
 #: apps/remix/app/routes/embed+/v2+/authoring+/_layout.tsx
 msgid "If you are using staging, ensure that you have set the host prop on the embedding component to the staging domain (https://stg-app.documenso.com)"
 msgstr "Ako koristite staging, provjerite jeste li postavili prop host na komponenti za ugrađivanje na staging domenu (https://stg-app.documenso.com)"
+
+#: apps/remix/app/components/general/document-signing/document-signing-sender-disabled-page.tsx
+msgid "If you believe this is a mistake, please contact the sender directly."
+msgstr "Ako smatrate da je ovo pogreška, obratite se izravno pošiljatelju."
+
+#: packages/email/template-components/template-account-disabled.tsx
+msgid "If you believe this was a mistake, contact us at <0>{supportEmail}</0>."
+msgstr "Ako smatrate da je ovo bila pogreška, obratite nam se na <0>{supportEmail}</0>."
 
 #: apps/remix/app/routes/_recipient+/report.$token.tsx
 msgid "If you did not expect this email or believe it is spam, you can report the sender to our team for review."
@@ -6552,6 +6860,14 @@ msgstr "Ako ne pronađete poveznicu za potvrdu u pristigloj pošti, u nastavku m
 msgid "If you expect to need higher limits, please contact support at {SUPPORT_EMAIL} and we will review your account."
 msgstr "Ako očekujete da će vam trebati veća ograničenja, obratite se podršci na {SUPPORT_EMAIL} i pregledat ćemo vaš račun."
 
+#: packages/email/templates/organisation-limits-updated.tsx
+msgid "If you have any questions, please contact support at {SUPPORT_EMAIL}."
+msgstr "Ako imate bilo kakvih pitanja, obratite se podršci na {SUPPORT_EMAIL}."
+
+#: packages/email/templates/organisation-limits-updated.tsx
+msgid "If you recently received an email regarding your usage limits, this change was made in response to that."
+msgstr "Ako ste nedavno primili e-poruku o ograničenjima korištenja, ova je promjena provedena kao odgovor na nju."
+
 #: apps/remix/app/components/forms/2fa/enable-authenticator-app-dialog.tsx
 msgid "If your authenticator app does not support QR codes, you can use the following code instead:"
 msgstr "Ako vaša aplikacija za autentifikaciju ne podržava QR kodove, umjesto toga možete koristiti sljedeći kôd:"
@@ -6559,6 +6875,11 @@ msgstr "Ako vaša aplikacija za autentifikaciju ne podržava QR kodove, umjesto 
 #: apps/remix/app/routes/_unauthenticated+/organisation.sso.confirmation.$token.tsx
 msgid "Important: What This Means"
 msgstr "Važno: što to znači"
+
+#: apps/remix/app/components/forms/signup.tsx
+#: apps/remix/app/components/general/public-legal-links.tsx
+msgid "Imprint"
+msgstr "Impresum"
 
 #: apps/remix/app/components/tables/user-billing-organisations-table.tsx
 #: packages/lib/constants/billing.ts
@@ -6687,7 +7008,7 @@ msgstr "Neispravan kôd. Pokušajte ponovno."
 #: apps/remix/app/components/general/direct-template/direct-template-invalid-page.tsx
 #: apps/remix/app/components/general/envelope-editor/envelope-editor-invalid-direct-template-alert.tsx
 msgid "Invalid direct link template"
-msgstr ""
+msgstr "Neispravan predložak s izravnom poveznicom"
 
 #: apps/remix/app/routes/_authenticated+/o.$orgUrl.settings.sso.tsx
 msgid "Invalid domains"
@@ -6741,7 +7062,7 @@ msgstr "Pozivnica prihvaćena!"
 
 #: apps/remix/app/routes/_unauthenticated+/organisation.invite.$token.tsx
 msgid "Invitation already accepted"
-msgstr ""
+msgstr "Pozivnica je već prihvaćena"
 
 #: apps/remix/app/components/general/organisations/organisation-invitations.tsx
 #: apps/remix/app/routes/_unauthenticated+/organisation.invite.$token.tsx
@@ -6794,6 +7115,7 @@ msgid "Invoice"
 msgstr "Račun"
 
 #: apps/remix/app/components/tables/admin-document-logs-table.tsx
+#: apps/remix/app/components/tables/admin-document-recipient-item-table.tsx
 #: apps/remix/app/components/tables/document-logs-table.tsx
 #: apps/remix/app/components/tables/internal-audit-log-table.tsx
 #: apps/remix/app/components/tables/settings-security-activity-table.tsx
@@ -6843,7 +7165,7 @@ msgstr "Trenutno niste vi na redu za potpisivanje. E-mailom ćete primiti upute 
 
 #: apps/remix/app/utils/toast-error-messages.ts
 msgid "It's not your turn to sign yet"
-msgstr ""
+msgstr "Još niste na redu za potpisivanje"
 
 #: packages/lib/constants/i18n.ts
 msgid "Italian"
@@ -6874,7 +7196,7 @@ msgstr "Pridruživanje: {0}"
 
 #: apps/remix/app/components/general/unified-settings-sidebar-mobile.tsx
 msgid "Jump to"
-msgstr ""
+msgstr "Idi na"
 
 #: apps/remix/app/routes/_authenticated+/admin+/teams.$id.tsx
 msgid "Key identifiers and relationships for this team."
@@ -6905,6 +7227,10 @@ msgstr "Oznaka"
 msgid "Language"
 msgstr "Jezik"
 
+#: apps/remix/app/utils/analytics.ts
+msgid "Last 12 months"
+msgstr "Posljednjih 12 mjeseci"
+
 #: apps/remix/app/components/general/period-selector.tsx
 #: apps/remix/app/components/tables/documents-table-period-filter.tsx
 msgid "Last 14 days"
@@ -6912,6 +7238,7 @@ msgstr "Zadnjih 14 dana"
 
 #: apps/remix/app/components/general/period-selector.tsx
 #: apps/remix/app/components/tables/documents-table-period-filter.tsx
+#: apps/remix/app/utils/analytics.ts
 msgid "Last 30 days"
 msgstr "Zadnjih 30 dana"
 
@@ -6921,12 +7248,21 @@ msgstr "Zadnjih 30 dana"
 
 #: apps/remix/app/components/general/period-selector.tsx
 #: apps/remix/app/components/tables/documents-table-period-filter.tsx
+#: apps/remix/app/utils/analytics.ts
 msgid "Last 7 days"
 msgstr "Zadnjih 7 dana"
+
+#: apps/remix/app/utils/analytics.ts
+msgid "Last 90 days"
+msgstr "Posljednjih 90 dana"
 
 #: apps/remix/app/components/filters/date-range-filter.tsx
 msgid "Last 90 Days"
 msgstr "Zadnjih 90 dana"
+
+#: apps/remix/app/components/general/analytics/analytics-activity-table-card.tsx
+msgid "Last active"
+msgstr "Zadnja aktivnost"
 
 #: apps/remix/app/routes/_authenticated+/settings+/security.sessions.tsx
 msgid "Last Active"
@@ -6961,6 +7297,10 @@ msgstr "Zadnje ažuriranje"
 
 #: apps/remix/app/components/tables/settings-security-passkey-table.tsx
 msgid "Last used"
+msgstr "Zadnje korišteno"
+
+#: apps/remix/app/routes/_authenticated+/t.$teamUrl+/settings.tokens.tsx
+msgid "Last Used"
 msgstr "Zadnje korišteno"
 
 #: apps/remix/app/routes/_authenticated+/admin+/email-domains._index.tsx
@@ -7046,7 +7386,7 @@ msgstr "Želite li vlastiti javni profil s ugovorima?"
 
 #: apps/remix/app/components/general/organisation-usage-panel.tsx
 msgid "Limit reached"
-msgstr ""
+msgstr "Ograničenje dosegnuto"
 
 #: apps/remix/app/components/general/claim-limit-fields.tsx
 msgid "Limits"
@@ -7067,6 +7407,10 @@ msgstr "Poveznica istječe za 1 sat."
 #: packages/email/templates/organisation-account-link-confirmation.tsx
 msgid "Link expires in 30 minutes."
 msgstr "Poveznica istječe za 30 minuta."
+
+#: apps/remix/app/components/forms/password-setup-request-button.tsx
+msgid "Link sent"
+msgstr "Poveznica poslana"
 
 #: apps/remix/app/routes/_authenticated+/t.$teamUrl+/settings.public-profile.tsx
 msgctxt "Action button to link template to public profile"
@@ -7105,13 +7449,12 @@ msgstr "Učitaj stariju aktivnost"
 msgid "Loading"
 msgstr "Učitavanje"
 
-#: apps/remix/app/components/embed/multisign/multi-sign-document-signing-view.tsx
-#: apps/remix/app/components/general/skeletons/document-edit-skeleton.tsx
-msgid "Loading document..."
-msgstr "Učitavanje dokumenta..."
+#: apps/remix/app/components/general/analytics/analytics-hydrate-fallback.tsx
+msgid "Loading analytics"
+msgstr "Učitavanje analitike"
 
-#: apps/remix/app/components/general/skeletons/document-edit-skeleton.tsx
-msgid "Loading Document..."
+#: apps/remix/app/components/embed/multisign/multi-sign-document-signing-view.tsx
+msgid "Loading document..."
 msgstr "Učitavanje dokumenta..."
 
 #: packages/ui/components/recipient/recipient-autocomplete-input.tsx
@@ -7356,7 +7699,7 @@ msgstr "Maks"
 
 #: apps/remix/app/components/general/rate-limit-array-input.tsx
 msgid "Max requests"
-msgstr ""
+msgstr "Maks. broj zahtjeva"
 
 #: apps/remix/app/components/dialogs/template-bulk-send-dialog.tsx
 msgid "Maximum file size: 4MB. Maximum 100 rows per upload. Blank values will use template defaults."
@@ -7380,10 +7723,15 @@ msgstr "Maksimalni dopušteni broj učitanih datoteka po omotnici"
 #: apps/remix/app/routes/_authenticated+/admin+/organisations.$id.tsx
 #: apps/remix/app/routes/_authenticated+/admin+/organisations.$id.tsx
 #: apps/remix/app/routes/_authenticated+/admin+/teams.$id.tsx
+#: apps/remix/app/routes/_authenticated+/t.$teamUrl+/analytics._index.tsx
 #: packages/lib/constants/organisations-translations.ts
 #: packages/lib/constants/teams-translations.ts
 msgid "Member"
 msgstr "Član"
+
+#: apps/remix/app/routes/_authenticated+/t.$teamUrl+/analytics._index.tsx
+msgid "Member activity"
+msgstr "Aktivnost članova"
 
 #: apps/remix/app/components/forms/subscription-claim-form.tsx
 #: apps/remix/app/routes/_authenticated+/admin+/organisations.$id.tsx
@@ -7413,6 +7761,7 @@ msgstr "Član od"
 #: apps/remix/app/routes/_authenticated+/admin+/teams.$id.tsx
 #: apps/remix/app/routes/_authenticated+/o.$orgUrl._index.tsx
 #: apps/remix/app/routes/_authenticated+/o.$orgUrl.settings.groups.$id.tsx
+#: apps/remix/app/routes/_authenticated+/t.$teamUrl+/analytics._index.tsx
 #: packages/lib/utils/settings-nav.ts
 #: packages/lib/utils/settings-nav.ts
 msgid "Members"
@@ -7454,7 +7803,7 @@ msgstr "Nedostaju primatelji"
 #: apps/remix/app/utils/toast-error-messages.ts
 #: apps/remix/app/utils/toast-error-messages.ts
 msgid "Missing signature fields"
-msgstr ""
+msgstr "Nedostaju polja za potpis"
 
 #: apps/remix/app/components/general/document/document-page-view-recipients.tsx
 #: apps/remix/app/components/general/template/template-page-view-recipients.tsx
@@ -7470,6 +7819,7 @@ msgid "Modify the details of the subscription claim."
 msgstr "Izmijenite detalje prava pretplate."
 
 #: apps/remix/app/components/dialogs/organisation-create-dialog.tsx
+#: apps/remix/app/components/general/analytics/analytics-documents-over-time-card.tsx
 #: apps/remix/app/components/general/billing-plans.tsx
 msgid "Monthly"
 msgstr "Mjesečno"
@@ -7484,11 +7834,11 @@ msgstr "Mjesečno aktivni korisnici: korisnici kojima je barem jedan dokument do
 
 #: apps/remix/app/components/general/claim-limit-fields.tsx
 msgid "Monthly quota"
-msgstr ""
+msgstr "Mjesečna kvota"
 
 #: apps/remix/app/components/general/organisation-usage-panel.tsx
 msgid "Monthly usage"
-msgstr ""
+msgstr "Mjesečno korištenje"
 
 #: apps/remix/app/components/dialogs/envelopes-bulk-move-dialog.tsx
 #: apps/remix/app/components/dialogs/folder-move-dialog.tsx
@@ -7559,11 +7909,13 @@ msgstr "N/D"
 #: apps/remix/app/components/general/claim-account.tsx
 #: apps/remix/app/components/general/document-signing/document-signing-name-field.tsx
 #: apps/remix/app/components/general/envelope-editor/envelope-editor-fields-drag-drop.tsx
-#: apps/remix/app/components/general/envelope-editor/envelope-editor-recipient-form.tsx
+#: apps/remix/app/components/general/envelope-editor/recipient-row.tsx
+#: apps/remix/app/components/general/envelope-editor/recipient-step-list.tsx
 #: apps/remix/app/components/tables/admin-claims-table.tsx
 #: apps/remix/app/components/tables/admin-dashboard-users-table.tsx
 #: apps/remix/app/components/tables/admin-document-jobs-table.tsx
 #: apps/remix/app/components/tables/admin-document-recipient-item-table.tsx
+#: apps/remix/app/components/tables/admin-document-recipients-table.tsx
 #: apps/remix/app/components/tables/admin-email-transports-table.tsx
 #: apps/remix/app/components/tables/admin-organisation-overview-table.tsx
 #: apps/remix/app/components/tables/organisation-insights-table.tsx
@@ -7594,15 +7946,15 @@ msgstr "Postavke imena"
 
 #: apps/remix/app/components/general/settings-upsell/email-domains-upsell.tsx
 msgid "Named senders with defaults per team, template or document"
-msgstr ""
+msgstr "Imenovani pošiljatelji sa zadanim vrijednostima po timu, predlošku ili dokumentu"
 
 #: apps/remix/app/components/general/app-command-menu.tsx
 msgid "Navigate"
-msgstr ""
+msgstr "Navigacija"
 
 #: apps/remix/app/components/general/organisation-usage-panel.tsx
 msgid "Near limit"
-msgstr ""
+msgstr "Blizu ograničenja"
 
 #: apps/remix/app/routes/_recipient+/sign.$token+/complete.tsx
 msgid "Need to sign documents?"
@@ -7623,12 +7975,17 @@ msgstr "Treba pregledati"
 #: apps/remix/app/components/dialogs/token-create-dialog.tsx
 #: apps/remix/app/components/tables/settings-security-passkey-table.tsx
 #: apps/remix/app/routes/_authenticated+/t.$teamUrl+/settings.tokens.tsx
+#: apps/remix/app/routes/_authenticated+/t.$teamUrl+/settings.tokens.tsx
 msgid "Never"
 msgstr "Nikad"
 
 #: packages/ui/components/document/expiration-period-picker.tsx
 msgid "Never expires"
 msgstr "Nikad ne ističe"
+
+#: apps/remix/app/components/general/analytics/analytics-overview-cards.tsx
+msgid "New"
+msgstr "Novo"
 
 #: apps/remix/app/components/forms/editor/editor-field-dropdown-form.tsx
 #: packages/ui/primitives/document-flow/field-items-advanced-settings/dropdown-field.tsx
@@ -7673,12 +8030,33 @@ msgstr "Ime sljedećeg primatelja"
 #: apps/remix/app/components/forms/certificate-preferences-form.tsx
 #: apps/remix/app/components/forms/document-preferences-form.tsx
 #: apps/remix/app/components/forms/email-preferences-form.tsx
+#: apps/remix/app/components/tables/admin-document-recipients-table.tsx
 msgid "No"
 msgstr "Ne"
 
 #: apps/remix/app/components/tables/documents-table-empty-state.tsx
 msgid "No active drafts"
 msgstr "Nema aktivnih skica"
+
+#: apps/remix/app/utils/analytics.ts
+msgid "No activity in the last 12 months."
+msgstr "Nema aktivnosti u posljednjih 12 mjeseci."
+
+#: apps/remix/app/utils/analytics.ts
+msgid "No activity in the last 30 days."
+msgstr "Nema aktivnosti u posljednjih 30 dana."
+
+#: apps/remix/app/utils/analytics.ts
+msgid "No activity in the last 7 days."
+msgstr "Nema aktivnosti u posljednjih 7 dana."
+
+#: apps/remix/app/utils/analytics.ts
+msgid "No activity in the last 90 days."
+msgstr "Nema aktivnosti u posljednjih 90 dana."
+
+#: apps/remix/app/utils/analytics.ts
+msgid "No activity in the selected range."
+msgstr "Nema aktivnosti u odabranom rasponu."
 
 #: apps/remix/app/components/general/pdf-viewer/envelope-pdf-viewer.tsx
 #: apps/remix/app/components/general/pdf-viewer/pdf-viewer.tsx
@@ -7689,10 +8067,27 @@ msgstr "Nije pronađen nijedan dokument"
 msgid "No document selected"
 msgstr "Nije odabran nijedan dokument"
 
+#: apps/remix/app/components/general/analytics/analytics-documents-over-time-card.tsx
+msgid "No documents created in this period"
+msgstr "Nema dokumenata izrađenih u ovom razdoblju"
+
 #: apps/remix/app/components/general/envelope-editor/envelope-editor-fields-page.tsx
 #: apps/remix/app/components/general/envelope-editor/envelope-editor-preview-page.tsx
 msgid "No documents found"
 msgstr "Nije pronađen nijedan dokument"
+
+#: apps/remix/app/components/general/analytics/analytics-status-breakdown-card.tsx
+#: apps/remix/app/components/general/analytics/analytics-status-breakdown-card.tsx
+msgid "No documents in this period"
+msgstr "Nema dokumenata u ovom razdoblju"
+
+#: apps/remix/app/components/tables/inbox-table.tsx
+msgid "No documents match your search"
+msgstr "Nijedan dokument ne odgovara Vašem pretraživanju"
+
+#: apps/remix/app/components/general/analytics/analytics-template-usage-card.tsx
+msgid "No documents were created from templates in this period"
+msgstr "Nijedan dokument nije izrađen iz predložaka u ovom razdoblju"
 
 #: apps/remix/app/components/dialogs/admin-swap-subscription-dialog.tsx
 msgid "No eligible organisations found. The target must be on the free plan."
@@ -7708,7 +8103,7 @@ msgstr "Za ovu domenu nije konfiguriran nijedan e-mail."
 
 #: apps/remix/app/components/tables/documents-table-empty-state.tsx
 msgid "No expired documents"
-msgstr ""
+msgstr "Nema isteklih dokumenata"
 
 #: apps/remix/app/components/general/admin-license-card.tsx
 msgid "No features enabled"
@@ -7736,6 +8131,10 @@ msgstr "Nije pronađena nijedna mapa koja odgovara \"{searchTerm}\""
 msgid "No folders yet."
 msgstr "Još nema mapa."
 
+#: apps/remix/app/components/embed/embed-document-completed.tsx
+msgid "No further action is required"
+msgstr "Nisu potrebne daljnje radnje"
+
 #: apps/remix/app/components/embed/embed-document-rejected.tsx
 #: apps/remix/app/routes/_recipient+/sign.$token+/rejected.tsx
 msgid "No further action is required from you at this time."
@@ -7747,15 +8146,23 @@ msgstr "Nije pronađena nijedna grupa"
 
 #: apps/remix/app/routes/_authenticated+/admin+/organisations.$id.tsx
 msgid "No inherited claim"
-msgstr ""
+msgstr "Nema naslijeđenog paketa"
 
 #: apps/remix/app/components/general/admin-license-card.tsx
 msgid "No License Configured"
 msgstr "Nije konfigurirana nijedna licenca"
 
+#: apps/remix/app/routes/_authenticated+/t.$teamUrl+/analytics._index.tsx
+msgid "No members"
+msgstr "Nema članova"
+
 #: apps/remix/app/components/general/organisation-members-multiselect-combobox.tsx
 msgid "No members found"
 msgstr "Nije pronađen nijedan član"
+
+#: apps/remix/app/routes/_authenticated+/t.$teamUrl+/analytics._index.tsx
+msgid "No members match your search"
+msgstr "Nijedan član ne odgovara Vašem pretraživanju"
 
 #: apps/remix/app/components/dialogs/team-member-create-dialog.tsx
 msgid "No members selected"
@@ -7772,6 +8179,10 @@ msgstr "S vašim timom još nije podijeljen nijedan predložak organizacije."
 #: apps/remix/app/routes/_authenticated+/dashboard.tsx
 msgid "No organisations found"
 msgstr "Nije pronađena nijedna organizacija"
+
+#: apps/remix/app/components/general/document-signing/document-signing-auth-set-password.tsx
+msgid "No password set"
+msgstr "Lozinka nije postavljena"
 
 #: apps/remix/app/components/tables/settings-public-profile-templates-table.tsx
 msgid "No public profile templates found"
@@ -7794,6 +8205,7 @@ msgstr "Nije pronađen nijedan primatelj koji odgovara ovom opisu."
 #: apps/remix/app/components/general/document/document-page-view-recipients.tsx
 #: apps/remix/app/components/general/document/document-recipient-link-copy-dialog.tsx
 #: apps/remix/app/components/general/template/template-page-view-recipients.tsx
+#: apps/remix/app/components/tables/admin-document-recipients-table.tsx
 #: packages/ui/primitives/document-flow/add-subject.tsx
 msgid "No recipients"
 msgstr "Nema primatelja"
@@ -7810,7 +8222,7 @@ msgstr "Nema primatelja s ovom ulogom"
 
 #: apps/remix/app/components/tables/documents-table-empty-state.tsx
 msgid "No rejected documents"
-msgstr ""
+msgstr "Nema odbijenih dokumenata"
 
 #: packages/ui/components/document/reminder-settings-picker.tsx
 msgid "No reminders"
@@ -7823,7 +8235,7 @@ msgstr "Bez ograničenja"
 
 #: apps/remix/app/components/general/app-command-menu.tsx
 msgid "No results for “{trimmedSearch}”"
-msgstr ""
+msgstr "Nema rezultata za „{trimmedSearch}”"
 
 #: packages/ui/primitives/data-table.tsx
 msgid "No results found"
@@ -7856,6 +8268,14 @@ msgstr "Nije pronađen nijedan prijedlog"
 #: apps/remix/app/components/tables/team-groups-table.tsx
 msgid "No team groups found"
 msgstr "Nije pronađena nijedna timska grupa"
+
+#: apps/remix/app/routes/_authenticated+/o.$orgUrl.analytics._index.tsx
+msgid "No teams"
+msgstr "Nema timova"
+
+#: apps/remix/app/routes/_authenticated+/o.$orgUrl.analytics._index.tsx
+msgid "No teams match your search"
+msgstr "Nijedan tim ne odgovara Vašem pretraživanju"
 
 #: apps/remix/app/routes/_authenticated+/o.$orgUrl._index.tsx
 msgid "No teams yet"
@@ -7897,6 +8317,10 @@ msgstr "Nijedno"
 msgid "None (Overrides global settings)"
 msgstr "Nijedno (nadjačava globalne postavke)"
 
+#: apps/remix/app/components/general/analytics/analytics-activity-table-card.tsx
+msgid "Not available"
+msgstr "Nije dostupno"
+
 #: apps/remix/app/routes/_authenticated+/t.$teamUrl+/documents.$id._index.tsx
 #: apps/remix/app/routes/_authenticated+/t.$teamUrl+/documents.$id.edit.tsx
 #: apps/remix/app/routes/_authenticated+/t.$teamUrl+/templates.$id._index.tsx
@@ -7927,6 +8351,10 @@ msgstr "Nema što raditi"
 #: apps/remix/app/components/general/envelope-editor/envelope-editor-settings-dialog.tsx
 msgid "Notifications"
 msgstr "Obavijesti"
+
+#: apps/remix/app/routes/_authenticated+/admin+/organisations.$id.tsx
+msgid "Notify the organisation about limit changes"
+msgstr "Obavijesti organizaciju o promjenama ograničenja"
 
 #: apps/remix/app/components/dialogs/ai-field-detection-dialog.tsx
 #: apps/remix/app/components/general/document-signing/document-signing-number-field.tsx
@@ -7961,6 +8389,10 @@ msgstr "Dopušteni broj timova. 0 = Neograničeno"
 msgid "Number Settings"
 msgstr "Postavke broja"
 
+#: apps/remix/app/components/general/analytics/analytics-overview-cards.tsx
+msgid "of sent documents completed"
+msgstr "dovršenih od poslanih dokumenata"
+
 #: apps/remix/app/components/general/admin-global-settings-section.tsx
 msgid "Off"
 msgstr "Isključeno"
@@ -7980,7 +8412,7 @@ msgstr "Na ovoj stranici možete stvarati nove webhookove i upravljati postojeć
 #: apps/remix/app/components/dialogs/branding-preferences-reset-dialog.tsx
 #: apps/remix/app/components/dialogs/document-preferences-reset-dialog.tsx
 msgid "Once confirmed, the following will be reset:"
-msgstr ""
+msgstr "Nakon potvrde bit će poništeno sljedeće:"
 
 #: apps/remix/app/components/dialogs/envelope-cancel-dialog.tsx
 #: apps/remix/app/components/dialogs/envelope-delete-dialog.tsx
@@ -8009,9 +8441,17 @@ msgstr "Nakon što postavite predložak, podijelite poveznicu gdje god želite. 
 msgid "One of the documents in the current bundle has a signing role that is not compatible with the current signing experience."
 msgstr "Jedan od dokumenata u trenutnom paketu ima ulogu potpisivanja koja nije kompatibilna s trenutnim iskustvom potpisivanja."
 
+#: packages/email/template-components/template-account-disabled.tsx
+msgid "One of your signing requests has been reported. As part of keeping signers safe, we've disabled your account for now."
+msgstr "Jedan od Vaših zahtjeva za potpisivanje prijavljen je. U svrhu zaštite potpisnika, privremeno smo onemogućili Vaš račun."
+
 #: apps/remix/app/utils/toast-error-messages.ts
 msgid "One or more of your required fields have not been saved. Please refresh the page, complete any empty required fields, and try again."
-msgstr ""
+msgstr "Jedno ili više Vaših obveznih polja nije spremljeno. Osvježite stranicu, ispunite sva prazna obvezna polja i pokušajte ponovno."
+
+#: apps/remix/app/components/forms/branding-preferences-form.tsx
+msgid "Only .jpg, .png, and .webp files are accepted"
+msgstr "Prihvaćene su samo datoteke .jpg, .png i .webp"
 
 #: apps/remix/app/components/forms/document-preferences-form.tsx
 msgid "Only admins can access and view the document"
@@ -8033,6 +8473,14 @@ msgstr "Dopuštene su samo PDF datoteke"
 msgid "Only pending documents you have permission to manage will be cancelled."
 msgstr "Bit će otkazani samo dokumenti na čekanju kojima imate dozvolu upravljati."
 
+#: packages/email/template-components/template-new-account-warning.tsx
+msgid "Only sign if you know and were expecting this sender."
+msgstr "Potpišite samo ako poznajete ovog pošiljatelja i očekivali ste ga."
+
+#: packages/email/template-components/template-new-account-warning.tsx
+msgid "Only sign if you know and were expecting this sender. <0>Report sender</0>"
+msgstr "Potpišite samo ako poznajete ovog pošiljatelja i očekivali ste ga. <0>Prijavi pošiljatelja</0>"
+
 #: apps/remix/app/components/general/generic-error-layout.tsx
 #: apps/remix/app/components/general/generic-error-layout.tsx
 #: apps/remix/app/routes/_authenticated+/t.$teamUrl+/documents.$id._layout.tsx
@@ -8043,7 +8491,7 @@ msgstr "Ups! Nešto je pošlo po zlu."
 
 #: apps/remix/app/components/general/app-command-menu.tsx
 msgid "Open"
-msgstr ""
+msgstr "Otvori"
 
 #: apps/remix/app/routes/_authenticated+/o.$orgUrl._index.tsx
 msgid "Open menu"
@@ -8088,12 +8536,12 @@ msgstr "Ili nastavite s"
 #: apps/remix/app/components/tables/admin-organisation-stats-table.tsx
 #: apps/remix/app/components/tables/admin-organisations-table.tsx
 #: apps/remix/app/components/tables/admin-user-teams-table.tsx
+#: apps/remix/app/components/tables/templates-table-view-filter.tsx
 #: apps/remix/app/components/tables/templates-table.tsx
 #: apps/remix/app/components/tables/user-billing-organisations-table.tsx
 #: apps/remix/app/components/tables/user-organisations-table.tsx
 #: apps/remix/app/routes/_authenticated+/admin+/email-domains._index.tsx
 #: apps/remix/app/routes/_authenticated+/admin+/email-domains.$id.tsx
-#: apps/remix/app/routes/_authenticated+/t.$teamUrl+/templates._index.tsx
 #: apps/remix/app/routes/_unauthenticated+/organisation.sso.confirmation.$token.tsx
 #: packages/ui/components/template/template-type-select.tsx
 msgid "Organisation"
@@ -8124,9 +8572,17 @@ msgid "Organisation Group Settings"
 msgstr "Postavke grupe organizacije"
 
 #: apps/remix/app/routes/_authenticated+/admin+/organisations.$id.tsx
+msgid "Organisation has been updated and its owner has been notified"
+msgstr "Organizacija je ažurirana, a njezin vlasnik je obaviješten"
+
+#: apps/remix/app/routes/_authenticated+/admin+/organisations.$id.tsx
 #: apps/remix/app/routes/_authenticated+/admin+/organisations.$id.tsx
 msgid "Organisation has been updated successfully"
 msgstr "Organizacija je uspješno ažurirana"
+
+#: apps/remix/app/routes/_authenticated+/admin+/organisations.$id.tsx
+msgid "Organisation has been updated. No limits changed, so no notification was sent"
+msgstr "Organizacija je ažurirana. Nijedno ograničenje nije promijenjeno, pa obavijest nije poslana"
 
 #: apps/remix/app/routes/_authenticated+/admin+/teams.$id.tsx
 msgid "Organisation ID"
@@ -8279,11 +8735,11 @@ msgstr "U suprotnom, dokument će biti stvoren kao skica."
 #: apps/remix/app/components/dialogs/envelope-distribute-dialog.tsx
 #: apps/remix/app/components/general/envelope-editor/envelope-editor-fields-page.tsx
 msgid "Overlapping fields detected"
-msgstr ""
+msgstr "Otkriveno preklapanje polja"
 
 #: apps/remix/app/components/forms/inheritable-field.tsx
 msgid "Override"
-msgstr ""
+msgstr "Nadjačaj"
 
 #: apps/remix/app/components/forms/document-preferences-form.tsx
 #: apps/remix/app/components/forms/email-preferences-form.tsx
@@ -8295,6 +8751,7 @@ msgstr "Nadjačaj postavke organizacije"
 #: apps/remix/app/components/tables/admin-organisations-table.tsx
 #: apps/remix/app/components/tables/admin-organisations-table.tsx
 #: apps/remix/app/components/tables/organisation-members-table.tsx
+#: apps/remix/app/components/tables/templates-table-owner-filter.tsx
 #: apps/remix/app/components/tables/user-organisations-table.tsx
 #: apps/remix/app/routes/_authenticated+/admin+/documents._index.tsx
 #: apps/remix/app/routes/_authenticated+/admin+/organisations.$id.tsx
@@ -8388,6 +8845,10 @@ msgstr "Pristupni ključevi omogućuju vam prijavu i autentifikaciju pomoću bio
 msgid "Passkeys are not supported on this browser"
 msgstr "Pristupni ključevi nisu podržani u ovom pregledniku"
 
+#: apps/remix/app/components/general/document-signing/document-signing-auth-passkey.tsx
+msgid "Passkeys could not be used here. If this document is embedded in another site, that site needs to allow passkeys for the embed."
+msgstr "Pristupni ključevi nisu se mogli upotrijebiti ovdje. Ako je ovaj dokument ugrađen na drugoj web-stranici, ta stranica mora dopustiti pristupne ključeve za ugradnju."
+
 #: apps/remix/app/components/forms/email-transport-form.tsx
 #: apps/remix/app/components/forms/reset-password.tsx
 #: apps/remix/app/components/forms/signin.tsx
@@ -8398,6 +8859,10 @@ msgstr "Pristupni ključevi nisu podržani u ovom pregledniku"
 msgid "Password"
 msgstr "Lozinka"
 
+#: apps/remix/app/components/general/document-signing/document-signing-auth-set-password.tsx
+msgid "Password authentication unavailable"
+msgstr "Autentifikacija lozinkom nije dostupna"
+
 #: apps/remix/app/routes/_internal+/[__htmltopdf]+/certificate.tsx
 #: packages/lib/server-only/pdf/generate-certificate-pdf.ts
 msgid "Password Re-Authentication"
@@ -8407,6 +8872,10 @@ msgstr "Ponovna autentifikacija lozinkom"
 msgid "Password Reset Requested"
 msgstr "Zatražena promjena lozinke"
 
+#: packages/lib/server-only/auth/send-reset-password.ts
+msgid "Password Reset Success!"
+msgstr "Lozinka uspješno poništena!"
+
 #: packages/email/templates/reset-password.tsx
 msgid "Password Reset Successful"
 msgstr "Lozinka uspješno promijenjena"
@@ -8415,6 +8884,14 @@ msgstr "Lozinka uspješno promijenjena"
 #: apps/remix/app/components/general/claim-account.tsx
 msgid "Password should not be common or based on personal information"
 msgstr "Lozinka ne smije biti uobičajena ni temeljena na osobnim podacima"
+
+#: apps/remix/app/components/forms/password-setup-request-button.tsx
+msgid "Password sign in is disabled for this instance."
+msgstr "Prijava lozinkom onemogućena je na ovoj instanci."
+
+#: apps/remix/app/components/forms/password-setup-request.tsx
+msgid "Password sign in is disabled for this instance. Please contact support."
+msgstr "Prijava lozinkom onemogućena je za ovu instancu. Obratite se podršci."
 
 #: apps/remix/app/components/forms/password.tsx
 #: apps/remix/app/components/forms/reset-password.tsx
@@ -8447,6 +8924,8 @@ msgid "PDF Document"
 msgstr "PDF dokument"
 
 #: apps/remix/app/components/dialogs/envelopes-bulk-download-dialog.tsx
+#: apps/remix/app/components/general/analytics/analytics-activity-table-card.tsx
+#: apps/remix/app/components/general/analytics/analytics-status-breakdown-card.tsx
 #: apps/remix/app/components/general/document/document-page-view-recipients.tsx
 #: apps/remix/app/components/general/document/document-page-view-recipients.tsx
 #: apps/remix/app/components/general/document/document-status.tsx
@@ -8493,7 +8972,7 @@ msgstr "Na čekanju od"
 
 #: apps/remix/app/routes/_authenticated+/admin+/organisations.$id.tsx
 msgid "People with access to this organisation."
-msgstr ""
+msgstr "Osobe s pristupom ovoj organizaciji."
 
 #: apps/remix/app/components/dialogs/organisation-create-dialog.tsx
 #: apps/remix/app/components/general/billing-plans.tsx
@@ -8533,6 +9012,14 @@ msgstr "Odaberite broj"
 #: apps/remix/app/components/general/claim-account.tsx
 msgid "Pick a password"
 msgstr "Odaberite lozinku"
+
+#: apps/remix/app/components/general/analytics/analytics-range-picker.tsx
+msgid "Pick a start date"
+msgstr "Odaberite datum početka"
+
+#: apps/remix/app/components/general/analytics/analytics-range-picker.tsx
+msgid "Pick an end date"
+msgstr "Odaberite datum završetka"
 
 #: apps/remix/app/components/general/user-profile-timur.tsx
 msgid "Pick any of the following agreements below and start signing to get started"
@@ -8586,6 +9073,7 @@ msgstr "Provjerite CSV datoteku i uvjerite se da je u skladu s našim formatom"
 
 #: apps/remix/app/components/embed/embed-document-waiting-for-turn.tsx
 #: apps/remix/app/components/embed/embed-recipient-expired.tsx
+#: apps/remix/app/components/embed/embed-sender-disabled.tsx
 msgid "Please check with the parent application for more information."
 msgstr "Za više informacija provjerite s nadređenom aplikacijom."
 
@@ -8650,6 +9138,10 @@ msgstr "Unesite broj"
 msgid "Please enter a valid number"
 msgstr "Unesite valjani broj"
 
+#: apps/remix/app/components/forms/branding-preferences-form.tsx
+msgid "Please enter a valid URL"
+msgstr "Unesite valjani URL"
+
 #: apps/remix/app/components/dialogs/sign-field-text-dialog.tsx
 msgid "Please enter a value"
 msgstr "Unesite vrijednost"
@@ -8665,6 +9157,10 @@ msgstr "Unesite svoje puno ime"
 #: apps/remix/app/components/dialogs/sign-field-initials-dialog.tsx
 msgid "Please enter your initials"
 msgstr "Unesite svoje inicijale"
+
+#: apps/remix/app/components/embed/embed-document-completed.tsx
+msgid "Please follow any instructions provided within the parent application."
+msgstr "Slijedite sve upute navedene u matičnoj aplikaciji."
 
 #: apps/remix/app/components/general/document-signing/document-signing-mobile-widget.tsx
 msgid "Please mark as viewed to complete"
@@ -8746,7 +9242,7 @@ msgstr "Odaberite kako želite primiti kôd za provjeru."
 #: apps/remix/app/components/general/settings-upsell/branding-upsell.tsx
 #: apps/remix/app/components/general/settings-upsell/email-domains-upsell.tsx
 msgid "Please sign: Example.pdf"
-msgstr ""
+msgstr "Molimo potpišite: Example.pdf"
 
 #: apps/remix/app/components/dialogs/organisation-email-domain-create-dialog.tsx
 msgid "Please try a different domain."
@@ -8778,6 +9274,10 @@ msgstr "Za nastavak učitajte dokument"
 #: apps/remix/app/components/forms/branding-preferences-form.tsx
 msgid "Please upload a logo"
 msgstr "Učitajte logotip"
+
+#: packages/ui/primitives/signature-pad/signature-pad-upload.tsx
+msgid "Please upload a valid image file."
+msgstr "Učitajte valjanu slikovnu datoteku."
 
 #: packages/lib/constants/i18n.ts
 msgid "Polish"
@@ -8854,6 +9354,11 @@ msgstr "Boja primarne radnje."
 #: apps/remix/app/components/forms/branding-preferences-form.tsx
 msgid "Primary Foreground"
 msgstr "Primarni prednji plan"
+
+#: apps/remix/app/components/forms/signup.tsx
+#: apps/remix/app/components/general/public-legal-links.tsx
+msgid "Privacy Policy"
+msgstr "Politika privatnosti"
 
 #: apps/remix/app/components/general/template/template-type.tsx
 #: apps/remix/app/components/tables/templates-table.tsx
@@ -8936,7 +9441,13 @@ msgstr "Javni predlošci povezani su s vašim javnim profilom. Sve izmjene javni
 
 #: apps/remix/app/components/general/settings-upsell/branding-upsell.tsx
 msgid "Put your own brand on every document you send. Branding is available on the Teams plan and above."
-msgstr ""
+msgstr "Stavite vlastiti brend na svaki dokument koji pošaljete. Brendiranje je dostupno u paketu Teams i višim paketima."
+
+#: apps/remix/app/components/embed/embed-document-signing-page-v1.tsx
+#: apps/remix/app/components/embed/multisign/multi-sign-document-signing-view.tsx
+#: apps/remix/app/routes/embed+/v1+/multisign+/_index.tsx
+msgid "Qualified electronic signatures are not supported in this embed."
+msgstr "Kvalificirani elektronički potpisi nisu podržani u ovoj ugrađenoj verziji."
 
 #: apps/remix/app/components/general/envelope-editor/envelope-editor.tsx
 msgid "Quick Actions"
@@ -8986,7 +9497,7 @@ msgstr "Samo za čitanje"
 msgid "Read our documentation to get started with Documenso."
 msgstr "Pročitajte našu dokumentaciju za početak rada s Documensom."
 
-#: apps/remix/app/routes/_authenticated+/admin+/documents.$id.tsx
+#: apps/remix/app/components/tables/admin-document-recipient-item-table.tsx
 msgid "Read Status"
 msgstr "Status čitanja"
 
@@ -9003,6 +9514,7 @@ msgstr "Čitanje vašeg dokumenta"
 msgid "Ready"
 msgstr "Spremno"
 
+#: apps/remix/app/components/dialogs/admin-recipient-delete-dialog.tsx
 #: apps/remix/app/routes/_internal+/[__htmltopdf]+/certificate.tsx
 #: packages/lib/server-only/pdf/render-certificate.ts
 msgid "Reason"
@@ -9034,11 +9546,16 @@ msgid "Reauthentication is required to sign this field"
 msgstr "Za potpisivanje ovog polja potrebna je ponovna autentifikacija"
 
 #: apps/remix/app/components/general/document-signing/csc-recipient-signing-in-progress-page.tsx
+#: apps/remix/app/components/general/envelope-signing/envelope-signing-csc-status.tsx
 msgid "Reauthorise and retry"
 msgstr "Ponovno autorizirajte i pokušajte ponovno"
 
 #: packages/ui/components/recipient/recipient-role-select.tsx
 msgid "Receives copy"
+msgstr "Prima kopiju"
+
+#: apps/remix/app/components/general/envelope-editor/recipient-step-list.tsx
+msgid "Receives Copy"
 msgstr "Prima kopiju"
 
 #: apps/remix/app/components/general/document/document-page-view-recent-activity.tsx
@@ -9059,11 +9576,12 @@ msgstr "Primatelj"
 
 #. placeholder {0}: index + 1
 #. placeholder {0}: recipient.index + 1
+#. placeholder {0}: signerIndex + 1
 #: apps/remix/app/components/dialogs/envelope-distribute-dialog.tsx
 #: apps/remix/app/components/dialogs/envelope-distribute-dialog.tsx
 #: apps/remix/app/components/dialogs/template-use-dialog.tsx
-#: apps/remix/app/components/general/envelope-editor/envelope-editor-recipient-form.tsx
 #: apps/remix/app/components/general/envelope-editor/envelope-recipient-selector.tsx
+#: apps/remix/app/components/general/envelope-editor/recipient-row.tsx
 msgid "Recipient {0}"
 msgstr "Primatelj {0}"
 
@@ -9118,8 +9636,9 @@ msgstr "Primatelj je odbio dokument"
 
 #: packages/lib/utils/document-audit-logs.ts
 msgid "Recipient rejected the document externally"
-msgstr ""
+msgstr "Primatelj je odbio dokument izvana"
 
+#: apps/remix/app/components/dialogs/admin-recipient-delete-dialog.tsx
 #: apps/remix/app/components/general/admin-global-settings-section.tsx
 msgid "Recipient removed"
 msgstr "Primatelj uklonjen"
@@ -9193,9 +9712,13 @@ msgstr "Autentifikacija pružatelja usluge potpisivanja primatelja nije uspjela"
 msgid "Recipients"
 msgstr "Primatelji"
 
+#: apps/remix/app/components/tables/admin-document-recipient-item-table.tsx
+msgid "Recipients cannot be removed from a completed document."
+msgstr "Primatelji se ne mogu ukloniti iz dovršenog dokumenta."
+
 #: apps/remix/app/components/general/envelope-editor/envelope-editor-invalid-direct-template-alert.tsx
 msgid "Recipients cannot use this direct link template because the following signers are missing a signature field"
-msgstr ""
+msgstr "Primatelji ne mogu koristiti ovaj predložak s izravnom poveznicom jer sljedeći potpisnici nemaju polje za potpis"
 
 #: apps/remix/app/routes/_authenticated+/admin+/stats.tsx
 msgid "Recipients metrics"
@@ -9268,7 +9791,11 @@ msgstr "Preusmjeravanje na {0}..."
 
 #: apps/remix/app/components/general/settings-upsell/sso-portal-upsell.tsx
 msgid "Redirecting to your identity provider"
-msgstr ""
+msgstr "Preusmjeravanje na Vašeg pružatelja identiteta"
+
+#: apps/remix/app/routes/embed+/auth+/popup.tsx
+msgid "Redirecting to your sign in provider..."
+msgstr "Preusmjeravanje na Vašeg pružatelja prijave..."
 
 #: apps/remix/app/components/forms/signup.tsx
 #: apps/remix/app/components/general/claim-account.tsx
@@ -9288,10 +9815,12 @@ msgstr "Odbij dokument"
 
 #: apps/remix/app/components/dialogs/envelopes-bulk-download-dialog.tsx
 #: apps/remix/app/components/embed/multisign/multi-sign-document-list.tsx
+#: apps/remix/app/components/general/analytics/analytics-status-breakdown-card.tsx
 #: apps/remix/app/components/general/document/document-page-view-recipients.tsx
 #: apps/remix/app/components/general/document/document-status.tsx
 #: apps/remix/app/components/general/envelope-editor/envelope-editor-header.tsx
 #: apps/remix/app/components/general/stack-avatars-with-tooltip.tsx
+#: apps/remix/app/components/tables/admin-document-recipients-table.tsx
 #: apps/remix/app/routes/_internal+/[__htmltopdf]+/certificate.tsx
 #: packages/lib/constants/document.ts
 #: packages/lib/server-only/pdf/render-certificate.ts
@@ -9306,6 +9835,10 @@ msgstr "Odbijanje potvrđeno"
 msgid "Rejection reason: {reason}"
 msgstr "Razlog odbijanja: {reason}"
 
+#: apps/remix/app/components/general/envelope-editor/recipient-step-card.tsx
+msgid "Release to group"
+msgstr "Otpustite u grupu"
+
 #: apps/remix/app/components/general/envelope-editor/envelope-editor-header.tsx
 #: apps/remix/app/components/tables/admin-document-jobs-table.tsx
 msgid "Reload"
@@ -9318,7 +9851,7 @@ msgstr "Sjetili ste se lozinke? <0>Prijavite se</0>"
 #: apps/remix/app/routes/_authenticated+/o.$orgUrl.settings.reminders.tsx
 #: apps/remix/app/routes/_authenticated+/t.$teamUrl+/settings.reminders.tsx
 msgid "Reminder preferences updated"
-msgstr ""
+msgstr "Postavke podsjetnika ažurirane"
 
 #: packages/email/templates/document-reminder.tsx
 msgid "Reminder to {action} {documentName}"
@@ -9363,6 +9896,7 @@ msgid "Reminders"
 msgstr "Podsjetnici"
 
 #: apps/remix/app/components/dialogs/admin-organisation-member-delete-dialog.tsx
+#: apps/remix/app/components/dialogs/admin-recipient-delete-dialog.tsx
 #: apps/remix/app/components/dialogs/admin-team-member-delete-dialog.tsx
 #: apps/remix/app/components/dialogs/team-email-delete-dialog.tsx
 #: apps/remix/app/components/dialogs/team-member-delete-dialog.tsx
@@ -9410,10 +9944,16 @@ msgstr "Ukloni člana organizacije"
 
 #: apps/remix/app/components/general/rate-limit-array-input.tsx
 msgid "Remove rate limit"
-msgstr ""
+msgstr "Ukloni ograničenje učestalosti"
 
 #: apps/remix/app/components/dialogs/ai-recipient-detection-dialog.tsx
 msgid "Remove recipient"
+msgstr "Ukloni primatelja"
+
+#: apps/remix/app/components/dialogs/admin-recipient-delete-dialog.tsx
+#: apps/remix/app/components/dialogs/admin-recipient-delete-dialog.tsx
+#: apps/remix/app/components/dialogs/admin-recipient-delete-dialog.tsx
+msgid "Remove Recipient"
 msgstr "Ukloni primatelja"
 
 #: apps/remix/app/components/dialogs/team-email-delete-dialog.tsx
@@ -9562,6 +10102,7 @@ msgstr "Ponovno pošalji provjeru"
 #: apps/remix/app/components/forms/public-profile-form.tsx
 #: apps/remix/app/components/general/organisation-usage-reset-button.tsx
 #: apps/remix/app/routes/_authenticated+/t.$teamUrl+/documents._index.tsx
+#: apps/remix/app/routes/_authenticated+/t.$teamUrl+/templates._index.tsx
 msgid "Reset"
 msgstr "Poništi"
 
@@ -9572,11 +10113,11 @@ msgstr "Poništi 2FA"
 
 #: apps/remix/app/components/dialogs/branding-preferences-reset-dialog.tsx
 msgid "Reset branding preferences"
-msgstr ""
+msgstr "Vrati postavke brendiranja"
 
 #: apps/remix/app/components/dialogs/document-preferences-reset-dialog.tsx
 msgid "Reset document preferences"
-msgstr ""
+msgstr "Vrati postavke dokumenata"
 
 #: apps/remix/app/components/forms/forgot-password.tsx
 msgid "Reset email sent"
@@ -9600,7 +10141,7 @@ msgstr "Poništite dvofaktorsku autentifikaciju korisnika. Ova radnja je nepovra
 #: apps/remix/app/components/dialogs/document-preferences-reset-dialog.tsx
 #: apps/remix/app/components/dialogs/document-preferences-reset-dialog.tsx
 msgid "Reset to defaults"
-msgstr ""
+msgstr "Vrati na zadano"
 
 #: apps/remix/app/components/dialogs/admin-user-reset-two-factor-dialog.tsx
 msgid "Reset Two Factor Authentication"
@@ -9620,7 +10161,7 @@ msgstr "Riješi plaćanje"
 
 #: apps/remix/app/components/general/organisation-usage-panel.tsx
 msgid "Resource blocked"
-msgstr ""
+msgstr "Resurs je blokiran"
 
 #: apps/remix/app/components/general/webhook-logs-sheet.tsx
 msgid "Response"
@@ -9640,7 +10181,7 @@ msgstr "Budite bez brige, vaš dokument je strogo povjerljiv i nikada neće biti
 
 #: apps/remix/app/components/general/settings-upsell/sso-portal-upsell.tsx
 msgid "Restrict sign-ins by email domain and choose the default role"
-msgstr ""
+msgstr "Ograničite prijave prema domeni e-pošte i odaberite zadanu ulogu"
 
 #: apps/remix/app/components/general/organisations/organisation-billing-banner.tsx
 msgid "Restricted Access"
@@ -9654,6 +10195,7 @@ msgstr "Zadržavanje dokumenata"
 msgid "Retried"
 msgstr "Ponovno pokušano"
 
+#: apps/remix/app/components/general/analytics/analytics-query-error.tsx
 #: apps/remix/app/components/general/document-signing/document-signing-auth-passkey.tsx
 msgid "Retry"
 msgstr "Pokušaj ponovno"
@@ -9665,6 +10207,7 @@ msgstr "Pokušaj ponovno"
 msgid "Return"
 msgstr "Natrag"
 
+#: apps/remix/app/components/general/document-signing/document-signing-sender-disabled-page.tsx
 #: apps/remix/app/routes/_recipient+/sign.$token+/expired.tsx
 #: apps/remix/app/routes/_recipient+/sign.$token+/rejected.tsx
 #: apps/remix/app/routes/_recipient+/sign.$token+/waiting.tsx
@@ -9722,6 +10265,7 @@ msgstr "Prsten"
 #: apps/remix/app/components/dialogs/template-direct-link-dialog.tsx
 #: apps/remix/app/components/embed/authoring/configure-document-recipients.tsx
 #: apps/remix/app/components/tables/admin-document-recipient-item-table.tsx
+#: apps/remix/app/components/tables/admin-document-recipients-table.tsx
 #: apps/remix/app/components/tables/admin-organisations-table.tsx
 #: apps/remix/app/components/tables/admin-user-teams-table.tsx
 #: apps/remix/app/components/tables/organisation-groups-table.tsx
@@ -9739,6 +10283,12 @@ msgstr "Uloga"
 #: apps/remix/app/routes/_authenticated+/admin+/users.$id.tsx
 msgid "Roles"
 msgstr "Uloge"
+
+#. placeholder {0}: rowError.row
+#. placeholder {1}: rowError.column
+#: apps/remix/app/components/dialogs/template-bulk-send-dialog.tsx
+msgid "Row {0}: <0>{1}</0> must be a valid email or empty"
+msgstr "Redak {0}: <0>{1}</0> mora biti valjana adresa e-pošte ili prazan"
 
 #: packages/ui/primitives/data-table-pagination.tsx
 msgid "Rows per page"
@@ -9803,8 +10353,8 @@ msgid "Search by claim ID or name"
 msgstr "Pretraži po ID-u ili nazivu prava"
 
 #: apps/remix/app/routes/_authenticated+/admin+/documents._index.tsx
-msgid "Search by document title, team:123 or user:123"
-msgstr "Pretraži po naslovu dokumenta, team:123 ili user:123"
+msgid "Search by document title, recipient:123, team:123 or user:123"
+msgstr "Pretražite po naslovu dokumenta, recipient:123, team:123 ili user:123"
 
 #: apps/remix/app/routes/_authenticated+/admin+/email-domains._index.tsx
 msgid "Search by domain or organisation name"
@@ -9836,7 +10386,7 @@ msgstr "Pretraži po nazivu organizacije, URL-u ili ID-u"
 
 #: apps/remix/app/components/general/app-command-menu.tsx
 msgid "Search documents, users, organisations…"
-msgstr ""
+msgstr "Pretražite dokumente, korisnike, organizacije…"
 
 #: apps/remix/app/components/general/document/document-search.tsx
 msgid "Search documents..."
@@ -9859,27 +10409,40 @@ msgstr "Pretraži jezike..."
 
 #: apps/remix/app/components/general/app-command-menu.tsx
 msgid "Search languages…"
-msgstr ""
+msgstr "Pretražite jezike…"
+
+#: apps/remix/app/routes/_authenticated+/t.$teamUrl+/analytics._index.tsx
+msgid "Search members"
+msgstr "Pretraži članove"
 
 #: apps/remix/app/components/general/organisation-members-multiselect-combobox.tsx
 msgid "Search members by name or email"
 msgstr "Pretraži članove po imenu ili e-mailu"
 
 #: apps/remix/app/components/tables/documents-table-sender-filter.tsx
+#: apps/remix/app/components/tables/templates-table-owner-filter.tsx
 msgid "Search members..."
-msgstr ""
+msgstr "Pretraži članove..."
 
 #: apps/remix/app/components/general/settings-org-switcher.tsx
 msgid "Search organisations…"
-msgstr ""
+msgstr "Pretražite organizacije…"
+
+#: apps/remix/app/routes/_authenticated+/o.$orgUrl.analytics._index.tsx
+msgid "Search teams"
+msgstr "Pretraži timove"
 
 #: apps/remix/app/components/general/settings-team-switcher.tsx
 msgid "Search teams…"
-msgstr ""
+msgstr "Pretražite timove…"
+
+#: apps/remix/app/components/general/template/template-search.tsx
+msgid "Search templates..."
+msgstr "Pretražite predloške..."
 
 #: apps/remix/app/components/general/app-command-menu.tsx
 msgid "Search themes…"
-msgstr ""
+msgstr "Pretražite teme…"
 
 #: apps/remix/app/components/forms/branding-preferences-form.tsx
 msgid "Secondary text colour, used for descriptions and footers."
@@ -9938,7 +10501,7 @@ msgstr "Odaberite primatelja"
 
 #: apps/remix/app/components/general/unified-settings-sidebar-mobile.tsx
 msgid "Select a section"
-msgstr ""
+msgstr "Odaberite odjeljak"
 
 #: apps/remix/app/routes/_authenticated+/o.$orgUrl._index.tsx
 msgid "Select a team to view its dashboard"
@@ -10106,7 +10669,7 @@ msgstr "Odaberite vidljivost"
 
 #: apps/remix/app/components/tables/envelopes-table-bulk-action-bar.tsx
 msgid "selected"
-msgstr ""
+msgstr "odabrano"
 
 #: apps/remix/app/components/dialogs/envelopes-bulk-delete-dialog.tsx
 msgid "Selected documents will be permanently deleted"
@@ -10164,7 +10727,7 @@ msgstr "Pošalji dokument"
 
 #: apps/remix/app/components/general/settings-upsell/email-domains-upsell.tsx
 msgid "Send documents from your own domain. Email domains are available on the Enterprise plan."
-msgstr ""
+msgstr "Šaljite dokumente sa svoje domene. Domene e-pošte dostupne su u paketu Enterprise."
 
 #: packages/email/templates/confirm-team-email.tsx
 msgid "Send documents on behalf of the team using the email address"
@@ -10176,7 +10739,7 @@ msgstr "Odmah pošalji dokumente primateljima"
 
 #: apps/remix/app/components/general/settings-upsell/email-domains-upsell.tsx
 msgid "Send emails to recipients from your domain"
-msgstr ""
+msgstr "Šaljite e-poštu primateljima sa svoje domene"
 
 #: apps/remix/app/components/general/envelope-editor/envelope-editor.tsx
 msgid "Send Envelope"
@@ -10202,7 +10765,12 @@ msgstr "Pošalji podsjetnik"
 msgid "Send reminders to the following recipients"
 msgstr "Pošalji podsjetnike sljedećim primateljima"
 
-#: apps/remix/app/routes/_authenticated+/admin+/documents.$id.tsx
+#: apps/remix/app/components/forms/password-setup-request-button.tsx
+#: apps/remix/app/components/forms/password-setup-request.tsx
+msgid "Send setup link"
+msgstr "Pošalji poveznicu za postavljanje"
+
+#: apps/remix/app/components/tables/admin-document-recipient-item-table.tsx
 msgid "Send Status"
 msgstr "Status slanja"
 
@@ -10220,17 +10788,22 @@ msgstr "Pošalji testni e-mail"
 msgid "Sender"
 msgstr "Pošiljatelj"
 
+#: apps/remix/app/components/embed/embed-sender-disabled.tsx
+#: apps/remix/app/components/general/document-signing/document-signing-sender-disabled-page.tsx
+msgid "Sender Account Disabled"
+msgstr "Račun pošiljatelja je onemogućen"
+
 #: apps/remix/app/routes/_recipient+/report.$token.tsx
 msgid "Sender reported"
 msgstr "Pošiljatelj prijavljen"
 
 #: apps/remix/app/components/general/settings-upsell/email-domains-upsell.tsx
 msgid "Sending from app.documenso.com"
-msgstr ""
+msgstr "Slanje s app.documenso.com"
 
 #: apps/remix/app/components/general/settings-upsell/email-domains-upsell.tsx
 msgid "Sending from your domain"
-msgstr ""
+msgstr "Slanje s Vaše domene"
 
 #: apps/remix/app/components/forms/forgot-password.tsx
 msgid "Sending Reset Email..."
@@ -10240,6 +10813,7 @@ msgstr "Slanje e-maila za poništavanje..."
 msgid "Sending..."
 msgstr "Slanje..."
 
+#: apps/remix/app/components/general/analytics/analytics-activity-table-card.tsx
 #: apps/remix/app/components/general/document/document-page-view-recipients.tsx
 #: apps/remix/app/components/general/webhook-logs-sheet.tsx
 #: apps/remix/app/routes/_authenticated+/t.$teamUrl+/settings.webhooks.$id._index.tsx
@@ -10250,21 +10824,26 @@ msgstr "Poslano"
 
 #: apps/remix/app/components/general/organisation-usage-panel.tsx
 msgid "Sent this period"
-msgstr ""
+msgstr "Poslano u ovom razdoblju"
 
 #: apps/remix/app/components/general/settings-upsell/branding-upsell.tsx
 msgid "Separate branding per team"
-msgstr ""
+msgstr "Zasebno brendiranje po timu"
 
 #: apps/remix/app/routes/_authenticated+/settings+/security.sessions.tsx
 msgid "Session revoked"
 msgstr "Sesija opozvana"
+
+#: apps/remix/app/routes/_authenticated+/settings+/security.sessions.tsx
+msgid "Sessions created by signing in to Documenso embedded on another website."
+msgstr "Sesije stvorene prijavom u Documenso ugrađen na drugoj web-stranici."
 
 #: apps/remix/app/components/dialogs/session-logout-all-dialog.tsx
 msgid "Sessions have been revoked"
 msgstr "Sesije su opozvane"
 
 #: apps/remix/app/components/general/claim-account.tsx
+#: apps/remix/app/routes/_authenticated+/settings+/security._index.tsx
 msgid "Set a password"
 msgstr "Postavite lozinku"
 
@@ -10322,6 +10901,7 @@ msgstr "Podijeli poveznicu"
 msgid "Share your signing experience!"
 msgstr "Podijelite svoje iskustvo potpisivanja!"
 
+#: apps/remix/app/components/tables/admin-document-recipient-item-table.tsx
 #: apps/remix/app/routes/_authenticated+/t.$teamUrl+/settings.public-profile.tsx
 msgid "Show"
 msgstr "Prikaži"
@@ -10332,9 +10912,17 @@ msgstr "Prikaži"
 msgid "Show advanced settings"
 msgstr "Prikaži napredne postavke"
 
+#: apps/remix/app/components/general/analytics/analytics-activity-table-card.tsx
+msgid "Show all"
+msgstr "Prikaži sve"
+
 #: apps/remix/app/routes/_authenticated+/admin+/organisation-stats._index.tsx
 msgid "Show daily averages for documents, emails and API usages"
 msgstr "Prikaži dnevne prosjeke za dokumente, e-mailove i korištenje API-ja"
+
+#: apps/remix/app/components/general/analytics/analytics-no-activity-alert.tsx
+msgid "Show last 12 months"
+msgstr "Prikaži zadnjih 12 mjeseci"
 
 #: apps/remix/app/components/general/admin-license-card.tsx
 msgid "Show license key"
@@ -10352,6 +10940,14 @@ msgstr "Prikaži korištenje"
 msgid "Show usage with quotas"
 msgstr "Prikaži korištenje s kvotama"
 
+#: apps/remix/app/routes/_authenticated+/t.$teamUrl+/analytics._index.tsx
+msgid "Showing {visibleCount} of {totalCount} members"
+msgstr "Prikazano {visibleCount} od {totalCount} članova"
+
+#: apps/remix/app/routes/_authenticated+/o.$orgUrl.analytics._index.tsx
+msgid "Showing {visibleCount} of {totalCount} teams"
+msgstr "Prikazano {visibleCount} od {totalCount} timova"
+
 #: apps/remix/app/components/dialogs/sign-field-signature-dialog.tsx
 #: apps/remix/app/components/general/document-signing/document-signing-auth-2fa.tsx
 #: apps/remix/app/components/general/document-signing/document-signing-auth-passkey.tsx
@@ -10362,7 +10958,6 @@ msgstr "Prikaži korištenje s kvotama"
 #: apps/remix/app/components/general/document-signing/document-signing-signature-field.tsx
 #: apps/remix/app/components/general/document/document-page-view-button.tsx
 #: apps/remix/app/components/general/settings-upsell/branding-upsell.tsx
-#: apps/remix/app/components/general/user-profile-skeleton.tsx
 #: apps/remix/app/components/general/user-profile-timur.tsx
 #: apps/remix/app/components/tables/documents-table-action-button.tsx
 #: apps/remix/app/components/tables/documents-table-action-dropdown.tsx
@@ -10427,11 +11022,43 @@ msgstr "Potpišite ovdje"
 msgid "Sign In"
 msgstr "Prijava"
 
+#: apps/remix/app/routes/embed+/auth+/complete.tsx
+msgid "Sign in did not complete. Close this window and try again."
+msgstr "Prijava nije dovršena. Zatvorite ovaj prozor i pokušajte ponovno."
+
+#: apps/remix/app/components/embed/embed-popup-auth.tsx
+msgid "Sign in did not complete. Please try again."
+msgstr "Prijava nije dovršena. Pokušajte ponovno."
+
+#: apps/remix/app/components/embed/embed-popup-auth.tsx
+msgid "Sign in timed out. Please try again."
+msgstr "Isteklo je vrijeme za prijavu. Pokušajte ponovno."
+
+#: apps/remix/app/routes/embed+/auth+/popup.tsx
+msgid "Sign in to Documenso to continue"
+msgstr "Prijavite se u Documenso za nastavak"
+
 #: apps/remix/app/components/general/document-signing/document-signing-auth-dialog.tsx
 #: apps/remix/app/routes/_unauthenticated+/o.$orgUrl.signin.tsx
 #: apps/remix/app/routes/_unauthenticated+/signin.tsx
 msgid "Sign in to your account"
 msgstr "Prijavite se u svoj račun"
+
+#: apps/remix/app/components/embed/embed-popup-auth.tsx
+msgid "Sign in with email or passkey"
+msgstr "Prijavite se e-poštom ili pristupnim ključem"
+
+#: apps/remix/app/components/embed/embed-popup-auth.tsx
+msgid "Sign in with passkey"
+msgstr "Prijavite se pristupnim ključem"
+
+#: apps/remix/app/components/embed/embed-csc-authentication-required.tsx
+msgid "Sign in with your signing provider"
+msgstr "Prijavite se kod svog pružatelja usluge potpisivanja"
+
+#: apps/remix/app/routes/embed+/auth+/popup.tsx
+msgid "Sign in with your signing provider to continue"
+msgstr "Prijavite se kod svog pružatelja usluge potpisivanja za nastavak"
 
 #: apps/remix/app/components/general/app-nav-mobile.tsx
 #: apps/remix/app/components/general/org-menu-switcher.tsx
@@ -10495,6 +11122,7 @@ msgid "Signature ID"
 msgstr "ID potpisa"
 
 #: packages/ui/primitives/signature-pad/signature-pad-draw.tsx
+#: packages/ui/primitives/signature-pad/signature-pad-upload.tsx
 msgid "Signature is too small"
 msgstr "Potpis je premalen"
 
@@ -10535,7 +11163,7 @@ msgstr "Potpisano"
 
 #: apps/remix/app/components/general/settings-upsell/sso-portal-upsell.tsx
 msgid "Signed in"
-msgstr ""
+msgstr "Prijavljeni"
 
 #: apps/remix/app/components/general/envelope-signing/envelope-signer-header.tsx
 msgid "Signer"
@@ -10555,6 +11183,10 @@ msgstr "Događaji potpisnika"
 msgctxt "Recipient role plural name"
 msgid "Signers"
 msgstr "Potpisnici"
+
+#: apps/remix/app/routes/_authenticated+/admin+/stats.tsx
+msgid "Signers that Signed Up"
+msgstr "Potpisnici koji su se registrirali"
 
 #: packages/lib/constants/recipient-roles.ts
 msgctxt "Recipient role progressive verb"
@@ -10603,7 +11235,7 @@ msgstr "Prijava..."
 
 #: apps/remix/app/utils/toast-error-messages.ts
 msgid "Signing link expired"
-msgstr ""
+msgstr "Poveznica za potpisivanje je istekla"
 
 #: apps/remix/app/components/general/document/document-page-view-dropdown.tsx
 #: apps/remix/app/components/tables/documents-table-action-dropdown.tsx
@@ -10614,7 +11246,11 @@ msgstr "Poveznice za potpisivanje"
 msgid "Signing links have been generated for this document."
 msgstr "Poveznice za potpisivanje generirane su za ovaj dokument."
 
-#: apps/remix/app/components/general/envelope-editor/envelope-editor-recipient-form.tsx
+#: apps/remix/app/components/tables/admin-document-recipient-item-table.tsx
+msgid "Signing Order"
+msgstr "Redoslijed potpisivanja"
+
+#: apps/remix/app/components/general/envelope-editor/recipient-step-list.tsx
 #: packages/ui/primitives/document-flow/add-signers.tsx
 #: packages/ui/primitives/template-flow/add-template-placeholder-recipients.tsx
 msgid "Signing order is enabled."
@@ -10624,9 +11260,13 @@ msgstr "Redoslijed potpisivanja je omogućen."
 msgid "Signing Reminders"
 msgstr "Podsjetnici za potpisivanje"
 
-#: apps/remix/app/routes/_authenticated+/admin+/documents.$id.tsx
+#: apps/remix/app/components/tables/admin-document-recipient-item-table.tsx
 msgid "Signing Status"
 msgstr "Status potpisivanja"
+
+#: apps/remix/app/components/general/document-signing/document-signing-auth-set-password.tsx
+msgid "Signing this field requires a password, but your account does not have one. We can email you a link to set one. Once done, sign in again and return to this document to continue."
+msgstr "Za potpisivanje ovog polja potrebna je lozinka, a Vaš račun je nema. Možemo Vam e-poštom poslati poveznicu za njezino postavljanje. Nakon toga se ponovno prijavite i vratite se na ovaj dokument kako biste nastavili."
 
 #: apps/remix/app/components/embed/embed-recipient-expired.tsx
 msgid "Signing Window Expired"
@@ -10648,6 +11288,10 @@ msgstr "Vrijeme za potpisivanje isteklo za \"{displayName}\" na \"{documentName}
 msgid "Signing window expired for {0}"
 msgstr "Vrijeme za potpisivanje isteklo za {0}"
 
+#: apps/remix/app/components/embed/embed-popup-auth.tsx
+msgid "Signing you in..."
+msgstr "Prijava u tijeku..."
+
 #: apps/remix/app/components/forms/signup.tsx
 msgid "Signup is currently disabled or not available for your email domain."
 msgstr "Registracija je trenutno onemogućena ili nije dostupna za vašu e-mail domenu."
@@ -10659,7 +11303,7 @@ msgstr "Od {0}"
 
 #: apps/remix/app/components/general/settings-upsell/sso-portal-upsell.tsx
 msgid "Single sign-on"
-msgstr ""
+msgstr "Jedinstvena prijava (SSO)"
 
 #: apps/remix/app/components/general/admin-site-banner-section.tsx
 msgid "Site Banner"
@@ -10678,15 +11322,15 @@ msgstr "Preskoči"
 #: apps/remix/app/components/dialogs/envelope-distribute-dialog.tsx
 #: apps/remix/app/components/general/envelope-editor/envelope-editor-fields-page.tsx
 msgid "Some fields are placed on top of each other. This may complicate the signing process or cause fields to not work as expected."
-msgstr ""
+msgstr "Neka polja postavljena su jedno preko drugog. To može otežati postupak potpisivanja ili uzrokovati da polja ne rade očekivano."
 
 #: apps/remix/app/utils/toast-error-messages.ts
 msgid "Some fields were not saved"
-msgstr ""
+msgstr "Neka polja nisu spremljena"
 
 #: apps/remix/app/components/general/app-command-menu.tsx
 msgid "Some searches failed — results may be incomplete."
-msgstr ""
+msgstr "Neka pretraživanja nisu uspjela — rezultati mogu biti nepotpuni."
 
 #: packages/ui/primitives/document-flow/missing-signature-field-dialog.tsx
 msgid "Some signers have not been assigned a signature field. Please assign at least 1 signature field to each signer before proceeding."
@@ -10742,6 +11386,7 @@ msgid "Something went wrong"
 msgstr "Nešto je pošlo po zlu"
 
 #: apps/remix/app/components/general/document-signing/csc-recipient-signing-in-progress-page.tsx
+#: apps/remix/app/components/general/envelope-signing/envelope-signing-csc-status.tsx
 msgid "Something went wrong while applying your signature. Please retry."
 msgstr "Nešto je pošlo po zlu prilikom primjene vašeg potpisa. Pokušajte ponovno."
 
@@ -10782,6 +11427,10 @@ msgstr "Nešto je pošlo po zlu pri zamjeni PDF-a"
 msgid "Something went wrong while sending the confirmation email."
 msgstr "Nešto je pošlo po zlu pri slanju e-maila za potvrdu."
 
+#: apps/remix/app/components/embed/embed-popup-auth.tsx
+msgid "Something went wrong while signing you in. Please try again."
+msgstr "Došlo je do pogreške pri prijavi. Pokušajte ponovno."
+
 #: apps/remix/app/components/dialogs/envelope-item-edit-dialog.tsx
 msgid "Something went wrong while updating the envelope item."
 msgstr "Nešto je pošlo po zlu pri ažuriranju stavke omotnice."
@@ -10808,6 +11457,10 @@ msgstr "Nešto je pošlo po zlu!"
 #: packages/ui/primitives/data-table.tsx
 msgid "Something went wrong."
 msgstr "Nešto je pošlo po zlu."
+
+#: apps/remix/app/routes/embed+/auth+/popup.tsx
+msgid "Something went wrong. Close this window and try again."
+msgstr "Nešto je pošlo po zlu. Zatvorite ovaj prozor i pokušajte ponovno."
 
 #: apps/remix/app/components/dialogs/token-create-dialog.tsx
 msgid "Something went wrong. Please try again later."
@@ -10847,6 +11500,10 @@ msgstr "Španjolski"
 msgid "SSO"
 msgstr "SSO"
 
+#: apps/remix/app/routes/embed+/auth+/popup.tsx
+msgid "Starting sign in..."
+msgstr "Pokretanje prijave..."
+
 #: apps/remix/app/routes/_authenticated+/admin+/_layout.tsx
 msgid "Stats"
 msgstr "Statistika"
@@ -10870,6 +11527,10 @@ msgstr "Statistika"
 msgid "Status"
 msgstr "Status"
 
+#: apps/remix/app/components/general/analytics/analytics-status-breakdown-card.tsx
+msgid "Status breakdown"
+msgstr "Raspodjela po statusu"
+
 #. placeholder {0}: currentStepData.order
 #. placeholder {1}: envelopeEditorSteps.length
 #: apps/remix/app/components/general/envelope-editor/envelope-editor.tsx
@@ -10883,7 +11544,11 @@ msgstr "Korak <0>{step} od {maxStep}</0>"
 
 #: apps/remix/app/components/dialogs/envelopes-bulk-download-dialog.tsx
 msgid "Stop"
-msgstr ""
+msgstr "Zaustavi"
+
+#: apps/remix/app/components/embed/embed-popup-auth.tsx
+msgid "Storage access was denied, so we cannot keep you signed in inside this embed. Please try again."
+msgstr "Pristup pohrani je odbijen pa Vas ne možemo držati prijavljenima unutar ove ugrađene verzije. Pokušajte ponovno."
 
 #: apps/remix/app/components/tables/admin-organisations-table.tsx
 msgid "Stripe"
@@ -10966,7 +11631,7 @@ msgstr "Pretplata sinkronizirana"
 
 #: apps/remix/app/components/general/use-admin-search-categories.ts
 msgid "Subscriptions"
-msgstr ""
+msgstr "Pretplate"
 
 #: apps/remix/app/components/dialogs/admin-organisation-create-dialog.tsx
 #: apps/remix/app/components/dialogs/admin-organisation-member-delete-dialog.tsx
@@ -11111,9 +11776,10 @@ msgstr "Ciljna organizacija"
 #: apps/remix/app/components/tables/admin-user-teams-table.tsx
 #: apps/remix/app/components/tables/organisation-insights-table.tsx
 #: apps/remix/app/components/tables/organisation-teams-table.tsx
+#: apps/remix/app/components/tables/templates-table-view-filter.tsx
 #: apps/remix/app/routes/_authenticated+/admin+/organisations.$id.tsx
+#: apps/remix/app/routes/_authenticated+/o.$orgUrl.analytics._index.tsx
 #: apps/remix/app/routes/_authenticated+/o.$orgUrl.settings.groups.$id.tsx
-#: apps/remix/app/routes/_authenticated+/t.$teamUrl+/templates._index.tsx
 msgid "Team"
 msgstr "Tim"
 
@@ -11121,6 +11787,10 @@ msgstr "Tim"
 #: packages/lib/server-only/team/delete-team.ts
 msgid "Team \"{0}\" has been deleted on Documenso"
 msgstr "Tim \"{0}\" je izbrisan na Documensu"
+
+#: apps/remix/app/routes/_authenticated+/o.$orgUrl.analytics._index.tsx
+msgid "Team activity"
+msgstr "Aktivnost tima"
 
 #: packages/lib/constants/teams-translations.ts
 msgid "Team Admin"
@@ -11266,9 +11936,11 @@ msgstr "URL tima"
 #: apps/remix/app/components/general/settings-upsell/branding-upsell.tsx
 #: apps/remix/app/components/general/use-admin-search-categories.ts
 #: apps/remix/app/components/tables/admin-organisation-overview-table.tsx
+#: apps/remix/app/components/tables/admin-organisation-stats-table.tsx
 #: apps/remix/app/components/tables/organisation-insights-table.tsx
 #: apps/remix/app/components/tables/organisation-insights-table.tsx
 #: apps/remix/app/routes/_authenticated+/dashboard.tsx
+#: apps/remix/app/routes/_authenticated+/o.$orgUrl.analytics._index.tsx
 #: apps/remix/app/routes/_authenticated+/o.$orgUrl.settings.teams.tsx
 #: packages/lib/utils/settings-nav.ts
 msgid "Teams"
@@ -11280,7 +11952,7 @@ msgstr "Timovi vam pomažu organizirati rad i surađivati s drugima. Stvorite sv
 
 #: apps/remix/app/routes/_authenticated+/admin+/organisations.$id.tsx
 msgid "Teams that belong to this organisation."
-msgstr ""
+msgstr "Timovi koji pripadaju ovoj organizaciji."
 
 #: apps/remix/app/routes/_authenticated+/o.$orgUrl.settings.groups.$id.tsx
 msgid "Teams that this organisation group is currently assigned to"
@@ -11384,6 +12056,10 @@ msgstr "Predložak uspješno ažuriran"
 msgid "Template uploaded"
 msgstr "Predložak učitan"
 
+#: apps/remix/app/components/general/analytics/analytics-template-usage-card.tsx
+msgid "Template usage"
+msgstr "Korištenje predložaka"
+
 #: apps/remix/app/components/general/app-command-menu.tsx
 #: apps/remix/app/components/general/app-nav-desktop.tsx
 #: apps/remix/app/components/general/app-nav-mobile.tsx
@@ -11402,6 +12078,11 @@ msgstr "Predlošci izbrisani"
 #: apps/remix/app/components/dialogs/envelopes-bulk-delete-dialog.tsx
 msgid "Templates partially deleted"
 msgstr "Predlošci djelomično izbrisani"
+
+#: apps/remix/app/components/forms/signup.tsx
+#: apps/remix/app/components/general/public-legal-links.tsx
+msgid "Terms of Service"
+msgstr "Uvjeti korištenja"
 
 #: apps/remix/app/routes/_authenticated+/t.$teamUrl+/settings.webhooks.$id._index.tsx
 msgid "Test"
@@ -11512,6 +12193,26 @@ msgstr "Metode autentifikacije potrebne primateljima za pregled dokumenta."
 msgid "The content to show in the banner, HTML is allowed"
 msgstr "Sadržaj za prikaz u baneru, HTML je dopušten"
 
+#: apps/remix/app/components/dialogs/template-bulk-send-dialog.tsx
+msgid "The CSV contains invalid recipient emails. Please fix the following rows:"
+msgstr "CSV sadrži nevaljane adrese e-pošte primatelja. Ispravite sljedeće retke:"
+
+#: apps/remix/app/components/dialogs/template-bulk-send-dialog.tsx
+msgid "The CSV could not be parsed. Please check the file format and try again."
+msgstr "CSV se nije mogao obraditi. Provjerite format datoteke i pokušajte ponovno."
+
+#: apps/remix/app/components/dialogs/template-bulk-send-dialog.tsx
+msgid "The CSV does not contain any rows. Please add at least one row of recipient details."
+msgstr "CSV ne sadrži nijedan redak. Dodajte barem jedan redak s podacima o primatelju."
+
+#: apps/remix/app/components/dialogs/template-bulk-send-dialog.tsx
+msgid "The CSV exceeds the maximum file size."
+msgstr "CSV premašuje najveću dopuštenu veličinu datoteke."
+
+#: apps/remix/app/components/dialogs/template-bulk-send-dialog.tsx
+msgid "The CSV is missing the following required columns. Please download the template CSV for the correct format."
+msgstr "CSV-u nedostaju sljedeći obavezni stupci. Preuzmite predložak CSV-a za ispravan format."
+
 #: apps/remix/app/components/forms/email-preferences-form.tsx
 msgid "The default email to use when sending emails to recipients"
 msgstr "Zadani e-mail koji će se koristiti pri slanju e-mailova primateljima"
@@ -11537,7 +12238,7 @@ msgstr "Dokument nije bilo moguće stvoriti zbog nedostajućih ili neispravnih p
 
 #: apps/remix/app/utils/toast-error-messages.ts
 msgid "The document could not be sent because some signers do not have a signature field. Please edit the template and add a signature field for each signer."
-msgstr ""
+msgstr "Dokument nije moguće poslati jer neki potpisnici nemaju polje za potpis. Uredite predložak i dodajte polje za potpis za svakog potpisnika."
 
 #: apps/remix/app/components/dialogs/admin-document-delete-dialog.tsx
 msgid "The Document has been deleted successfully."
@@ -11551,9 +12252,9 @@ msgstr "Dokument je uspješno odbijen."
 msgid "The document is already saved and cannot be changed."
 msgstr "Dokument je već spremljen i ne može se mijenjati."
 
-#: apps/remix/app/components/embed/embed-document-completed.tsx
-msgid "The document is now completed, please follow any instructions provided within the parent application."
-msgstr "Dokument je sada dovršen, slijedite sve upute navedene u nadređenoj aplikaciji."
+#: apps/remix/app/components/dialogs/template-use-dialog.tsx
+msgid "The document name will use the most recently uploaded file name without its extension."
+msgstr "Naziv dokumenta koristit će naziv zadnje učitane datoteke bez ekstenzije."
 
 #: packages/email/template-components/template-document-rejection-confirmed.tsx
 msgid "The document owner has been notified of this rejection. No further action is required from you at this time. The document owner may contact you with any questions regarding this rejection."
@@ -11582,20 +12283,20 @@ msgstr "Dokument je stvoren, ali nije bilo moguće poslati ga primateljima."
 
 #: packages/lib/utils/document-audit-logs.ts
 msgid "The document was rejected externally by {onBehalfOf} on behalf of {user}"
-msgstr ""
+msgstr "Dokument je izvana odbio {onBehalfOf} u ime korisnika {user}"
 
 #: packages/lib/utils/document-audit-logs.ts
 #: packages/lib/utils/document-audit-logs.ts
 msgid "The document was rejected externally by {onBehalfOf} on behalf of the recipient"
-msgstr ""
+msgstr "Dokument je izvana odbio {onBehalfOf} u ime primatelja"
 
 #: packages/lib/utils/document-audit-logs.ts
 msgid "The document was rejected externally on behalf of {user}"
-msgstr ""
+msgstr "Dokument je izvana odbijen u ime korisnika {user}"
 
 #: packages/lib/utils/document-audit-logs.ts
 msgid "The document was rejected externally on behalf of the recipient"
-msgstr ""
+msgstr "Dokument je izvana odbijen u ime primatelja"
 
 #: apps/remix/app/components/dialogs/envelope-delete-dialog.tsx
 msgid "The document will be hidden from your account"
@@ -11652,8 +12353,9 @@ msgid "The fields have been updated to the new field insertion method successful
 msgstr "Polja su uspješno ažurirana na novu metodu umetanja polja"
 
 #: apps/remix/app/components/dialogs/envelope-item-edit-dialog.tsx
-msgid "The file is not a valid PDF."
-msgstr "Datoteka nije valjan PDF."
+#: apps/remix/app/utils/toast-error-messages.ts
+msgid "The file is not a valid PDF or is password protected."
+msgstr "Datoteka nije valjani PDF ili je zaštićena lozinkom."
 
 #: apps/remix/app/components/dialogs/folder-delete-dialog.tsx
 msgid "The folder you are trying to delete does not exist."
@@ -11691,9 +12393,17 @@ msgstr "Sljedećim potpisnicima nedostaju polja za potpis:"
 msgid "The following team has been deleted. You will no longer be able to access this team and its documents"
 msgstr "Sljedeći tim je izbrisan. Više nećete moći pristupiti ovom timu ni njegovim dokumentima"
 
+#: packages/ui/primitives/signature-pad/signature-pad-upload.tsx
+msgid "The image could not be loaded. Please try again."
+msgstr "Slika se nije mogla učitati. Pokušajte ponovno."
+
+#: packages/ui/primitives/signature-pad/signature-pad-upload.tsx
+msgid "The image must be smaller than 5MB."
+msgstr "Slika mora biti manja od 5 MB."
+
 #: apps/remix/app/components/general/admin-license-card.tsx
 msgid "The license key has been copied to your clipboard"
-msgstr ""
+msgstr "Licenčni ključ kopiran je u međuspremnik"
 
 #. placeholder {0}: form.watch('name')
 #. placeholder {1}: form.watch('email')
@@ -11771,6 +12481,10 @@ msgstr "Navedeni razlog brisanja je sljedeći:"
 msgid "The recipient can prepare the document for later signers by pre-filling suggest values."
 msgstr "Primatelj može pripremiti dokument za kasnije potpisnike unaprijed ispunjavajući predložene vrijednosti."
 
+#: apps/remix/app/components/dialogs/admin-recipient-delete-dialog.tsx
+msgid "The recipient has been removed and the document owner has been notified."
+msgstr "Primatelj je uklonjen, a vlasnik dokumenta obaviješten."
+
 #: apps/remix/app/components/tables/admin-document-recipient-item-table.tsx
 msgid "The recipient has been updated successfully"
 msgstr "Primatelj je uspješno ažuriran"
@@ -11819,14 +12533,15 @@ msgstr "Ime potpisnika"
 msgid "The signing deadline for this document has passed. Please contact the document owner if you need a new copy to sign."
 msgstr "Rok za potpisivanje ovog dokumenta je istekao. Obratite se vlasniku dokumenta ako trebate novu kopiju za potpis."
 
-#: apps/remix/app/components/general/avatar-with-recipient.tsx
 #: apps/remix/app/components/general/document/document-page-view-recipients.tsx
 #: apps/remix/app/components/general/document/document-recipient-link-copy-dialog.tsx
+#: apps/remix/app/components/general/stack-avatars-with-tooltip.tsx
 #: packages/ui/primitives/document-flow/add-subject.tsx
 msgid "The signing link has been copied to your clipboard."
 msgstr "Poveznica za potpisivanje kopirana je u vaš međuspremnik."
 
 #: apps/remix/app/components/general/document-signing/csc-recipient-signing-in-progress-page.tsx
+#: apps/remix/app/components/general/envelope-signing/envelope-signing-csc-status.tsx
 msgid "The signing provider did not respond in time. Please retry."
 msgstr "Pružatelj usluge potpisivanja nije odgovorio na vrijeme. Pokušajte ponovno."
 
@@ -11885,6 +12600,10 @@ msgstr "Token je uspješno izbrisan."
 msgid "The token you have used to reset your password is either expired or it never existed. If you have still forgotten your password, please request a new reset link."
 msgstr "Token koji ste koristili za ponovno postavljanje lozinke istekao je ili nikada nije postojao. Ako ste i dalje zaboravili lozinku, zatražite novu poveznicu za ponovno postavljanje."
 
+#: apps/remix/app/components/forms/password.tsx
+msgid "The two factor code you provided is invalid. Please try again."
+msgstr "Kôd za dvofaktorsku autentifikaciju koji ste unijeli nije valjan. Pokušajte ponovno."
+
 #: apps/remix/app/components/forms/signin.tsx
 msgid "The two-factor authentication code provided is incorrect."
 msgstr "Navedeni kôd dvofaktorske autentifikacije nije točan."
@@ -11932,7 +12651,7 @@ msgstr "Webhook koji tražite možda je uklonjen, preimenovan ili nikada nije ni
 
 #: apps/remix/app/components/general/app-command-menu.tsx
 msgid "Theme"
-msgstr ""
+msgstr "Tema"
 
 #: packages/ui/components/document/reminder-settings-picker.tsx
 msgid "Then repeat every"
@@ -11952,11 +12671,19 @@ msgstr "Još nema dovršenih dokumenata. Dokumenti koje ste stvorili ili primili
 
 #: apps/remix/app/components/tables/documents-table-empty-state.tsx
 msgid "There are no documents with expired signing links. You can redistribute a document to renew its expiration."
-msgstr ""
+msgstr "Nema dokumenata s isteklim poveznicama za potpisivanje. Možete ponovno poslati dokument kako biste obnovili njegov rok."
 
 #: apps/remix/app/components/tables/documents-table-empty-state.tsx
 msgid "There are no rejected documents. Documents that a recipient declines to sign will appear here."
-msgstr ""
+msgstr "Nema odbijenih dokumenata. Dokumenti koje primatelj odbije potpisati prikazat će se ovdje."
+
+#: packages/email/template-components/template-recipient-removed-by-admin.tsx
+msgid "There is no action required on your side. If you believe this was a mistake, please contact the document sender."
+msgstr "S Vaše strane nije potrebna nikakva radnja. Ako smatrate da se radi o pogrešci, obratite se pošiljatelju dokumenta."
+
+#: packages/email/template-components/template-recipient-removed-by-admin.tsx
+msgid "There is no action required on your side. If you believe this was a mistake, please contact your administrator."
+msgstr "S Vaše strane nije potrebna nikakva radnja. Ako smatrate da se radi o pogrešci, obratite se svom administratoru."
 
 #: apps/remix/app/components/embed/authoring/configure-document-upload.tsx
 msgid "There was an error uploading your file. Please try again."
@@ -11980,7 +12707,7 @@ msgstr "U vaše ime imaju dozvolu za:"
 
 #: apps/remix/app/routes/_unauthenticated+/team.verify.email.$token.tsx
 msgid "They will be able to view documents associated with this email."
-msgstr ""
+msgstr "Moći će pregledavati dokumente povezane s ovom e-mail adresom."
 
 #: apps/remix/app/components/forms/signin.tsx
 msgid "This account has been disabled. Please contact support."
@@ -12015,17 +12742,21 @@ msgstr "Ovo može potrajati minutu-dvije, ovisno o veličini vašeg dokumenta."
 msgid "This claim is locked and cannot be deleted."
 msgstr "Ovo pravo je zaključano i ne može se izbrisati."
 
+#: apps/remix/app/components/general/analytics/analytics-query-error.tsx
+msgid "This data could not be loaded."
+msgstr "Ovi podaci nisu se mogli učitati."
+
 #: apps/remix/app/utils/toast-error-messages.ts
 msgid "This direct link template cannot be used because one or more signers do not have a signature field assigned."
-msgstr ""
+msgstr "Ovaj predložak s izravnom poveznicom ne može se koristiti jer jednom ili više potpisnika nije dodijeljeno polje za potpis."
 
 #: apps/remix/app/components/general/direct-template/direct-template-invalid-page.tsx
 msgid "This direct link template cannot be used because one or more signers do not have a signature field assigned. Please contact the sender to update the template."
-msgstr ""
+msgstr "Ovaj predložak s izravnom poveznicom ne može se koristiti jer jednom ili više potpisnika nije dodijeljeno polje za potpis. Obratite se pošiljatelju kako bi ažurirao predložak."
 
 #: apps/remix/app/utils/toast-error-messages.ts
 msgid "This document can no longer be signed. It may have been removed by the sender, or your signing access may have been revoked. Please contact the sender for a new signing link."
-msgstr ""
+msgstr "Ovaj dokument više se ne može potpisati. Pošiljatelj ga je možda uklonio ili Vam je opozvan pristup potpisivanju. Obratite se pošiljatelju za novu poveznicu za potpisivanje."
 
 #: packages/email/template-components/template-document-super-delete.tsx
 msgid "This document can not be recovered, if you would like to dispute the reason for future documents please contact support."
@@ -12057,7 +12788,7 @@ msgstr "Ovaj dokument trenutno nije bilo moguće spremiti kao predložak. Pokuš
 
 #: apps/remix/app/utils/toast-error-messages.ts
 msgid "This document has already been completed and no further signatures can be added."
-msgstr ""
+msgstr "Ovaj dokument već je dovršen i nije moguće dodati daljnje potpise."
 
 #: apps/remix/app/components/general/envelope-editor/envelope-recipient-selector.tsx
 #: packages/ui/primitives/recipient-selector.tsx
@@ -12079,7 +12810,7 @@ msgstr "Vlasnik je otkazao ovaj dokument."
 
 #: apps/remix/app/utils/toast-error-messages.ts
 msgid "This document has been cancelled by the sender and can no longer be signed. Please contact the sender if you believe this is a mistake."
-msgstr ""
+msgstr "Pošiljatelj je otkazao ovaj dokument i više se ne može potpisati. Obratite se pošiljatelju ako smatrate da je riječ o pogrešci."
 
 #: apps/remix/app/routes/_authenticated+/t.$teamUrl+/documents.$id._index.tsx
 msgid "This document has been rejected by a recipient"
@@ -12087,7 +12818,7 @@ msgstr "Ovaj dokument je odbio primatelj"
 
 #: apps/remix/app/utils/toast-error-messages.ts
 msgid "This document has been rejected by a recipient and can no longer be signed."
-msgstr ""
+msgstr "Primatelj je odbio ovaj dokument i više se ne može potpisati."
 
 #: apps/remix/app/routes/_authenticated+/t.$teamUrl+/documents.$id._index.tsx
 msgid "This document has been signed by all recipients"
@@ -12095,7 +12826,7 @@ msgstr "Ovaj dokument potpisali su svi primatelji"
 
 #: apps/remix/app/utils/toast-error-messages.ts
 msgid "This document has not been sent for signing yet. Please wait for the sender to send it before signing."
-msgstr ""
+msgstr "Ovaj dokument još nije poslan na potpisivanje. Pričekajte da ga pošiljatelj pošalje prije potpisivanja."
 
 #: apps/remix/app/utils/toast-error-messages.ts
 msgid "This document has too many recipients. Please remove some recipients or contact support if you need more."
@@ -12109,17 +12840,26 @@ msgstr "Ovaj dokument dostupan je na vašem Documenso računu. Tamo možete vidj
 msgid "This document is currently a draft and has not been sent"
 msgstr "Ovaj dokument je trenutno skica i nije poslan"
 
+#: apps/remix/app/components/embed/embed-sender-disabled.tsx
+#: apps/remix/app/components/general/document-signing/document-signing-sender-disabled-page.tsx
+msgid "This document is no longer available to sign because the account that sent it has been disabled, likely due to spam or abuse."
+msgstr "Ovaj dokument više nije dostupan za potpisivanje jer je račun s kojeg je poslan onemogućen, vjerojatno zbog neželjene pošte ili zlouporabe."
+
 #: apps/remix/app/utils/toast-error-messages.ts
 msgid "This document is signed in a set order and other recipients must sign before you. You will receive an email when it is your turn."
-msgstr ""
+msgstr "Ovaj dokument potpisuje se zadanim redoslijedom i drugi primatelji moraju potpisati prije Vas. Primit ćete e-mail kada dođete na red."
 
 #: apps/remix/app/components/general/legacy-field-warning-popover.tsx
 msgid "This document is using legacy field insertion, we recommend using the new field insertion method for more accurate results."
 msgstr "Ovaj dokument koristi naslijeđeno umetanje polja; preporučujemo korištenje nove metode umetanja polja za točnije rezultate."
 
+#: apps/remix/app/components/embed/embed-csc-authentication-required.tsx
+msgid "This document requires a qualified electronic signature. Sign in with your signing provider to continue."
+msgstr "Ovaj dokument zahtijeva kvalificirani elektronički potpis. Prijavite se kod svog pružatelja usluge potpisivanja za nastavak."
+
 #: apps/remix/app/components/general/envelope-signing/envelope-signing-complete-dialog.tsx
 msgid "This document was already signed and no further action was taken."
-msgstr ""
+msgstr "Ovaj dokument već je potpisan i nisu poduzete daljnje radnje."
 
 #: apps/remix/app/components/general/template/template-page-view-documents-table.tsx
 msgid "This document was created by you or a team member using the template above."
@@ -12143,7 +12883,7 @@ msgstr "Ovaj e-mail potvrđuje da ste odbili dokument <0>\"{documentName}\"</0> 
 
 #: apps/remix/app/routes/_unauthenticated+/team.verify.email.$token.tsx
 msgid "This email is already being used as a team email. Please contact your team for assistance."
-msgstr ""
+msgstr "Ova e-mail adresa već se koristi kao timska e-mail adresa. Obratite se svom timu za pomoć."
 
 #: apps/remix/app/components/dialogs/team-email-add-dialog.tsx
 msgid "This email is already being used by another team."
@@ -12189,6 +12929,10 @@ msgstr "Ova vrsta datoteke nije podržana. Učitajte PDF ili Word dokument."
 #: apps/remix/app/components/dialogs/folder-delete-dialog.tsx
 msgid "This folder contains multiple items. Deleting it will remove all subfolders and move all nested documents and templates to the root folder."
 msgstr "Ova mapa sadrži više stavki. Njezinim brisanjem uklonit će se sve podmape, a svi ugniježđeni dokumenti i predlošci premjestit će se u korijensku mapu."
+
+#: packages/ui/primitives/signature-pad/signature-pad-upload.tsx
+msgid "This image is invalid, please upload a valid image file."
+msgstr "Ova slika nije valjana, učitajte valjanu slikovnu datoteku."
 
 #: apps/remix/app/components/general/envelope-editor/envelope-editor-settings-dialog.tsx
 #: packages/ui/primitives/template-flow/add-template-settings.tsx
@@ -12244,14 +12988,22 @@ msgstr "Ovaj pristupni ključ nije konfiguriran za ovu aplikaciju. Prijavite se 
 msgid "This recipient can no longer be modified as they have signed a field, or completed the document."
 msgstr "Ovaj primatelj se više ne može mijenjati jer je potpisao polje ili dovršio dokument."
 
+#: apps/remix/app/components/tables/admin-document-recipient-item-table.tsx
+msgid "This recipient has already signed and cannot be removed."
+msgstr "Ovaj primatelj već je potpisao i ne može se ukloniti."
+
 #: apps/remix/app/components/forms/signin.tsx
 msgid "This session has expired. Please try again."
 msgstr "Ova sesija je istekla. Pokušajte ponovno."
 
-#: apps/remix/app/components/general/envelope-editor/envelope-editor-recipient-form.tsx
+#: apps/remix/app/components/general/envelope-editor/recipient-step-list.tsx
 #: packages/ui/primitives/document-flow/add-signers.tsx
 msgid "This signer has already signed the document."
 msgstr "Ovaj potpisnik je već potpisao dokument."
+
+#: apps/remix/app/routes/embed+/auth+/popup.tsx
+msgid "This signing request is missing its details. Close this window and try again."
+msgstr "Ovom zahtjevu za potpisivanje nedostaju podaci. Zatvorite ovaj prozor i pokušajte ponovno."
 
 #: apps/remix/app/routes/_authenticated+/t.$teamUrl+/settings.general.tsx
 msgid "This team, and any associated data excluding billing invoices will be permanently deleted."
@@ -12323,15 +13075,19 @@ msgstr "Ovo će ukloniti sve e-mailove povezane s ovom e-mail domenom"
 
 #: apps/remix/app/components/dialogs/branding-preferences-reset-dialog.tsx
 msgid "This will reset all branding preferences to their default values and save the changes immediately."
-msgstr ""
+msgstr "Time će se sve postavke brendiranja vratiti na zadane vrijednosti, a promjene će se odmah spremiti."
 
 #: apps/remix/app/components/dialogs/document-preferences-reset-dialog.tsx
 msgid "This will reset all document preferences to their default values and save the changes immediately."
-msgstr ""
+msgstr "Time će se sve postavke dokumenata vratiti na zadane vrijednosti, a promjene će se odmah spremiti."
 
 #: apps/remix/app/components/dialogs/session-logout-all-dialog.tsx
 msgid "This will sign you out of all other devices. You will need to sign in again on those devices to continue using your account."
 msgstr "Ovo će vas odjaviti sa svih ostalih uređaja. Morat ćete se ponovno prijaviti na tim uređajima za nastavak korištenja računa."
+
+#: apps/remix/app/routes/embed+/auth+/popup.tsx
+msgid "This window must be opened from a Documenso embed."
+msgstr "Ovaj prozor mora se otvoriti iz Documenso ugradnje."
 
 #: apps/remix/app/components/tables/admin-document-logs-table.tsx
 #: apps/remix/app/components/tables/document-logs-table.tsx
@@ -12557,6 +13313,11 @@ msgstr "Previše zahtjeva"
 msgid "Top"
 msgstr "Vrh"
 
+#: apps/remix/app/components/general/analytics/analytics-documents-over-time-card.tsx
+#: apps/remix/app/components/general/analytics/analytics-status-breakdown-card.tsx
+msgid "total"
+msgstr "ukupno"
+
 #: apps/remix/app/components/tables/admin-organisation-stats-table.tsx
 msgid "Total"
 msgstr "Ukupno"
@@ -12612,13 +13373,19 @@ msgstr "Okidači"
 
 #: apps/remix/app/components/general/app-command-menu.tsx
 msgid "Try a different search or switch category."
-msgstr ""
+msgstr "Pokušajte s drugim pretraživanjem ili promijenite kategoriju."
+
+#: apps/remix/app/components/general/analytics/analytics-no-activity-alert.tsx
+msgid "Try a longer range."
+msgstr "Pokušajte s duljim razdobljem."
 
 #: apps/remix/app/components/dialogs/ai-field-detection-dialog.tsx
 #: apps/remix/app/components/dialogs/ai-field-detection-dialog.tsx
 #: apps/remix/app/components/dialogs/ai-recipient-detection-dialog.tsx
 #: apps/remix/app/components/dialogs/ai-recipient-detection-dialog.tsx
+#: apps/remix/app/components/embed/embed-csc-authentication-required.tsx
 #: apps/remix/app/components/general/document-signing/csc-recipient-blocked-page.tsx
+#: apps/remix/app/components/general/envelope-signing/envelope-signing-csc-status.tsx
 msgid "Try again"
 msgstr "Pokušajte ponovno"
 
@@ -12634,6 +13401,7 @@ msgstr "Dvofaktorska autentifikacija"
 msgid "Two factor authentication recovery codes are used to access your account in the event that you lose access to your authenticator app."
 msgstr "Kodovi za oporavak dvofaktorske autentifikacije koriste se za pristup vašem računu u slučaju da izgubite pristup svojoj aplikaciji za autentifikaciju."
 
+#: apps/remix/app/components/forms/2fa/two-factor-code-dialog.tsx
 #: apps/remix/app/components/forms/signin.tsx
 #: apps/remix/app/routes/_internal+/[__htmltopdf]+/certificate.tsx
 #: packages/lib/server-only/pdf/generate-certificate-pdf.ts
@@ -12763,6 +13531,11 @@ msgstr "Nije moguće ponovno postaviti lozinku"
 msgid "Unable to setup two-factor authentication"
 msgstr "Nije moguće postaviti dvofaktorsku autentifikaciju"
 
+#: apps/remix/app/components/embed/embed-document-signing-page-v1.tsx
+#: apps/remix/app/components/embed/multisign/multi-sign-document-signing-view.tsx
+msgid "Unable to sign document"
+msgstr "Dokument nije moguće potpisati"
+
 #: apps/remix/app/components/forms/signin.tsx
 #: apps/remix/app/components/forms/signin.tsx
 msgid "Unable to sign in"
@@ -12772,6 +13545,10 @@ msgstr "Nije moguće prijaviti se"
 msgid "Unable to start the signing flow"
 msgstr "Nije moguće pokrenuti postupak potpisivanja"
 
+#: packages/ui/primitives/signature-pad/signature-pad-upload.tsx
+msgid "Unable to upload image"
+msgstr "Slika se ne može učitati"
+
 #: apps/remix/app/components/general/document-signing/document-signing-auth-2fa.tsx
 #: apps/remix/app/components/general/document-signing/document-signing-auth-passkey.tsx
 #: apps/remix/app/components/general/document-signing/document-signing-auth-password.tsx
@@ -12780,14 +13557,23 @@ msgstr "Nije moguće pokrenuti postupak potpisivanja"
 msgid "Unauthorized"
 msgstr "Neovlašteno"
 
+#: apps/remix/app/components/general/analytics/analytics-template-usage-card.tsx
+msgid "Unavailable template"
+msgstr "Nedostupan predložak"
+
 #: apps/remix/app/components/general/stack-avatars-with-tooltip.tsx
 msgid "Uncompleted"
 msgstr "Nedovršeno"
 
 #: apps/remix/app/components/forms/form-sticky-save-bar.tsx
 #: packages/ui/primitives/signature-pad/signature-pad-draw.tsx
+#: packages/ui/primitives/signature-pad/signature-pad-draw.tsx
 msgid "Undo"
 msgstr "Poništi"
+
+#: apps/remix/app/components/general/envelope-editor/recipient-step-card.tsx
+msgid "Ungroup"
+msgstr "Razgrupiraj"
 
 #: apps/remix/app/routes/_authenticated+/settings+/security.linked-accounts.tsx
 #: apps/remix/app/routes/_authenticated+/settings+/security.sessions.tsx
@@ -12813,6 +13599,10 @@ msgstr "Nepoznata pogreška"
 msgid "Unknown name"
 msgstr "Nepoznato ime"
 
+#: apps/remix/app/routes/embed+/auth+/popup.tsx
+msgid "Unknown sign in provider."
+msgstr "Nepoznati pružatelj prijave."
+
 #: apps/remix/app/components/general/claim-limit-fields.tsx
 #: apps/remix/app/components/general/organisation-usage-panel.tsx
 #: apps/remix/app/components/tables/admin-claims-table.tsx
@@ -12830,15 +13620,15 @@ msgstr "Odspoji"
 
 #: apps/remix/app/components/general/settings-upsell/branding-upsell.tsx
 msgid "Unlock Branding Preferences"
-msgstr ""
+msgstr "Otključajte postavke brendiranja"
 
 #: apps/remix/app/components/general/settings-upsell/email-domains-upsell.tsx
 msgid "Unlock Email Domains"
-msgstr ""
+msgstr "Otključajte e-mail domene"
 
 #: apps/remix/app/components/general/settings-upsell/sso-portal-upsell.tsx
 msgid "Unlock the Organisation SSO Portal"
-msgstr ""
+msgstr "Otključajte SSO portal organizacije"
 
 #: apps/remix/app/components/general/folder/folder-card.tsx
 msgid "Unpin"
@@ -12846,7 +13636,7 @@ msgstr "Otkvači"
 
 #: apps/remix/app/components/forms/form-sticky-save-bar.tsx
 msgid "Unsaved changes"
-msgstr ""
+msgstr "Nespremljene promjene"
 
 #: apps/remix/app/routes/_authenticated+/admin+/_layout.tsx
 #: apps/remix/app/routes/_authenticated+/admin+/unsealed-documents._index.tsx
@@ -12928,6 +13718,7 @@ msgid "Update passkey"
 msgstr "Ažuriraj pristupni ključ"
 
 #: apps/remix/app/components/forms/password.tsx
+#: apps/remix/app/components/forms/password.tsx
 msgid "Update password"
 msgstr "Ažuriraj lozinku"
 
@@ -12983,6 +13774,11 @@ msgstr "Ažurirajte naslov ili zamijenite PDF datoteku."
 msgid "Update user"
 msgstr "Ažuriraj korisnika"
 
+#. placeholder {0}: formatRelativeDate(template.updatedAt, i18n.locale)
+#: apps/remix/app/components/general/analytics/analytics-template-usage-card.tsx
+msgid "Updated {0}"
+msgstr "Ažurirano {0}"
+
 #: apps/remix/app/components/dialogs/admin-organisation-member-update-dialog.tsx
 msgid "Updated {organisationMemberName} to {roleLabel}."
 msgstr "{organisationMemberName} – nova uloga: {roleLabel}."
@@ -13015,7 +13811,7 @@ msgstr "Nadogradite <0>{0}</0> na {planName}"
 
 #: apps/remix/app/components/general/settings-upsell/settings-upsell-card.tsx
 msgid "Upgrade Plan"
-msgstr ""
+msgstr "Nadogradi plan"
 
 #: apps/remix/app/components/general/envelope/envelope-drop-zone-wrapper.tsx
 msgid "Upgrade your plan to upload more documents"
@@ -13038,6 +13834,10 @@ msgstr "Učitajte CSV datoteku za stvaranje više dokumenata iz ovog predloška.
 #: apps/remix/app/components/dialogs/template-use-dialog.tsx
 msgid "Upload a custom document to use instead of the template's default document"
 msgstr "Učitajte prilagođeni dokument koji će se koristiti umjesto zadanog dokumenta predloška"
+
+#: apps/remix/app/components/dialogs/template-use-dialog.tsx
+msgid "Upload a custom document to use its file name."
+msgstr "Učitajte vlastiti dokument kako biste koristili njegov naziv datoteke."
 
 #: apps/remix/app/components/dialogs/template-bulk-send-dialog.tsx
 msgid "Upload and Process"
@@ -13075,6 +13875,10 @@ msgstr "Učitajte dokumente i dodajte primatelje"
 #: apps/remix/app/components/general/envelope/envelope-upload-button.tsx
 msgid "Upload failed"
 msgstr "Učitavanje nije uspjelo"
+
+#: packages/ui/primitives/signature-pad/signature-pad-upload.tsx
+msgid "Upload New Image"
+msgstr "Učitaj novu sliku"
 
 #: apps/remix/app/components/general/admin-global-settings-section.tsx
 msgid "Upload signature"
@@ -13124,28 +13928,34 @@ msgstr "Učitavanje"
 msgid "URL"
 msgstr "URL"
 
+#: apps/remix/app/components/general/analytics/analytics-page-header.tsx
+msgid "Usage overview for {name} · {rangeLabel}"
+msgstr "Pregled korištenja za {name} · {rangeLabel}"
+
 #: apps/remix/app/routes/_authenticated+/t.$teamUrl+/templates.$id._index.tsx
 msgid "Use"
 msgstr "Koristi"
 
 #: apps/remix/app/components/general/rate-limit-array-input.tsx
 msgid "Use a duration with a unit, e.g. 5m, 1h, or 24h"
-msgstr ""
+msgstr "Koristite trajanje s jedinicom, npr. 5m, 1h ili 24h"
 
 #: apps/remix/app/components/general/rate-limit-array-input.tsx
 msgid "Use a unique window for each rate limit"
-msgstr ""
+msgstr "Koristite jedinstveni vremenski prozor za svako ograničenje učestalosti"
 
 #: apps/remix/app/components/dialogs/token-create-dialog.tsx
 msgid "Use API tokens to authenticate with the Documenso API."
-msgstr ""
+msgstr "Koristite API tokene za autentifikaciju s Documenso API-jem."
 
 #: apps/remix/app/components/forms/2fa/disable-authenticator-app-dialog.tsx
+#: apps/remix/app/components/forms/2fa/two-factor-code-dialog.tsx
 #: apps/remix/app/components/forms/signin.tsx
 msgid "Use Authenticator"
 msgstr "Koristi aplikaciju za autentifikaciju"
 
 #: apps/remix/app/components/forms/2fa/disable-authenticator-app-dialog.tsx
+#: apps/remix/app/components/forms/2fa/two-factor-code-dialog.tsx
 #: apps/remix/app/components/forms/signin.tsx
 msgid "Use Backup Code"
 msgstr "Koristi rezervni kôd"
@@ -13154,6 +13964,14 @@ msgstr "Koristi rezervni kôd"
 #: apps/remix/app/components/general/envelope-editor/envelope-editor-header.tsx
 msgid "Use Template"
 msgstr "Koristi predložak"
+
+#: apps/remix/app/components/dialogs/template-use-dialog.tsx
+msgid "Use template name"
+msgstr "Koristi naziv predloška"
+
+#: apps/remix/app/components/dialogs/template-use-dialog.tsx
+msgid "Use uploaded file name"
+msgstr "Koristi naziv učitane datoteke"
 
 #: apps/remix/app/components/general/document-signing/access-auth-2fa-form.tsx
 msgid "Use your authenticator app to generate a code"
@@ -13263,7 +14081,7 @@ msgstr "Provjeri domenu"
 
 #: apps/remix/app/routes/_unauthenticated+/team.verify.email.$token.tsx
 msgid "Verify email"
-msgstr ""
+msgstr "Potvrdi e-mail adresu"
 
 #: apps/remix/app/routes/_unauthenticated+/verify-email._index.tsx
 msgid "Verify Email"
@@ -13275,7 +14093,7 @@ msgstr "Provjeri sada"
 
 #: apps/remix/app/routes/_unauthenticated+/team.verify.email.$token.tsx
 msgid "Verify team email"
-msgstr ""
+msgstr "Potvrdi timsku e-mail adresu"
 
 #: apps/remix/app/components/general/verify-email-banner.tsx
 msgid "Verify your email address"
@@ -13289,6 +14107,10 @@ msgstr "Provjerite svoju e-mail adresu da biste otključali sve značajke."
 #: apps/remix/app/components/general/envelope/envelope-upload-button.tsx
 msgid "Verify your email to upload documents."
 msgstr "Provjerite svoj e-mail za učitavanje dokumenata."
+
+#: apps/remix/app/routes/embed+/auth+/popup.tsx
+msgid "Verify your email, then close this window and try again."
+msgstr "Potvrdite svoju e-mail adresu, zatim zatvorite ovaj prozor i pokušajte ponovno."
 
 #: packages/email/templates/confirm-team-email.tsx
 msgid "Verify your team email address"
@@ -13313,6 +14135,7 @@ msgstr "Okomito poravnanje"
 #: apps/remix/app/components/tables/inbox-table.tsx
 #: apps/remix/app/components/tables/inbox-table.tsx
 #: apps/remix/app/components/tables/organisation-billing-invoices-table.tsx
+#: apps/remix/app/components/tables/templates-table-view-filter.tsx
 #: apps/remix/app/routes/_authenticated+/admin+/email-domains._index.tsx
 msgid "View"
 msgstr "Prikaži"
@@ -13348,7 +14171,7 @@ msgstr "Prikaži sve povezane dokumente"
 
 #: apps/remix/app/components/general/use-admin-search-categories.ts
 msgid "View all results"
-msgstr ""
+msgstr "Prikaži sve rezultate"
 
 #: apps/remix/app/routes/_authenticated+/settings+/security.activity.tsx
 msgid "View all security activity related to your account."
@@ -13430,6 +14253,10 @@ msgstr "Prikaži više"
 msgid "View next document"
 msgstr "Prikaži sljedeći dokument"
 
+#: apps/remix/app/routes/_authenticated+/t.$teamUrl+/analytics._index.tsx
+msgid "View organisation analytics"
+msgstr "Prikaži analitiku organizacije"
+
 #: apps/remix/app/routes/_authenticated+/t.$teamUrl+/templates.$id._index.tsx
 msgid "View organisation template"
 msgstr "Prikaži predložak organizacije"
@@ -13450,6 +14277,10 @@ msgstr "Prikaži kodove za oporavak"
 #: apps/remix/app/routes/_authenticated+/t.$teamUrl+/_layout.tsx
 msgid "View teams"
 msgstr "Prikaži timove"
+
+#: apps/remix/app/components/general/analytics/analytics-template-usage-card.tsx
+msgid "View templates"
+msgstr "Prikaži predloške"
 
 #: apps/remix/app/routes/_authenticated+/o.$orgUrl.settings.email-domains.$id.tsx
 msgid "View the DNS records for this email domain"
@@ -13494,6 +14325,14 @@ msgstr "Pregledavanje"
 msgid "Visibility"
 msgstr "Vidljivost"
 
+#: apps/remix/app/components/dialogs/admin-recipient-delete-dialog.tsx
+msgid "Visible to the document owner in the audit log."
+msgstr "Vidljivo vlasniku dokumenta u zapisniku promjena."
+
+#: apps/remix/app/components/general/analytics/analytics-overview-cards.tsx
+msgid "vs. previous period"
+msgstr "u odnosu na prethodno razdoblje"
+
 #: apps/remix/app/components/general/stack-avatars-with-tooltip.tsx
 msgid "Waiting"
 msgstr "Čekanje"
@@ -13503,8 +14342,8 @@ msgid "Waiting for others"
 msgstr "Čekanje ostalih"
 
 #: packages/lib/jobs/definitions/emails/send-document-pending-email.handler.ts
-msgid "Waiting for others to complete signing."
-msgstr "Čeka se da drugi dovrše potpisivanje."
+msgid "Waiting for others to complete signing"
+msgstr "Čeka se da ostali dovrše potpisivanje"
 
 #: apps/remix/app/routes/_recipient+/sign.$token+/complete.tsx
 msgid "Waiting for others to sign"
@@ -13528,9 +14367,7 @@ msgstr "Želite vlastiti javni profil?"
 msgid "Warning, this email transport is currently being used by:"
 msgstr "Upozorenje, ovaj e-mail transport trenutno koriste:"
 
-#: apps/remix/app/components/general/envelope-editor/envelope-editor-recipient-form.tsx
-#: apps/remix/app/components/general/envelope-editor/envelope-editor-recipient-form.tsx
-#: apps/remix/app/components/general/envelope-editor/envelope-editor-recipient-form.tsx
+#: apps/remix/app/components/general/envelope-editor/recipient-step-list.tsx
 #: packages/ui/primitives/document-flow/add-signers.tsx
 #: packages/ui/primitives/document-flow/add-signers.tsx
 #: packages/ui/primitives/document-flow/add-signers.tsx
@@ -13539,6 +14376,10 @@ msgstr "Upozorenje, ovaj e-mail transport trenutno koriste:"
 #: packages/ui/primitives/template-flow/add-template-placeholder-recipients.tsx
 msgid "Warning: Assistant as last signer"
 msgstr "Upozorenje: Asistent kao posljednji potpisnik"
+
+#: packages/email/template-components/template-new-account-warning.tsx
+msgid "Warning: This was sent from a new account ({senderEmail})"
+msgstr "Upozorenje: ovo je poslano s novog računa ({senderEmail})"
 
 #: apps/remix/app/components/general/organisations/organisation-billing-banner.tsx
 #: apps/remix/app/components/general/organisations/organisation-billing-portal-button.tsx
@@ -13555,7 +14396,7 @@ msgstr "Trenutno ne možemo ažurirati ovaj pristupni ključ. Pokušajte ponovno
 
 #: apps/remix/app/components/general/app-command-menu.tsx
 msgid "We couldn’t complete the search. Try again."
-msgstr ""
+msgstr "Pretraživanje nije uspjelo. Pokušajte ponovno."
 
 #: apps/remix/app/utils/toast-error-messages.ts
 msgid "We couldn't convert this file. Please check it's a valid Word document or upload a PDF instead."
@@ -13786,6 +14627,10 @@ msgstr "Naišli smo na nepoznatu pogrešku pri pokušaju ažuriranja timske e-ma
 msgid "We encountered an unknown error while attempting update your profile. Please try again later."
 msgstr "Naišli smo na nepoznatu pogrešku pri pokušaju ažuriranja vašeg profila. Pokušajte ponovno kasnije."
 
+#: apps/remix/app/components/dialogs/admin-recipient-delete-dialog.tsx
+msgid "We encountered an unknown error while removing the recipient."
+msgstr "Došlo je do nepoznate pogreške prilikom uklanjanja primatelja."
+
 #: apps/remix/app/components/dialogs/team-email-add-dialog.tsx
 msgid "We have sent a confirmation email for verification."
 msgstr "Poslali smo e-mail za potvrdu radi provjere."
@@ -13796,7 +14641,7 @@ msgstr "Trebamo vaš potpis za potpisivanje dokumenata"
 
 #: apps/remix/app/routes/_unauthenticated+/organisation.invite.$token.tsx
 msgid "We were unable to add you to <0>{organisationName}</0> at this time. Please try again later, or contact the organisation administrator."
-msgstr ""
+msgstr "Trenutačno Vas nismo mogli dodati u <0>{organisationName}</0>. Pokušajte ponovno kasnije ili se obratite administratoru organizacije."
 
 #: apps/remix/app/components/forms/2fa/recovery-code-list.tsx
 msgid "We were unable to copy your recovery code to your clipboard. Please try again."
@@ -13824,6 +14669,14 @@ msgstr "Trenutno vas nismo mogli odjaviti."
 msgid "We were unable to report this sender at this time. Please try again later."
 msgstr "Trenutno nismo mogli prijaviti ovog pošiljatelja. Pokušajte ponovno kasnije."
 
+#: apps/remix/app/components/forms/password-setup-request-button.tsx
+msgid "We were unable to send the email. Please try again later."
+msgstr "Nismo mogli poslati e-mail. Pokušajte ponovno kasnije."
+
+#: apps/remix/app/components/forms/password-setup-request.tsx
+msgid "We were unable to send the email. Please try again or contact support."
+msgstr "Nismo mogli poslati e-mail. Pokušajte ponovno ili se obratite podršci."
+
 #: apps/remix/app/routes/_authenticated+/t.$teamUrl+/settings.public-profile.tsx
 msgid "We were unable to set your public profile to public. Please try again."
 msgstr "Nismo mogli postaviti vaš javni profil na javno. Pokušajte ponovno."
@@ -13832,6 +14685,10 @@ msgstr "Nismo mogli postaviti vaš javni profil na javno. Pokušajte ponovno."
 #: apps/remix/app/components/forms/2fa/enable-authenticator-app-dialog.tsx
 msgid "We were unable to setup two-factor authentication for your account. Please ensure that you have entered your code correctly and try again."
 msgstr "Nismo mogli postaviti dvofaktorsku autentifikaciju za vaš račun. Provjerite jeste li ispravno unijeli kôd te pokušajte ponovno."
+
+#: apps/remix/app/routes/embed+/auth+/popup.tsx
+msgid "We were unable to start the sign in flow. Close this window and try again."
+msgstr "Nismo mogli pokrenuti postupak prijave. Zatvorite ovaj prozor i pokušajte ponovno."
 
 #: apps/remix/app/utils/toast-error-messages.ts
 #: apps/remix/app/utils/toast-error-messages.ts
@@ -13846,7 +14703,7 @@ msgstr "Trenutno nismo mogli ažurirati vaše postavke brendiranja, pokušajte p
 #: apps/remix/app/routes/_authenticated+/o.$orgUrl.settings.certificates.tsx
 #: apps/remix/app/routes/_authenticated+/t.$teamUrl+/settings.certificates.tsx
 msgid "We were unable to update your certificate preferences at this time, please try again later"
-msgstr ""
+msgstr "Trenutačno nismo mogli ažurirati Vaše postavke certifikata, pokušajte ponovno kasnije"
 
 #: apps/remix/app/routes/_authenticated+/o.$orgUrl.settings.document.tsx
 #: apps/remix/app/routes/_authenticated+/t.$teamUrl+/settings.document.tsx
@@ -13861,7 +14718,7 @@ msgstr "Trenutno nismo mogli ažurirati vaše postavke e-maila, pokušajte ponov
 #: apps/remix/app/routes/_authenticated+/o.$orgUrl.settings.reminders.tsx
 #: apps/remix/app/routes/_authenticated+/t.$teamUrl+/settings.reminders.tsx
 msgid "We were unable to update your reminder preferences at this time, please try again later"
-msgstr ""
+msgstr "Trenutačno nismo mogli ažurirati Vaše postavke podsjetnika, pokušajte ponovno kasnije"
 
 #: apps/remix/app/components/forms/signin.tsx
 msgid "We were unable to verify that you're human. Please try again."
@@ -13869,7 +14726,7 @@ msgstr "Nismo mogli provjeriti da niste robot. Pokušajte ponovno."
 
 #: apps/remix/app/routes/_unauthenticated+/team.verify.email.$token.tsx
 msgid "We were unable to verify this email at this time. Please try again later."
-msgstr ""
+msgstr "Trenutačno nismo mogli potvrditi ovu e-mail adresu. Pokušajte ponovno kasnije."
 
 #: apps/remix/app/components/general/document-signing/document-signing-auth-2fa.tsx
 #: apps/remix/app/components/general/document-signing/document-signing-auth-passkey.tsx
@@ -13946,6 +14803,20 @@ msgstr "Poslali smo 6-znamenkasti kôd za provjeru na vaš e-mail. Unesite ga u 
 msgid "We've sent a confirmation email to <0>{email}</0>. Please check your inbox and click the link in the email to verify your account."
 msgstr "Poslali smo e-mail za potvrdu na <0>{email}</0>. Provjerite svoju pristiglu poštu i kliknite poveznicu u e-mailu za provjeru svog računa."
 
+#. placeholder {0}: user.email
+#: apps/remix/app/components/forms/password-setup-request.tsx
+msgid "We've sent a link to {0}. Follow it to set your password, then sign in again to continue."
+msgstr "Poslali smo poveznicu na {0}. Slijedite je kako biste postavili lozinku, a zatim se ponovno prijavite za nastavak."
+
+#. placeholder {0}: user.email
+#: apps/remix/app/components/forms/password-setup-request-button.tsx
+msgid "We've sent a link to {0}. Follow it to set your password."
+msgstr "Poslali smo poveznicu na {0}. Slijedite je kako biste postavili lozinku."
+
+#: packages/email/templates/organisation-limits-updated.tsx
+msgid "We've updated the usage limits for your organisation."
+msgstr "Ažurirali smo ograničenja korištenja za Vašu organizaciju."
+
 #: apps/remix/app/routes/_authenticated+/t.$teamUrl+/settings.webhooks._index.tsx
 #: apps/remix/app/routes/_authenticated+/t.$teamUrl+/settings.webhooks.$id._index.tsx
 msgid "Webhook"
@@ -14002,7 +14873,7 @@ msgstr "Dobrodošli natrag! Evo pregleda vašeg računa."
 #. placeholder {0}: organisation.name
 #: apps/remix/app/components/general/settings-upsell/sso-portal-upsell.tsx
 msgid "Welcome to {0}"
-msgstr ""
+msgstr "Dobro došli u {0}"
 
 #: apps/remix/app/routes/_unauthenticated+/o.$orgUrl.signin.tsx
 msgid "Welcome to {organisationName}"
@@ -14071,7 +14942,7 @@ msgstr "Širina:"
 
 #: apps/remix/app/components/general/rate-limit-array-input.tsx
 msgid "Window"
-msgstr ""
+msgstr "Prozor"
 
 #: apps/remix/app/routes/_unauthenticated+/articles.signature-disclosure.tsx
 msgid "Withdrawing Consent"
@@ -14079,11 +14950,11 @@ msgstr "Povlačenje privole"
 
 #: apps/remix/app/components/general/organisation-usage-panel.tsx
 msgid "Within limit"
-msgstr ""
+msgstr "U okviru ograničenja"
 
 #: apps/remix/app/components/general/settings-upsell/sso-portal-upsell.tsx
 msgid "Works with any OIDC provider — Okta, Entra ID, Google and more"
-msgstr ""
+msgstr "Radi s bilo kojim OIDC pružateljem — Okta, Entra ID, Google i drugima"
 
 #: apps/remix/app/components/forms/public-profile-form.tsx
 msgid "Write a description to display on your public profile"
@@ -14099,6 +14970,7 @@ msgstr "Godišnje"
 #: apps/remix/app/components/forms/certificate-preferences-form.tsx
 #: apps/remix/app/components/forms/document-preferences-form.tsx
 #: apps/remix/app/components/forms/email-preferences-form.tsx
+#: apps/remix/app/components/tables/admin-document-recipients-table.tsx
 msgid "Yes"
 msgstr "Da"
 
@@ -14237,11 +15109,15 @@ msgstr "Namjeravate se pretplatiti na {planName}"
 #. placeholder {0}: data.organisationName
 #: apps/remix/app/routes/_unauthenticated+/organisation.invite.$token.tsx
 msgid "You are already a member of <0>{0}</0>."
-msgstr ""
+msgstr "Već ste član organizacije <0>{0}</0>."
 
 #: apps/remix/app/routes/_authenticated+/o.$orgUrl.settings.billing.tsx
 msgid "You are currently on the <0>Free Plan</0>."
 msgstr "Trenutno ste na <0>Besplatnom planu</0>."
+
+#: apps/remix/app/components/embed/embed-popup-auth.tsx
+msgid "You are currently signed in as <0>{signedInAs}</0>. Signing in below will switch accounts."
+msgstr "Trenutačno ste prijavljeni kao <0>{signedInAs}</0>. Prijavom u nastavku promijenit ćete račun."
 
 #. placeholder {0}: i18n.date(periodEnd)
 #: apps/remix/app/routes/_authenticated+/o.$orgUrl.settings.billing.tsx
@@ -14331,13 +15207,13 @@ msgstr "Ovu poveznicu možete i kopirati i zalijepiti u svoj preglednik: {resetP
 msgid "You can choose to enable or disable the profile for public view."
 msgstr "Možete odabrati hoćete li omogućiti ili onemogućiti profil za javni prikaz."
 
+#: apps/remix/app/routes/embed+/auth+/complete.tsx
+msgid "You can close this window."
+msgstr "Možete zatvoriti ovaj prozor."
+
 #: apps/remix/app/components/general/document/document-recipient-link-copy-dialog.tsx
 msgid "You can copy and share these links to recipients so they can action the document."
 msgstr "Ove poveznice možete kopirati i podijeliti s primateljima kako bi mogli djelovati na dokument."
-
-#: apps/remix/app/components/dialogs/envelopes-bulk-download-dialog.tsx
-msgid "You can download up to {MAX_BULK_DOWNLOAD_ENVELOPES} documents at a time. Deselect some documents to continue."
-msgstr ""
 
 #: apps/remix/app/components/general/teams/team-inherit-member-alert.tsx
 msgid "You can enable access to allow all organisation members to access this team by default."
@@ -14380,7 +15256,7 @@ msgstr "Dokument i njegov status možete vidjeti klikom na gumb u nastavku."
 msgid "You cancelled the document"
 msgstr "Otkazali ste dokument"
 
-#: apps/remix/app/components/general/envelope-editor/envelope-editor-recipient-form.tsx
+#: apps/remix/app/components/general/envelope-editor/recipient-step-list.tsx
 #: packages/ui/primitives/document-flow/add-signers.tsx
 #: packages/ui/primitives/template-flow/add-template-placeholder-recipients.tsx
 msgid "You cannot add assistants when signing order is disabled."
@@ -14422,10 +15298,6 @@ msgstr "Ne možete ukloniti vlasnika organizacije iz tima."
 #: packages/ui/primitives/document-upload-button.tsx
 msgid "You cannot upload documents at this time."
 msgstr "Trenutno ne možete učitavati dokumente."
-
-#: apps/remix/app/utils/toast-error-messages.ts
-msgid "You cannot upload encrypted PDFs."
-msgstr "Ne možete učitavati šifrirane PDF-ove."
 
 #: packages/lib/utils/document-audit-logs.ts
 msgid "You CC'd the document"
@@ -14481,7 +15353,7 @@ msgstr "Nemate dozvolu za stvaranje tokena za ovaj tim."
 
 #: apps/remix/app/components/general/unified-settings-sidebar.tsx
 msgid "You don't have permission to manage this organisation. Switch to another one above, or continue in your team settings below."
-msgstr ""
+msgstr "Nemate dopuštenje za upravljanje ovom organizacijom. Prijeđite na drugu iznad ili nastavite u postavkama tima u nastavku."
 
 #: apps/remix/app/components/tables/user-billing-organisations-table.tsx
 msgid "You don't manage billing for any organisations."
@@ -14497,7 +15369,7 @@ msgstr "Niste uspjeli potvrditi 2FA token za dokument"
 
 #: apps/remix/app/routes/_unauthenticated+/organisation.invite.$token.tsx
 msgid "You have accepted an invitation from <0>{organisationName}</0> to join their organisation."
-msgstr ""
+msgstr "Prihvatili ste pozivnicu organizacije <0>{organisationName}</0> za pridruživanje njihovoj organizaciji."
 
 #. placeholder {0}: data.teamName
 #: apps/remix/app/routes/_unauthenticated+/team.verify.email.$token.tsx
@@ -14506,7 +15378,7 @@ msgstr "Već ste potvrdili svoju e-mail adresu za <0>{0}</0>."
 
 #: apps/remix/app/routes/_unauthenticated+/organisation.invite.$token.tsx
 msgid "You have been invited by <0>{organisationName}</0> to join their organisation."
-msgstr ""
+msgstr "Organizacija <0>{organisationName}</0> pozvala Vas je da se pridružite njihovoj organizaciji."
 
 #. placeholder {0}: organisation.name
 #: packages/lib/server-only/organisation/create-organisation-member-invites.ts
@@ -14515,15 +15387,25 @@ msgstr "Pozvani ste da se pridružite organizaciji {0} na Documensu"
 
 #: apps/remix/app/routes/_unauthenticated+/organisation.invite.$token.tsx
 msgid "You have been invited to join <0>{organisationName}</0> on Documenso."
-msgstr ""
+msgstr "Pozvani ste da se pridružite organizaciji <0>{organisationName}</0> na Documensu."
 
 #: packages/email/templates/organisation-invite.tsx
 msgid "You have been invited to join the following organisation"
 msgstr "Pozvani ste da se pridružite sljedećoj organizaciji"
 
+#: packages/email/template-components/template-recipient-removed-by-admin.tsx
+#: packages/lib/jobs/definitions/emails/send-admin-recipient-removed-emails.handler.ts
 #: packages/lib/jobs/definitions/emails/send-recipient-removed-email.handler.ts
 msgid "You have been removed from a document"
 msgstr "Uklonjeni ste iz dokumenta"
+
+#: packages/email/template-components/template-recipient-removed-by-admin.tsx
+msgid "You have been removed from the document \"{documentName}\" by an administrator, typically at the request of the document sender."
+msgstr "Administrator Vas je uklonio iz dokumenta \"{documentName}\", obično na zahtjev pošiljatelja dokumenta."
+
+#: packages/email/templates/recipient-removed-by-admin.tsx
+msgid "You have been removed from the document \"{documentName}\" by an administrator."
+msgstr "Administrator Vas je uklonio iz dokumenta \"{documentName}\"."
 
 #: apps/remix/app/components/embed/multisign/multi-sign-document-list.tsx
 msgid "You have been requested to sign the following documents. Review each document carefully and complete the signing process."
@@ -14531,7 +15413,7 @@ msgstr "Zatraženo je da potpišete sljedeće dokumente. Pažljivo pregledajte s
 
 #: apps/remix/app/routes/_unauthenticated+/organisation.invite.$token.tsx
 msgid "You have declined the invitation from <0>{organisationName}</0> to join their organisation."
-msgstr ""
+msgstr "Odbili ste pozivnicu organizacije <0>{organisationName}</0> za pridruživanje njihovoj organizaciji."
 
 #. placeholder {0}: `"${envelope.title}"`
 #: packages/lib/jobs/definitions/emails/send-signing-email.handler.ts
@@ -14541,7 +15423,7 @@ msgstr "Pokrenuli ste dokument {0} koji zahtijeva da ga {recipientActionVerb}."
 
 #: apps/remix/app/routes/_authenticated+/t.$teamUrl+/settings.tokens.tsx
 msgid "You have no API tokens yet. Your tokens will be shown here once you create them."
-msgstr ""
+msgstr "Još nemate API tokena. Vaši tokeni prikazat će se ovdje nakon što ih izradite."
 
 #: apps/remix/app/routes/_authenticated+/t.$teamUrl+/settings.webhooks._index.tsx
 msgid "You have no webhooks yet. Your webhooks will be shown here once you create them."
@@ -14646,7 +15528,7 @@ msgstr "Imate pravo povući svoju privolu za korištenje elektroničkih potpisa 
 
 #: apps/remix/app/components/forms/form-sticky-save-bar.tsx
 msgid "You have unsaved changes"
-msgstr ""
+msgstr "Imate nespremljene promjene"
 
 #: apps/remix/app/components/dialogs/team-member-update-dialog.tsx
 msgid "You have updated {memberName}."
@@ -14662,7 +15544,7 @@ msgstr "Ažurirali ste timsku grupu."
 
 #: apps/remix/app/routes/_unauthenticated+/team.verify.email.$token.tsx
 msgid "You have verified your email address for <0>{teamName}</0>."
-msgstr ""
+msgstr "Potvrdili ste svoju e-mail adresu za <0>{teamName}</0>."
 
 #: packages/lib/utils/document-audit-logs.ts
 msgid "You moved the document to team"
@@ -14800,6 +15682,10 @@ msgstr "Uklonili ste polje"
 msgid "You removed a recipient"
 msgstr "Uklonili ste primatelja"
 
+#: packages/lib/utils/document-audit-logs.ts
+msgid "You removed a recipient as an administrator"
+msgstr "Uklonili ste primatelja kao administrator"
+
 #. placeholder {0}: data.envelopeItemTitle
 #: packages/lib/utils/document-audit-logs.ts
 msgid "You replaced the PDF for envelope item {0}"
@@ -14884,6 +15770,10 @@ msgstr "Potvrdili ste 2FA token za dokument"
 msgid "You viewed the document"
 msgstr "Pogledali ste dokument"
 
+#: apps/remix/app/routes/embed+/auth+/popup.tsx
+msgid "You will be redirected to sign in, then returned here."
+msgstr "Bit ćete preusmjereni na prijavu, a zatim vraćeni ovdje."
+
 #: apps/remix/app/components/dialogs/admin-organisation-create-dialog.tsx
 msgid "You will need to configure any claims or subscription after creating this organisation"
 msgstr "Morat ćete konfigurirati prava ili pretplatu nakon stvaranja ove organizacije"
@@ -14895,6 +15785,10 @@ msgstr "Sada ćete pri prijavi morati unijeti kôd iz svoje aplikacije za autent
 #: apps/remix/app/routes/_recipient+/sign.$token+/complete.tsx
 msgid "You will receive an email copy of the signed document once everyone has signed."
 msgstr "E-mailom ćete primiti kopiju potpisanog dokumenta kada svi potpišu."
+
+#: packages/email/template-components/template-account-disabled.tsx
+msgid "You won't be able to sign in or send documents while it is disabled."
+msgstr "Dok je račun onemogućen, nećete se moći prijaviti niti slati dokumente."
 
 #: apps/remix/app/components/dialogs/ai-features-enable-dialog.tsx
 msgid "You're an admin. You can enable AI features for this team right away. Everyone on the team will see AI detection once enabled."
@@ -14909,9 +15803,21 @@ msgstr "Poslali ste previše zahtjeva za prepoznavanje. Pričekajte minutu prije
 msgid "Your Account"
 msgstr "Vaš račun"
 
+#: apps/remix/app/components/general/document-signing/document-signing-auth-set-password.tsx
+msgid "Your account does not have a password and password sign in is disabled for this instance. Please contact the document sender to use a different authentication method."
+msgstr "Vaš račun nema lozinku, a prijava lozinkom onemogućena je na ovoj instanci. Obratite se pošiljatelju dokumenta kako biste koristili drugi način autentifikacije."
+
 #: apps/remix/app/components/dialogs/account-delete-dialog.tsx
 msgid "Your account has been deleted successfully."
 msgstr "Vaš račun je uspješno izbrisan."
+
+#: packages/email/template-components/template-account-disabled.tsx
+msgid "Your account has been disabled"
+msgstr "Vaš račun je onemogućen"
+
+#: apps/remix/app/routes/_authenticated+/settings+/security._index.tsx
+msgid "Your account has no password. Add one to sign in with your email and to sign documents that require it. We'll email you a link."
+msgstr "Vaš račun nema lozinku. Dodajte je kako biste se mogli prijavljivati e-mail adresom i potpisivati dokumente koji je zahtijevaju. Poslat ćemo Vam poveznicu e-mailom."
 
 #: apps/remix/app/components/forms/avatar-image.tsx
 msgid "Your avatar has been updated successfully."
@@ -14929,6 +15835,10 @@ msgstr "URL web-mjesta vašeg brenda"
 #: apps/remix/app/routes/_authenticated+/t.$teamUrl+/settings.branding.tsx
 msgid "Your branding preferences have been updated"
 msgstr "Vaše postavke brendiranja su ažurirane"
+
+#: apps/remix/app/components/embed/embed-popup-auth.tsx
+msgid "Your browser blocked the sign in window. Allow popups for this site and try again."
+msgstr "Vaš preglednik blokirao je prozor za prijavu. Dopustite skočne prozore za ovu stranicu i pokušajte ponovno."
 
 #: apps/remix/app/components/general/document-signing/document-signing-auth-passkey.tsx
 msgid "Your browser does not support passkeys, which is required to approve this document."
@@ -14967,6 +15877,14 @@ msgstr "Vaš preglednik ne podržava pristupne ključeve, koji su potrebni za pr
 msgid "Your browser does not support passkeys, which is required to view this field."
 msgstr "Vaš preglednik ne podržava pristupne ključeve, koji su potrebni za pregled ovog polja."
 
+#: apps/remix/app/components/embed/embed-popup-auth.tsx
+msgid "Your browser is blocking the cookies needed to keep you signed in inside this embed. Open this document in a new tab instead."
+msgstr "Vaš preglednik blokira kolačiće potrebne za održavanje prijave unutar ove ugradnje. Umjesto toga otvorite ovaj dokument u novoj kartici."
+
+#: apps/remix/app/components/embed/embed-popup-auth.tsx
+msgid "Your browser needs permission to keep you signed in inside this embed. Press Continue and allow access when Safari asks."
+msgstr "Vašem pregledniku potrebno je dopuštenje za održavanje prijave unutar ove ugradnje. Pritisnite Nastavi i dopustite pristup kada Safari to zatraži."
+
 #: apps/remix/app/components/dialogs/template-bulk-send-dialog.tsx
 msgid "Your bulk send has been initiated. You will receive an email notification upon completion."
 msgstr "Vaše skupno slanje je pokrenuto. Po dovršetku ćete primiti obavijest e-mailom."
@@ -14978,7 +15896,7 @@ msgstr "Vaše skupno slanje za predložak \"{templateName}\" je dovršeno."
 #: apps/remix/app/routes/_authenticated+/o.$orgUrl.settings.certificates.tsx
 #: apps/remix/app/routes/_authenticated+/t.$teamUrl+/settings.certificates.tsx
 msgid "Your certificate preferences have been updated"
-msgstr ""
+msgstr "Vaše postavke certifikata su ažurirane"
 
 #: apps/remix/app/routes/_authenticated+/o.$orgUrl.settings.billing.tsx
 msgid "Your current {currentProductName} plan is past due. Please update your payment information."
@@ -15004,6 +15922,11 @@ msgstr "Vaš trenutni plan je dospio."
 #: apps/remix/app/components/dialogs/public-profile-template-manage-dialog.tsx
 msgid "Your direct signing templates"
 msgstr "Vaši predlošci za izravno potpisivanje"
+
+#: packages/email/templates/account-disabled.tsx
+#: packages/lib/jobs/definitions/emails/send-account-disabled-email.handler.ts
+msgid "Your Documenso account has been disabled"
+msgstr "Vaš Documenso račun je onemogućen"
 
 #: apps/remix/app/components/dialogs/ai-features-enable-dialog.tsx
 msgid "Your document content will be sent securely to our AI provider solely for detection and will not be stored or used for training."
@@ -15104,7 +16027,7 @@ msgstr "Vaša omotnica je uspješno ponovno poslana."
 
 #: apps/remix/app/components/general/settings-upsell/branding-upsell.tsx
 msgid "Your logo on signing pages and emails"
-msgstr ""
+msgstr "Vaš logotip na stranicama za potpisivanje i u e-mailovima"
 
 #: apps/remix/app/components/general/document-signing/document-signing-complete-dialog.tsx
 msgid "Your Name"
@@ -15112,7 +16035,7 @@ msgstr "Vaše ime"
 
 #: apps/remix/app/components/dialogs/token-create-dialog.tsx
 msgid "Your new API token"
-msgstr ""
+msgstr "Vaš novi API token"
 
 #: apps/remix/app/components/forms/password.tsx
 #: apps/remix/app/components/forms/reset-password.tsx
@@ -15180,6 +16103,10 @@ msgstr "Vaša organizacija približava se ograničenjima poštene upotrebe za sl
 msgid "Your organisation is nearing its fair use limits for sending email on your current plan. Once the limit is reached, new email activity will be temporarily paused."
 msgstr "Vaša organizacija približava se ograničenjima poštene upotrebe za slanje e-mailova na vašem trenutnom planu. Kada se ograničenje dosegne, nova aktivnost e-mailova bit će privremeno pauzirana."
 
+#: packages/email/templates/organisation-limits-updated.tsx
+msgid "Your organisation limits have been updated"
+msgstr "Ograničenja Vaše organizacije su ažurirana"
+
 #: apps/remix/app/components/forms/password.tsx
 #: apps/remix/app/components/forms/reset-password.tsx
 msgid "Your password has been updated successfully."
@@ -15188,6 +16115,15 @@ msgstr "Vaša lozinka je uspješno ažurirana."
 #: packages/email/template-components/template-reset-password.tsx
 msgid "Your password has been updated."
 msgstr "Vaša lozinka je ažurirana."
+
+#: packages/email/templates/reset-password.tsx
+#: packages/lib/server-only/auth/send-reset-password.ts
+msgid "Your password was changed"
+msgstr "Vaša lozinka je promijenjena"
+
+#: packages/email/templates/reset-password.tsx
+msgid "Your password was just changed from your account security settings."
+msgstr "Vaša lozinka upravo je promijenjena u postavkama sigurnosti Vašeg računa."
 
 #: apps/remix/app/components/general/organisations/organisation-billing-banner.tsx
 msgid "Your payment is overdue. Please settle the payment to avoid any service disruptions."
@@ -15225,13 +16161,14 @@ msgstr "Vaši kodovi za oporavak navedeni su u nastavku. Pohranite ih na sigurno
 #: apps/remix/app/routes/_authenticated+/o.$orgUrl.settings.reminders.tsx
 #: apps/remix/app/routes/_authenticated+/t.$teamUrl+/settings.reminders.tsx
 msgid "Your reminder preferences have been updated"
-msgstr ""
+msgstr "Vaše postavke podsjetnika su ažurirane"
 
 #: packages/lib/utils/document-audit-logs.ts
 msgid "Your remote signature was applied"
 msgstr "Primijenjen je vaš udaljeni potpis"
 
 #: apps/remix/app/components/general/document-signing/csc-recipient-signing-in-progress-page.tsx
+#: apps/remix/app/components/general/envelope-signing/envelope-signing-csc-status.tsx
 msgid "Your signing authorisation expired before the signature could be applied. Please reauthorise to retry."
 msgstr "Vaše ovlaštenje za potpisivanje isteklo je prije nego što je potpis mogao biti primijenjen. Ponovno se autorizirajte za novi pokušaj."
 
@@ -15241,7 +16178,7 @@ msgstr "Vaš certifikat za potpisivanje nije valjan, istekao je ili mu nedostaje
 
 #: apps/remix/app/utils/toast-error-messages.ts
 msgid "Your signing link has expired. Please contact the sender to request a new one."
-msgstr ""
+msgstr "Vaša poveznica za potpisivanje je istekla. Obratite se pošiljatelju kako biste zatražili novu."
 
 #: packages/lib/utils/document-audit-logs.ts
 msgid "Your signing provider authentication failed"
@@ -15324,3 +16261,13 @@ msgstr "Vaš kôd za provjeru:"
 #: apps/remix/app/routes/_authenticated+/o.$orgUrl.settings.sso.tsx
 msgid "your-domain.com another-domain.com"
 msgstr "your-domain.com another-domain.com"
+
+#: packages/ui/primitives/signature-pad/signature-pad-upload.tsx
+#: packages/ui/primitives/signature-pad/signature-pad-upload.tsx
+msgid "Zoom in"
+msgstr "Povećaj"
+
+#: packages/ui/primitives/signature-pad/signature-pad-upload.tsx
+#: packages/ui/primitives/signature-pad/signature-pad-upload.tsx
+msgid "Zoom out"
+msgstr "Smanji"

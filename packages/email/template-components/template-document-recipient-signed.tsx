@@ -28,7 +28,7 @@ export const TemplateDocumentRecipientSigned = ({
           <Column align="center">
             <Text className="font-semibold text-base text-foreground">
               <Img
-                src={getEmailAssetUrl('/static/completed.png', assetBaseUrl)}
+                src={getEmailAssetUrl(assetBaseUrl, 'static/completed.png')}
                 className="-mt-0.5 mr-2 inline h-7 w-7 align-middle"
                 alt=""
               />

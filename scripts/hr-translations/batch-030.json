@@ -1,0 +1,262 @@
+[
+  [
+    "They will be able to view documents associated with this email.",
+    "Moći će pregledavati dokumente povezane s ovom e-mail adresom."
+  ],
+  ["This data could not be loaded.", "Ovi podaci nisu se mogli učitati."],
+  [
+    "This direct link template cannot be used because one or more signers do not have a signature field assigned.",
+    "Ovaj predložak s izravnom poveznicom ne može se koristiti jer jednom ili više potpisnika nije dodijeljeno polje za potpis."
+  ],
+  [
+    "This direct link template cannot be used because one or more signers do not have a signature field assigned. Please contact the sender to update the template.",
+    "Ovaj predložak s izravnom poveznicom ne može se koristiti jer jednom ili više potpisnika nije dodijeljeno polje za potpis. Obratite se pošiljatelju kako bi ažurirao predložak."
+  ],
+  [
+    "This document can no longer be signed. It may have been removed by the sender, or your signing access may have been revoked. Please contact the sender for a new signing link.",
+    "Ovaj dokument više se ne može potpisati. Pošiljatelj ga je možda uklonio ili Vam je opozvan pristup potpisivanju. Obratite se pošiljatelju za novu poveznicu za potpisivanje."
+  ],
+  [
+    "This document has already been completed and no further signatures can be added.",
+    "Ovaj dokument već je dovršen i nije moguće dodati daljnje potpise."
+  ],
+  [
+    "This document has been cancelled by the sender and can no longer be signed. Please contact the sender if you believe this is a mistake.",
+    "Pošiljatelj je otkazao ovaj dokument i više se ne može potpisati. Obratite se pošiljatelju ako smatrate da je riječ o pogrešci."
+  ],
+  [
+    "This document has been rejected by a recipient and can no longer be signed.",
+    "Primatelj je odbio ovaj dokument i više se ne može potpisati."
+  ],
+  [
+    "This document has not been sent for signing yet. Please wait for the sender to send it before signing.",
+    "Ovaj dokument još nije poslan na potpisivanje. Pričekajte da ga pošiljatelj pošalje prije potpisivanja."
+  ],
+  [
+    "This document is no longer available to sign because the account that sent it has been disabled, likely due to spam or abuse.",
+    "Ovaj dokument više nije dostupan za potpisivanje jer je račun s kojeg je poslan onemogućen, vjerojatno zbog neželjene pošte ili zlouporabe."
+  ],
+  [
+    "This document is signed in a set order and other recipients must sign before you. You will receive an email when it is your turn.",
+    "Ovaj dokument potpisuje se zadanim redoslijedom i drugi primatelji moraju potpisati prije Vas. Primit ćete e-mail kada dođete na red."
+  ],
+  [
+    "This document requires a qualified electronic signature. Sign in with your signing provider to continue.",
+    "Ovaj dokument zahtijeva kvalificirani elektronički potpis. Prijavite se kod svog pružatelja usluge potpisivanja za nastavak."
+  ],
+  [
+    "This document was already signed and no further action was taken.",
+    "Ovaj dokument već je potpisan i nisu poduzete daljnje radnje."
+  ],
+  [
+    "This email is already being used as a team email. Please contact your team for assistance.",
+    "Ova e-mail adresa već se koristi kao timska e-mail adresa. Obratite se svom timu za pomoć."
+  ],
+  [
+    "This image is invalid, please upload a valid image file.",
+    "Ova slika nije valjana, učitajte valjanu slikovnu datoteku."
+  ],
+  ["This recipient has already signed and cannot be removed.", "Ovaj primatelj već je potpisao i ne može se ukloniti."],
+  [
+    "This signing request is missing its details. Close this window and try again.",
+    "Ovom zahtjevu za potpisivanje nedostaju podaci. Zatvorite ovaj prozor i pokušajte ponovno."
+  ],
+  [
+    "This will reset all branding preferences to their default values and save the changes immediately.",
+    "Time će se sve postavke brendiranja vratiti na zadane vrijednosti, a promjene će se odmah spremiti."
+  ],
+  [
+    "This will reset all document preferences to their default values and save the changes immediately.",
+    "Time će se sve postavke dokumenata vratiti na zadane vrijednosti, a promjene će se odmah spremiti."
+  ],
+  ["This window must be opened from a Documenso embed.", "Ovaj prozor mora se otvoriti iz Documenso ugradnje."],
+  ["total", "ukupno"],
+  ["Try a different search or switch category.", "Pokušajte s drugim pretraživanjem ili promijenite kategoriju."],
+  ["Try a longer range.", "Pokušajte s duljim razdobljem."],
+  ["Unable to sign document", "Dokument nije moguće potpisati"],
+  ["Unable to upload image", "Slika se ne može učitati"],
+  ["Unavailable template", "Nedostupan predložak"],
+  ["Ungroup", "Razgrupiraj"],
+  ["Unknown sign in provider.", "Nepoznati pružatelj prijave."],
+  ["Unlock Branding Preferences", "Otključajte postavke brendiranja"],
+  ["Unlock Email Domains", "Otključajte e-mail domene"],
+  ["Unlock the Organisation SSO Portal", "Otključajte SSO portal organizacije"],
+  ["Unsaved changes", "Nespremljene promjene"],
+  ["Updated {0}", "Ažurirano {0}"],
+  ["Upgrade Plan", "Nadogradi plan"],
+  [
+    "Upload a custom document to use its file name.",
+    "Učitajte vlastiti dokument kako biste koristili njegov naziv datoteke."
+  ],
+  ["Upload New Image", "Učitaj novu sliku"],
+  ["Usage overview for {name} · {rangeLabel}", "Pregled korištenja za {name} · {rangeLabel}"],
+  ["Use a duration with a unit, e.g. 5m, 1h, or 24h", "Koristite trajanje s jedinicom, npr. 5m, 1h ili 24h"],
+  [
+    "Use a unique window for each rate limit",
+    "Koristite jedinstveni vremenski prozor za svako ograničenje učestalosti"
+  ],
+  [
+    "Use API tokens to authenticate with the Documenso API.",
+    "Koristite API tokene za autentifikaciju s Documenso API-jem."
+  ],
+  ["Use template name", "Koristi naziv predloška"],
+  ["Use uploaded file name", "Koristi naziv učitane datoteke"],
+  ["Verify email", "Potvrdi e-mail adresu"],
+  ["Verify team email", "Potvrdi timsku e-mail adresu"],
+  [
+    "Verify your email, then close this window and try again.",
+    "Potvrdite svoju e-mail adresu, zatim zatvorite ovaj prozor i pokušajte ponovno."
+  ],
+  ["View all results", "Prikaži sve rezultate"],
+  ["View organisation analytics", "Prikaži analitiku organizacije"],
+  ["View templates", "Prikaži predloške"],
+  ["Visible to the document owner in the audit log.", "Vidljivo vlasniku dokumenta u zapisniku promjena."],
+  ["vs. previous period", "u odnosu na prethodno razdoblje"],
+  ["Waiting for others to complete signing", "Čeka se da ostali dovrše potpisivanje"],
+  [
+    "Warning: This was sent from a new account ({senderEmail})",
+    "Upozorenje: ovo je poslano s novog računa ({senderEmail})"
+  ],
+  ["We couldn’t complete the search. Try again.", "Pretraživanje nije uspjelo. Pokušajte ponovno."],
+  [
+    "We encountered an unknown error while removing the recipient.",
+    "Došlo je do nepoznate pogreške prilikom uklanjanja primatelja."
+  ],
+  [
+    "We were unable to add you to <0>{organisationName}</0> at this time. Please try again later, or contact the organisation administrator.",
+    "Trenutačno Vas nismo mogli dodati u <0>{organisationName}</0>. Pokušajte ponovno kasnije ili se obratite administratoru organizacije."
+  ],
+  [
+    "We were unable to send the email. Please try again later.",
+    "Nismo mogli poslati e-mail. Pokušajte ponovno kasnije."
+  ],
+  [
+    "We were unable to send the email. Please try again or contact support.",
+    "Nismo mogli poslati e-mail. Pokušajte ponovno ili se obratite podršci."
+  ],
+  [
+    "We were unable to start the sign in flow. Close this window and try again.",
+    "Nismo mogli pokrenuti postupak prijave. Zatvorite ovaj prozor i pokušajte ponovno."
+  ],
+  [
+    "We were unable to update your certificate preferences at this time, please try again later",
+    "Trenutačno nismo mogli ažurirati Vaše postavke certifikata, pokušajte ponovno kasnije"
+  ],
+  [
+    "We were unable to update your reminder preferences at this time, please try again later",
+    "Trenutačno nismo mogli ažurirati Vaše postavke podsjetnika, pokušajte ponovno kasnije"
+  ],
+  [
+    "We were unable to verify this email at this time. Please try again later.",
+    "Trenutačno nismo mogli potvrditi ovu e-mail adresu. Pokušajte ponovno kasnije."
+  ],
+  [
+    "We've sent a link to {0}. Follow it to set your password, then sign in again to continue.",
+    "Poslali smo poveznicu na {0}. Slijedite je kako biste postavili lozinku, a zatim se ponovno prijavite za nastavak."
+  ],
+  [
+    "We've sent a link to {0}. Follow it to set your password.",
+    "Poslali smo poveznicu na {0}. Slijedite je kako biste postavili lozinku."
+  ],
+  [
+    "We've updated the usage limits for your organisation.",
+    "Ažurirali smo ograničenja korištenja za Vašu organizaciju."
+  ],
+  ["Welcome to {0}", "Dobro došli u {0}"],
+  ["Window", "Prozor"],
+  ["Within limit", "U okviru ograničenja"],
+  [
+    "Works with any OIDC provider — Okta, Entra ID, Google and more",
+    "Radi s bilo kojim OIDC pružateljem — Okta, Entra ID, Google i drugima"
+  ],
+  ["You are already a member of <0>{0}</0>.", "Već ste član organizacije <0>{0}</0>."],
+  [
+    "You are currently signed in as <0>{signedInAs}</0>. Signing in below will switch accounts.",
+    "Trenutačno ste prijavljeni kao <0>{signedInAs}</0>. Prijavom u nastavku promijenit ćete račun."
+  ],
+  ["You can close this window.", "Možete zatvoriti ovaj prozor."],
+  [
+    "You don't have permission to manage this organisation. Switch to another one above, or continue in your team settings below.",
+    "Nemate dopuštenje za upravljanje ovom organizacijom. Prijeđite na drugu iznad ili nastavite u postavkama tima u nastavku."
+  ],
+  [
+    "You have accepted an invitation from <0>{organisationName}</0> to join their organisation.",
+    "Prihvatili ste pozivnicu organizacije <0>{organisationName}</0> za pridruživanje njihovoj organizaciji."
+  ],
+  [
+    "You have been invited by <0>{organisationName}</0> to join their organisation.",
+    "Organizacija <0>{organisationName}</0> pozvala Vas je da se pridružite njihovoj organizaciji."
+  ],
+  [
+    "You have been invited to join <0>{organisationName}</0> on Documenso.",
+    "Pozvani ste da se pridružite organizaciji <0>{organisationName}</0> na Documensu."
+  ],
+  [
+    "You have been removed from the document \"{documentName}\" by an administrator, typically at the request of the document sender.",
+    "Administrator Vas je uklonio iz dokumenta \"{documentName}\", obično na zahtjev pošiljatelja dokumenta."
+  ],
+  [
+    "You have been removed from the document \"{documentName}\" by an administrator.",
+    "Administrator Vas je uklonio iz dokumenta \"{documentName}\"."
+  ],
+  [
+    "You have declined the invitation from <0>{organisationName}</0> to join their organisation.",
+    "Odbili ste pozivnicu organizacije <0>{organisationName}</0> za pridruživanje njihovoj organizaciji."
+  ],
+  [
+    "You have no API tokens yet. Your tokens will be shown here once you create them.",
+    "Još nemate API tokena. Vaši tokeni prikazat će se ovdje nakon što ih izradite."
+  ],
+  ["You have unsaved changes", "Imate nespremljene promjene"],
+  [
+    "You have verified your email address for <0>{teamName}</0>.",
+    "Potvrdili ste svoju e-mail adresu za <0>{teamName}</0>."
+  ],
+  ["You removed a recipient as an administrator", "Uklonili ste primatelja kao administrator"],
+  [
+    "You will be redirected to sign in, then returned here.",
+    "Bit ćete preusmjereni na prijavu, a zatim vraćeni ovdje."
+  ],
+  [
+    "You won't be able to sign in or send documents while it is disabled.",
+    "Dok je račun onemogućen, nećete se moći prijaviti niti slati dokumente."
+  ],
+  [
+    "Your account does not have a password and password sign in is disabled for this instance. Please contact the document sender to use a different authentication method.",
+    "Vaš račun nema lozinku, a prijava lozinkom onemogućena je na ovoj instanci. Obratite se pošiljatelju dokumenta kako biste koristili drugi način autentifikacije."
+  ],
+  ["Your account has been disabled", "Vaš račun je onemogućen"],
+  [
+    "Your account has no password. Add one to sign in with your email and to sign documents that require it. We'll email you a link.",
+    "Vaš račun nema lozinku. Dodajte je kako biste se mogli prijavljivati e-mail adresom i potpisivati dokumente koji je zahtijevaju. Poslat ćemo Vam poveznicu e-mailom."
+  ],
+  [
+    "Your browser blocked the sign in window. Allow popups for this site and try again.",
+    "Vaš preglednik blokirao je prozor za prijavu. Dopustite skočne prozore za ovu stranicu i pokušajte ponovno."
+  ],
+  [
+    "Your browser is blocking the cookies needed to keep you signed in inside this embed. Open this document in a new tab instead.",
+    "Vaš preglednik blokira kolačiće potrebne za održavanje prijave unutar ove ugradnje. Umjesto toga otvorite ovaj dokument u novoj kartici."
+  ],
+  [
+    "Your browser needs permission to keep you signed in inside this embed. Press Continue and allow access when Safari asks.",
+    "Vašem pregledniku potrebno je dopuštenje za održavanje prijave unutar ove ugradnje. Pritisnite Nastavi i dopustite pristup kada Safari to zatraži."
+  ],
+  ["Your certificate preferences have been updated", "Vaše postavke certifikata su ažurirane"],
+  ["Your Documenso account has been disabled", "Vaš Documenso račun je onemogućen"],
+  ["Your logo on signing pages and emails", "Vaš logotip na stranicama za potpisivanje i u e-mailovima"],
+  ["Your new API token", "Vaš novi API token"],
+  ["Your organisation limits have been updated", "Ograničenja Vaše organizacije su ažurirana"],
+  ["Your password was changed", "Vaša lozinka je promijenjena"],
+  [
+    "Your password was just changed from your account security settings.",
+    "Vaša lozinka upravo je promijenjena u postavkama sigurnosti Vašeg računa."
+  ],
+  ["Your reminder preferences have been updated", "Vaše postavke podsjetnika su ažurirane"],
+  [
+    "Your signing link has expired. Please contact the sender to request a new one.",
+    "Vaša poveznica za potpisivanje je istekla. Obratite se pošiljatelju kako biste zatražili novu."
+  ],
+  ["Zoom in", "Povećaj"],
+  ["Zoom out", "Smanji"]
+]

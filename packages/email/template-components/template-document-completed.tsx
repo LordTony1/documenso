@@ -35,7 +35,7 @@ export const TemplateDocumentCompleted = ({
           <Column align="center">
             <Text className="font-semibold text-base text-foreground">
               <Img
-                src={getEmailAssetUrl('/static/completed.png', assetBaseUrl)}
+                src={getEmailAssetUrl(assetBaseUrl, 'static/completed.png')}
                 className="-mt-0.5 mr-2 inline h-7 w-7 align-middle"
                 alt=""
               />
@@ -58,7 +58,7 @@ export const TemplateDocumentCompleted = ({
             href={downloadLink}
           >
             <Img
-              src={getEmailAssetUrl('/static/download.png', assetBaseUrl)}
+              src={getEmailAssetUrl(assetBaseUrl, 'static/download.png')}
               className="mr-2 mb-0.5 inline h-5 w-5 align-middle"
               alt=""
             />
