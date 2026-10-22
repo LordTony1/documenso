@@ -19,7 +19,7 @@ cd "$(dirname "$0")"
 
 COMPOSE="docker compose -f compose.selfhost.yml"
 BACKUP_DIR="${HOME}/documenso-backups"
-KEEP=1
+KEEP="${KEEP:-1}"
 
 mkdir -p "${BACKUP_DIR}"
 STAMP="$(date +%F)"
